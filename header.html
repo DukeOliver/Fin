@@ -1,25 +1,33 @@
 <header class="header">
   <div class="header-inner clearfix">
-    <div class="logo">{{#link 'help_center'}}
-      <img src="{{logo_url}}" alt="{{t 'logo'}}">
-    {{/link}}</div>
-    <nav class="user-nav">
-      {{#if alternative_locales}}
-        <div class="dropdown language-selector" aria-haspopup="true">
-          <a class="dropdown-toggle">
-            {{current_locale.name}}
-          </a>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
-        </div>
-      {{/if}}
-      {{link 'new_request' class='submit-a-request'}}
-      {{user_info}}
+    <div class="left-nav">
+      <div class="logo">
+        <a href="http://www.exagoinc.com/"><img src="//p5.zdassets.com/hc/theme_assets/806071/200153628/whitelogo.png" alt="logo"></a>
+      </div>
+      <div class="nav-link">
+        <a href="https://exagoinc.zendesk.com/hc/en-us">Help Center</a>
+      </div>
+    </div>
+    <nav class="right-nav">
+      <div class="nav-link"><a href="#">About</a></div>
+      <div class="nav-link">{{user_info}}</div>
     </nav>
   </div>
 </header>
+
+<div class="hero-search">
+  <div class="search-container">
+    {{search}}
+    <div class="ticket-button-container">
+      <div class="ticket-button-column">
+        <a class="ticket-button" href="/hc/en-us/requests/new">Submit a Ticket</a>
+        <div class="button-text">
+          <span><a href="#">View our guide</a> about tickets</span>
+        </div>
+      </div>
+      <div class="ticket-button-column">
+        <a class="ticket-button" href="/hc/en-us/requests">View My Tickets</a>
+      </div>
+    </div>
+  </div>
+</div>

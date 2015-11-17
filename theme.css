@@ -4,20 +4,23 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
-  background-color: $color_5;
+  background-color:#ebebeb;
+  height: 100%;
 }
 
 body {
-  color: $color_3;
-  font-family: $font_1;
-  font-size: 13px;
-  font-weight: lighter;
-  line-height: 1.5;
+  height: 100%;
+  color: #202020;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
-  padding-bottom: 50px;
+  font-size: 13px;
+  line-height: 1.5; /* easier on the eyes for reading articles */
+  margin: 0; /* remove default margin */
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -34,12 +37,17 @@ figure > img {
 }
 
 a {
-  color: $color_4;
-  font-family: $font_2;
+  font-family:'Open Sans', sans-serif;
   text-decoration: none;
+  color: #303030;
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
 }
+
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 ul, ol {
@@ -100,7 +108,6 @@ input[type="checkbox"] + label {
 
 input, textarea {
   border: 1px solid #DDD;
-  border-radius: 2px;
   padding: 10px;
 }
 
@@ -140,10 +147,8 @@ input::-webkit-inner-spin-button {
   color: #CCC;
 }
 
-/* Buttons */
+/* Buttons, and the navigation Log In Button */
 button, [role=button], [type=button], [type=submit] {
-  border-radius: 4px;
-  border: 1px solid #DDD;
   color: $color_4;
   cursor: pointer;
   display: inline-block;
@@ -171,7 +176,6 @@ input[type=submit][disabled] {
 }
 
 button img, [role=button] img {
-  border-radius: 4px;
   margin: 0 5px 0 0;
   height: 20px;
   position: relative;
@@ -182,9 +186,17 @@ button img, [role=button] img {
   margin: 0 0 0 5px;
 }
 
+.user-avatar { /* remove avatar from username in navigation */
+  display: none;
+}
+
 /* Forms */
+#request_description {
+  height: 250px;
+}
+
 .form {
-  max-width: 505px;
+  max-width: 100%;
 }
 
 .form-field ~ .form-field {
@@ -203,13 +215,13 @@ button img, [role=button] img {
 
 .form-field.required > label:after {
   content: "*";
-  color: red;
+  color: #60798A;
   margin-left: 2px;
 }
 
 .form-field p {
-  color: #BEBEBE;
-  font-size: 11px;
+  color: #4b4b4b;
+  font-size: 12px;
 }
 
 .form-field input[type=number], .form-field input.datepicker {
@@ -227,7 +239,6 @@ button img, [role=button] img {
 .searchbox-suggestions {
   background-color: #fff;
   border: 1px solid #EEE;
-  border-radius: 4px;
   padding: 10px 20px;
 }
 
@@ -252,6 +263,56 @@ button img, [role=button] img {
   color: #CCC;
   cursor: pointer;
   margin-right: 15px;
+}
+
+/*custom form changes*/
+#new_request > div.form-field.string.required.request_custom_fields_28135878 { /*"version" in forms*/
+  text-align: justify;
+  padding-right: 40px;
+  width: 50%;
+  float: left;
+  margin-bottom: 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent
+      rgba(128, 128, 128, 0.2)
+      transparent
+      transparent;
+}
+
+#new_request > div.form-field.decimal.required.request_custom_fields_28135958 { /*"Build" in forms*/
+  text-align: justify;
+  padding-right: 40px;
+  padding-left: 40px;
+  width: 50%;
+  float: right;
+}
+
+#new_request > div.form-field.decimal.required.request_custom_fields_28135958 > p {
+  padding-top: 5px;
+}
+
+#new_request > div.form-field.string.required.request_custom_fields_28126367 > label { /* "priority" in forms*/
+  width: 50%;
+}
+
+#request_custom_fields_28135958 { /* "build" form's textbox*/
+  padding: 5px;
+}
+
+#new_request > div.form-field.string.required.request_custom_fields_28135878 > a,
+#new_request > div.form-field.string.required.request_custom_fields_28126367 > a {
+  max-width: 100%;
+}
+
+
+/* Form attachments area */
+.upload-dropzone {
+  border-color: rgba(0,0,0,.35);
+}
+
+#upload-dropzone span {
+  color: rgba(0,0,0,.75);
 }
 
 /* Navigation menus */
@@ -288,16 +349,22 @@ button img, [role=button] img {
 
 /* Breadcrumbs */
 .breadcrumbs li {
-  color: #BEBEBE;
+  color: #333;
   display: inline-block;
   font-size: 12px;
 }
 .breadcrumbs li + li:before {
   content: ">";
-  margin: 0 4px;
+  color: #60798A;
+  margin-left: 4px;
+  margin-right: 6px;
 }
 .breadcrumbs li a {
-  color: $color_3;
+  color: #333;
+}
+
+.breadcrumbs li a:hover {
+  color: #45d167;
 }
 
 /* Labels */
@@ -478,32 +545,123 @@ h1 {
   margin: 0.8em 0;
 }
 
+/* Notification Banner */
+.notification-notice {
+  position: absolute;
+}
+
+.notification-error {
+  position: absolute;
+  background: #e36a6a;
+  border-color: #8f2e2e;
+}
+
+.notification {
+  margin-top: 220px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* ====================================================
-   Content frame
+   Header, Navigation, Content Frame
    ==================================================== */
-main, .header-inner {
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 940px;
+
+.header-inner {
+  width: 75%;
+  max-width: 1200px;
+  margin: 0 auto; /* centers the header */
 }
 
 .header {
-  background: $color_5;
-  border-bottom: 1px solid #EEE;
+  position: absolute; /* allows header to overlap search section */
+  left: 0; /* These 2 properties stretch the header across the page */
+  right: 0;
+  top: 0; /* adds margin to top, brings header down a bit */
 }
 
-.header-inner {
-  display: table;
-  height: 100px;
+.left-nav {
+  float: left;
 }
 
-.logo, .user-nav {
+.right-nav {
+  float: right;
+  margin-top: 6px;
+}
+
+.nav-link{
+  float: left;
+}
+
+.left-nav .nav-link > a {
+  font-size: 20px;
+  color: #afafaf;
+}
+
+.right-nav .nav-link > a {
+  color: #f4f6f6;
+}
+
+.nav-link a:hover {
+  color: #ff7000;
+}
+
+.logo {
+  float: left;
+  margin-top: 26px; /* moves logo down to be in line with nav text */
+}
+
+.nav-link > a { /* gives nav text bigger clickable area */
+  display: inline-block;
+  padding: 20px;
+}
+
+.user-info > [role=button] { /* styling for username nav button */
+  padding: 19px;
+  color: #f4f6f6;
+  /* hover off */
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
+}
+
+.user-info > [role=button]:hover {
+  color: #ff7000;
+  /* hover on */
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
+}
+
+.dropdown-menu { /* changing default values I can't access */
+  border: none;
+  margin-top: -10px;
+  border-radius: 0;
+  padding: 0;
+}
+
+.dropdown-menu [role=menuitem] { /* color of links in dropdown menu */
+  color: #505050;
+}
+
+#user #user-dropdown { /* transparency and size of dropdown menu */
+  background: white;
+  min-width: 175px;
+}
+
+.dropdown-menu-end { /* push dropdown menu to the left a bit */
+  right: 7px;
+}
+
+.dropdown-menu [role=separator] { /* dropdown menu separator thingy */
+  margin: 0;
+  padding: 0;
+}
+
+/*zendesk stuff*/
+.user-nav {
   display: table-cell;
   vertical-align: middle;
-}
-
-.logo img {
-  max-height: 60px;
 }
 
 .user-nav {
@@ -523,139 +681,306 @@ main, .header-inner {
 /*
  * Column size
  */
+.column-container {
+  width: 1100px;
+  margin: 20px auto;
+}
+
+
 .main-column, .side-column {
+  padding: 15px;
   display: inline-block;
   vertical-align: top;
+  background-color: #fafafa;
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
 
 .main-column {
-  width: 600px;
+  display: block;
+  width: 700px;
+  float: left;
 }
 
 .side-column {
-  width: 250px;
-  margin-left: 45px;
+  display: block;
+  width: 380px;
+  float: right;
+  margin-bottom: 20px;
 }
 [dir=rtl] .side-column {
   margin-left: 0;
   margin-right: 45px;
 }
 
+.wide-column {
+  width: 1100px;
+}
+
+.article-column {
+  min-height: 800px;
+}
+
 /* ====================================================
    Search
    ==================================================== */
-.search-box {
-  position: relative;
-  background: $color_1;
-  margin-bottom: 35px;
-  padding: 35px 0;
+.hero-search {
+  height: 250px;
+  padding-top: 70px; /* pushes search bar down within this div */
+  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/search-blue.png);
+  background-position: 0 0;
+  background-size: 600px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 -7px 20px -7px inset;
 }
 
-.search-box:before {
+.search-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto; /* centers the search container */
+}
+
+form.search::before { /* adds blank content into form */
   content: " ";
-  position: absolute;
-  z-index: -1;
-  left: 5px;
-  right: 0px;
-  top: 0;
-  bottom: 0;
-  box-shadow: -894px 0 $color_1, 894px 0 $color_1;
-  display: block;
+  display: table;
 }
 
-.search-box .search {
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  position: relative;
-}
-
-.search-box .search input {
+.search-container
+.search input {
   border: 0;
   display: inline-block;
-  height: 90px;
+  height: 55px;
   outline: 0;
   vertical-align: middle;
 }
 
-.search-box .search input[type=search],
-.search-box .search input[type=text] {
-  line-height: 1.2em;
-  border-radius: 8px 0 0 8px;
-  background: #fff;
-  font-size: 20px;
-  padding: 35px 100px 35px 30px;
-  width: 700px;
-}
-[dir=rtl] .search-box .search input[type=search], [dir=rtl]
-.search-box .search input[type=text] {
-  border-radius: 0 8px 8px 0;
+.search-container
+.search input[type=search] {
+  width: 80%;
+  padding: 8px 12px;
+  background-color: #fafafa;
+  float: left;
+  font-size: 16px;
+  text-align: left;
 }
 
-.search-box .search input[type=submit] {
-  background-color: $color_2;
-  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-  border-radius: 0 8px 8px 0;
-  border: 0;
-  bottom: 0;
-  box-shadow: none;
-  color: #fff;
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-shadow: 0 2px rgba(0, 0, 0, 0.2);
-  min-width: 200px;
-  padding: 0 20px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-[dir=rtl] .search-box .search input[type=submit] {
-  border-radius: 8px 0 0 8px;
-  left: 0;
-  right: auto;
+/***** Search Button *****/
+.search-container
+.search input[type=submit] {
+  width: 20%;
+  height: 55px;
+  float: left;
+  background-color: #607887;
+  color: white;
+  font-size: 16px;
+  text-shadow: rgba(40, 60, 70, 0.5) 1px 1px 0;
+  -webkit-transition: background-color 250ms ease;
+  -moz-transition: background-color 250ms ease;
+  -o-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
 }
 
-.sub-nav .search {
-  float: right;
-  position: relative;
+.search-container
+.search input[type=submit]:hover {
+  background-color: #ff7000;
 }
-[dir=rtl] .sub-nav .search {
+
+/***** Homepage Ticket Buttons *****/
+.ticket-button-container::before, /* prevents top margin from collapsing in itself */
+.ticket-button-container::after {
+  content: " ";
+  display: table;
+}
+
+.ticket-button-container::after { /* clears floats */
+  clear: both;
+}
+
+.ticket-button-container {
+  padding: 0 120px; /* pushes container in from both sides */
+  max-width: 800px;
+  margin: 0 auto; /* centers the buttons */
+  margin-top: 95px; /* pushes buttons down from search bar */
+}
+
+.ticket-button-column {
+  width: 50%;
   float: left;
 }
 
-.sub-nav .search:before {
-  content: "\1F50D";
-  font-family: "entypo";
-  font-size: 16px;
-  line-height: 0;
-  position: absolute;
+.ticket-button {
+  display: block;
+  margin: 0 auto;
+  width: 85%;
+  height: 45px;
+  padding-top: 13px; /* pushes text down into center of button */
   text-align: center;
-  top: 50%;
-  width: 35px;
-  z-index: 1;
+  color: white;
+  background-color: #60798a;
+  -webkit-transition: background-color 250ms ease;
+  -moz-transition: background-color 250ms ease;
+  -o-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
+  text-shadow: rgba(40, 60, 70, 0.5) 1px 1px 0;
 }
 
-.sub-nav .search input[type=search],
-.sub-nav .search input[type=text] {
-  padding: 6px 10px 6px 35px;
-  height: 30px;
-  width: 100%;
-}
-[dir=rtl] .sub-nav .search input[type=search], [dir=rtl]
-.sub-nav .search input[type=text] {
-  padding: 6px 35px 6px 10px;
+.ticket-button-column > a:hover {
+  background-color: #45d167;
 }
 
-.sub-nav .search input[type=submit] {
-  display: none;
+.button-text {
+  font-size: 12px;
+  padding: 0;
+  text-align: center;
+  color: #a0a0a0;
+  margin-top: 9px;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0;
 }
+
+.button-text a {
+  color: lightgray;
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
+}
+
+.button-text a:hover {
+  color: #54d65e;
+}
+
+
+/* ====================================================
+   404 Page
+   ==================================================== */
+.error {
+  text-align: center;
+}
+
+.error > p {
+  padding: 40px;
+  font-size: 20px;
+}
+
+.goodness {
+  color: pink;
+}
+
+/* ====================================================
+   Footer
+   ==================================================== */
+.footer-container {
+  margin-top: 50px;
+}
+
+.social-links {
+  float: left;
+  list-style: none;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.social-links::before,
+.social-links::after {
+  content: " ";
+  display: table;
+}
+
+.social-links::after {
+  clear: both;
+}
+/***** social icons *****/
+.social-links li {
+  float: left;
+  list-style: none;
+}
+
+.sml-icon {
+  width: 20px;
+  height: 20px;
+  float: left;
+  overflow: hidden;
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  vertical-align: top;
+  text-align: left;
+  display: block; /* need this for text-indent to work */
+  text-indent: -999em;
+  direction: ltr;
+  opacity: 0.25;
+  -webkit-transition: opacity 250ms ease;
+  -moz-transition: opacity 250ms ease;
+  -o-transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
+}
+
+.sml-icon:hover {
+  opacity: 0.5;
+}
+
+.social-links .twitter-icon {
+  width: 30px;
+  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/twitter.svg);
+  background-position: center top;
+}
+
+.social-links .linkedin-icon {
+  width: 30px;
+  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/linkedin.svg);
+  background-position: center top;
+}
+
+.social-links .youtube-icon {
+  width: 30px;
+  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/youtube.svg);
+  background-position: center top;
+}
+
+/***** footer navigation *****/
+.footer-nav {
+  float: right;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-nav li {
+  float: left;
+  margin-left: 20px;
+}
+
+.footer-nav a {
+  color: #999;
+  font-size: 12px;
+}
+
+.footer-nav a:hover {
+  color: #444;
+}
+
+/***** sticky footer *****/
+main {
+  min-height: 75%;
+  margin-bottom: -101px;
+}
+
+main::after {
+  content: " ";
+  display: block;
+}
+
+main::after, footer-container {
+  height: 100px;
+}
+
 
 /* ====================================================
    Navigation pages
    ==================================================== */
+
 .help-center-name {
   color: #FFF;
   font-size: 60px;
@@ -669,12 +994,7 @@ main, .header-inner {
   margin-bottom: 135px;
 }
 
-.category-tree {
-  border-color: rgba(0, 0, 0, 0.15);
-  border-style: solid;
-  border-width: 1px 0;
-  padding: 20px 30px;
-}
+
 
 .category-tree h2 ~ *, .category-tree h3 ~ * {
   display: none;
@@ -903,16 +1223,16 @@ main, .header-inner {
    Sub nav
    ==================================================== */
 .sub-nav {
-  display: table;
-  margin-bottom: 25px;
-  padding: 25px 0;
-  table-layout: fixed;
-  width: 100%;
-  border-bottom: none;
+  background-color: #fafafa;
+  width: 1100px;
+  margin: 20px auto 0;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
-.sub-nav > * {
-  display: table-cell;
-}
+
 .sub-nav .breadcrumbs {
   overflow: hidden;
   white-space: nowrap;
@@ -955,12 +1275,45 @@ h1 .visibility-internal-icon:before {
 }
 
 .article-more-questions {
-  margin: 15px 0 50px;
+  background-color: #fafafa;
+  width: 700px;
+  margin: 20px auto 0;
+  padding: 15px 0;
+  float: left;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+}
+
+.article-more-questions a {
+  padding: 15px 180px;
+}
+
+.article-more-questions a:hover {
+  color: #ff7000;
+}
+
+.main-articles h1 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.main-articles h3 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.main-articles .related-articles li:hover,
+.main-articles .recent-articles li:hover {
+  background-color: #ddecff;
 }
 
 .article-body {
-  line-height: 2;
-  font-size: 14px;
   word-wrap: break-word;
 }
 
@@ -1418,6 +1771,34 @@ body.community-enabled .search-results-column {
 
 .my-activities-sub-nav {
   margin-bottom: 15px;
+  text-align: center;
+}
+
+.my-activities-sub-nav li a {
+  border: 2px solid transparent;
+  /*hover off*/
+  -webkit-transition: border-color 250ms ease;
+  -moz-transition: border-color 250ms ease;
+  -o-transition: border-color 250ms ease;
+  transition: border-color 250ms ease;
+}
+
+.my-activities-sub-nav li a:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent
+                transparent
+                rgba(128, 128, 128, 0.3)
+                transparent;
+  /*hover on*/
+  -webkit-transition: border-color 250ms ease;
+  -moz-transition: border-color 250ms ease;
+  -o-transition: border-color 250ms ease;
+  transition: border-color 250ms ease;
+}
+
+tbody tr:hover {
+  background-color: #EAF0F9;
 }
 
 .request-table-toolbar {
@@ -1441,7 +1822,7 @@ body.community-enabled .search-results-column {
 }
 
 .requests-search {
-  border-radius: 20px;
+
   outline: none;
   padding: 6px 15px;
 }
@@ -2004,8 +2385,13 @@ body.community-enabled .search-results-column + .search-results-column {
   font-size: 16px;
 }
 
+.search-result-link:hover {
+  color: #ff7000;
+}
+
 .search-result-description, .search-result-meta {
-  padding-top: 16px;
+  padding-top: 0;
+  color: gray;
 }
 
 .search-result-meta-name, .search-result-meta-time, .search-result-meta-count {
@@ -2199,5 +2585,70 @@ body.community-enabled .search-results-column + .search-results-column {
   }
   100% {
     left: 100%;
+  }
+}
+
+/* =============================
+   Media Queries
+   ============================= */
+@media screen and (max-width: 730px) {
+
+  main {
+    min-width: 490px;
+  }
+
+  .search-container {
+    width: 90%;
+  }
+
+  .ticket-button-column {
+    width: 100%;
+    float: none;
+    margin-bottom: 10px;
+  }
+
+  .small-button-container {
+    margin-top: 70px;
+  }
+
+  .ticket-button {
+    width: 100%;
+  }
+
+  .button-text {
+    display: none;
+  }
+
+  .search-container
+  .search
+  input[type=search] {
+    width: 70%;
+  }
+
+  .search-container
+  .search
+  input[type=submit] {
+    width: 30%;
+  }
+
+  .header {
+    min-width: 490px;
+  }
+
+  .header-inner {
+    width: 95%;
+  }
+
+  .nav-link > a {
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+
+  .user-info > [role=button] {
+    padding-left: 10px;
+  }
+
+  .knowledge-base {
+    width: 100%;
   }
 }

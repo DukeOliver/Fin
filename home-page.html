@@ -1,75 +1,76 @@
-<div class="search-box">
-  <h1 class="help-center-name">{{help_center.name}}</h1>
-  {{search}}
-</div>
+<style>
+  .hero-search {
+    height: 425px;
+    padding-top: 165px;
+  }
 
-<div class="knowledge-base clearfix">
-  {{#if categories}}
-    <div class="category-tree">
-      {{#each categories}}
-        <section class="category">
-          {{#if ../has_multiple_categories}}
-            <h2><a href="{{url}}">{{name}}</a></h2>
-          {{/if}}
-          {{#each sections}}
-            <section class="section">
-              <h3>
-                {{#if internal}}
-                  <span class="visibility-internal" data-title="{{t 'internal'}}">
-                    <span class="visibility-internal-icon"></span>
-                  </span>
-                {{/if}}
-                <a href="{{url}}">{{name}}</a>
-              </h3>
-              {{#if articles}}
-                <ul class="article-list">
-                  {{#each articles}}
-                    <li {{#if promoted}} class="article-promoted" {{/if}}>
-                      {{#if promoted}}
-                        <span data-title="{{t 'promoted'}}">★</span>
-                      {{/if}}
-                      <a href="{{url}}">{{title}}</a>
-                    </li>
-                  {{/each}}
-                </ul>
-                {{#if more_articles}}
-                  <a href="{{url}}" class="see-all-articles">
-                    {{t 'show_all_articles' count=article_count}}
-                  </a>
-                {{/if}}
+  .ticket-button-container {
+    margin-top: 135px;
+  }
+
+  main {
+    min-height: 60%;
+  }
+</style>
+<div class="main-requests clearfix">
+  <div class="column-container clearfix">
+    <section class="main-column wide-column">
+      {{#if categories}}
+        <div class="category-tree">
+          {{#each categories}}
+            <section class="category">
+              {{#if ../has_multiple_categories}}
+                <h2><a href="{{url}}">{{name}}</a></h2>
+              {{/if}}
+              {{#each sections}}
+                <section class="section">
+                  <h3>
+                    {{#if internal}}
+                      <span class="visibility-internal" data-title="{{t 'internal'}}">
+                        <span class="visibility-internal-icon"></span>
+                      </span>
+                    {{/if}}
+                    <a href="{{url}}">{{name}}</a>
+                  </h3>
+                  {{#if articles}}
+                    <ul class="article-list">
+                      {{#each articles}}
+                        <li {{#if promoted}} class="article-promoted" {{/if}}>
+                          {{#if promoted}}
+                            <span data-title="{{t 'promoted'}}">★</span>
+                          {{/if}}
+                          <a href="{{url}}">{{title}}</a>
+                        </li>
+                      {{/each}}
+                    </ul>
+                    {{#if more_articles}}
+                      <a href="{{url}}" class="see-all-articles">
+                        {{t 'show_all_articles' count=article_count}}
+                      </a>
+                    {{/if}}
+                  {{else}}
+                    <i class="section-empty">
+                      <a href="{{url}}">{{t 'empty'}}</a>
+                    </i>
+                  {{/if}}
+                </section>
               {{else}}
-                <i class="section-empty">
+                <i class="category-empty">
                   <a href="{{url}}">{{t 'empty'}}</a>
                 </i>
+              {{/each}}
+
+              {{#if more_sections}}
+                <div>
+                  <a href="{{url}}">{{t 'see_all_sections'}}</a>
+                </div>
               {{/if}}
             </section>
-          {{else}}
-            <i class="category-empty">
-              <a href="{{url}}">{{t 'empty'}}</a>
-            </i>
           {{/each}}
 
-          {{#if more_sections}}
-            <div>
-              <a href="{{url}}">{{t 'see_all_sections'}}</a>
-            </div>
-          {{/if}}
-        </section>
-      {{/each}}
-
-      {{pagination}}
-    </div>
-  {{/if}}
-</div>
-
-<div class="community">
-  {{#if help_center.community_enabled}}
-    <h4>
-      {{t 'community'}}
-      {{#link 'community'}}
-        {{t 'browse'}}
-      {{/link}}
-    </h4>
-  {{/if}}
-  {{recent_activity scope='community'}}
+          {{pagination}}
+        </div>
+      {{/if}}
+    </section>
+  </div>
 </div>
