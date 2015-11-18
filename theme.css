@@ -44,6 +44,10 @@ a {
   -moz-transition: color 250ms ease;
   -o-transition: color 250ms ease;
   transition: color 250ms ease;
+  -webkit-transition: background-color 250ms ease;
+  -moz-transition: background-color 250ms ease;
+  -o-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
 }
 
 a:hover {
@@ -352,6 +356,7 @@ button img, [role=button] img {
   color: #333;
   display: inline-block;
   font-size: 12px;
+  text-transform: capitalize;
 }
 .breadcrumbs li + li:before {
   content: ">";
@@ -722,6 +727,10 @@ h1 {
   min-height: 800px;
 }
 
+.accordion-column {
+  padding: 0;
+}
+
 /* ====================================================
    Search
    ==================================================== */
@@ -962,17 +971,17 @@ form.search::before { /* adds blank content into form */
 }
 
 /***** sticky footer *****/
-main {
-  min-height: 75%;
+.site-container {
+  min-height: 100%;
   margin-bottom: -101px;
 }
 
-main::after {
+.site-container::after {
   content: " ";
   display: block;
 }
 
-main::after, footer-container {
+.site-container::after, footer-container {
   height: 100px;
 }
 
@@ -1384,8 +1393,35 @@ h1 .visibility-internal-icon:before {
 /* ====================================================
    Requests
    ==================================================== */
+.main-requests h1 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 24px;
+  color: #595959;
+  text-transform: capitalize;
+}
+
+
+
+.main-requests .main-column:first-child {
+  margin-bottom: 20px;
+}
+
 .request-follow-up {
-  text-align: right;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.request-follow-up a {
+  color: white;
+  padding: 10px;
+  background-color: #60798a;
+  text-shadow: rgba(40, 60, 70, 0.5) 1px 1px 0;
+
+}
+
+.request-follow-up a:hover {
+  background-color: #ff7000;
 }
 
 .follow-up-hint {
@@ -1401,7 +1437,6 @@ h1 .visibility-internal-icon:before {
   border: 1px solid #ECECEC;
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 3px;
-  margin: 30px 0 30px;
   padding: 15px 20px;
 }
 
@@ -1419,6 +1454,7 @@ h1 .visibility-internal-icon:before {
   color: #bbb;
   display: block;
   font-size: 13px;
+  float: right;
 }
 
 .request-details {
@@ -1553,6 +1589,12 @@ body.community-enabled .search-results-column {
 }
 
 /* Comments - Article, Request and Post pages */
+.comment-author {
+  color: #a9a9a9;
+  font-weight: normal;
+  font-style: italic;
+}
+
 .comment-list {
   margin-bottom: 25px;
 }
@@ -1609,27 +1651,26 @@ body.community-enabled .search-results-column {
 }
 
 .comment-avatar {
+
   position: relative;
-  width: 85px;
+  width: 65px;
 }
 .comment-avatar img {
-  border-radius: 3px;
-  max-width: 65px;
-  max-height: 65px;
+  max-width: 55px;
+  max-height: 55px;
 }
 
 .comment-avatar-agent:after {
   background-color: transparent;
-  background-image: url(/hc/assets/agent-marker.png);
-  background-image: url(/hc/assets/agent-marker.svg);
+  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/logo-orange-small.png);
   background-repeat: no-repeat;
-  background-size: 15px;
+  background-size: 55px;
   content: " ";
   height: 15px;
-  left: 55px;
+  left: 0;
   position: absolute;
-  top: 55px;
-  width: 15px;
+  top: 57px;
+  width: 55px;
 }
 [dir=rtl] .comment-avatar-agent:after {
   left: auto;
@@ -1836,7 +1877,6 @@ tbody tr:hover {
   border: 1px solid #EEE;
   border-radius: 3px;
   font-size: 12px;
-  margin: 0 0 30px;
   padding: 15px 20px;
 }
 
@@ -2586,6 +2626,48 @@ body.community-enabled .search-results-column + .search-results-column {
   100% {
     left: 100%;
   }
+}
+
+/* ====================================================
+   Accordion CSS
+   ==================================================== */
+
+.collapse {
+  display: none;
+}
+
+.collapse.in {
+  display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+          transition: height 0.35s ease;
+}
+
+.panel-title {
+  margin: 0;
+   padding: 10px;
+  font-size: 13px;
+  text-align: center;
+  color: #B0B0B0;
+  /*hover off*/
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
+}
+
+.panel-title:hover {
+  color: #ff7000;
+  /*hover on*/
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
 }
 
 /* =============================
