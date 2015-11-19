@@ -40,14 +40,10 @@ a {
   font-family:'Open Sans', sans-serif;
   text-decoration: none;
   color: #303030;
-  -webkit-transition: color 250ms ease;
-  -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
-  transition: color 250ms ease;
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
+  -webkit-transition: color 250ms ease, background-color 250ms ease;
+  -moz-transition: color 250ms ease,  background-color 250ms ease;
+  -o-transition: color 250ms ease,  background-color 250ms ease;
+  transition: color 250ms ease, background-color 250ms ease;
 }
 
 a:hover {
@@ -312,7 +308,7 @@ button img, [role=button] img {
 
 /* Form attachments area */
 .upload-dropzone {
-  border-color: rgba(0,0,0,.35);
+  border: none;
 }
 
 #upload-dropzone span {
@@ -358,6 +354,7 @@ button img, [role=button] img {
   font-size: 12px;
   text-transform: capitalize;
 }
+
 .breadcrumbs li + li:before {
   content: ">";
   color: #60798A;
@@ -366,10 +363,20 @@ button img, [role=button] img {
 }
 .breadcrumbs li a {
   color: #333;
+  /*hover off*/
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
 }
 
 .breadcrumbs li a:hover {
   color: #45d167;
+  /*hover on*/
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -o-transition: color 250ms ease;
+  transition: color 250ms ease;
 }
 
 /* Labels */
@@ -1431,15 +1438,6 @@ h1 .visibility-internal-icon:before {
   margin-top: 13px;
 }
 
-.request-details {
-  background: #f6f6f6;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid #ECECEC;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 3px;
-  padding: 15px 20px;
-}
-
 .request-details li + li {
   margin-top: 10px;
 }
@@ -1455,10 +1453,6 @@ h1 .visibility-internal-icon:before {
   display: block;
   font-size: 13px;
   float: right;
-}
-
-.request-details {
-  font-size: 12px;
 }
 
 .request-details dt ~ dt {
@@ -1716,12 +1710,29 @@ body.community-enabled .search-results-column {
 .comment-form textarea {
   border-radius: 2px 2px 0 0;
   border-width: 1px;
+  height: 150px;
 }
 
 .comment-attachments {
   border: 1px solid #DDD;
   margin-top: -1px;
   padding: 10px;
+  float: left;
+  width: 900px;
+  /*hover off*/
+  -webkit-transition: background-color 250ms ease;
+  -moz-transition: background-color 250ms ease;
+  -o-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
+}
+
+.comment-attachments:hover {
+  background-color: #D6D6D6; 
+  /*hover on*/
+  -webkit-transition: background-color 250ms ease;
+  -moz-transition: background-color 250ms ease;
+  -o-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
 }
 
 .comment-form-controls {
@@ -1873,10 +1884,7 @@ tbody tr:hover {
 }
 
 .request-details {
-  background: #f9f9f9;
-  border: 1px solid #EEE;
-  border-radius: 3px;
-  font-size: 12px;
+  border-top: 1px solid #e6e6e6;
   padding: 15px 20px;
 }
 
@@ -2712,7 +2720,7 @@ body.community-enabled .search-results-column + .search-results-column {
   input[type=submit] {
     width: 30%;
   }
-
+ 
   .header {
     min-width: 490px;
   }
