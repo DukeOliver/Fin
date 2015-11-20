@@ -62,9 +62,9 @@
             </thead>
             <tbody>
               {{#each requests}}
-                <tr>
+                <tr onclick="location.href='/hc/en-us/requests/{{id}}'">
                   <td>{{id}}</td>
-                  <td>
+                  <td class="request-subject">
                     <a href="{{url}}">
                       {{#if subject}}
                         {{subject}}
