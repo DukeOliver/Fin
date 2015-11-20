@@ -6,7 +6,8 @@
   <div class="column-container clearfix">
     <section class="main-column article-column">
       <article>
-        <h1>{{#if article.internal}}
+        <div class="print-button clearfix"><script>var pfHeaderImgUrl = 'https://p5.zdassets.com/hc/theme_assets/806071/200153628/logo-orange.png';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = 'https://p5.zdassets.com/hc/themes/806071/205336438/style-a72a6c4eb638fb434562794b5d5107b2.css?brand_id=506898&locale=en-us';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if ('https:' === document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Print Friendly and PDF"/></a></div>
+        <h1 class="article-title">{{#if article.internal}}
           <span class="visibility-internal" data-title="{{t 'internal'}}">
             <span class="visibility-internal-icon"></span>
           </span>
@@ -15,46 +16,24 @@
           {{article.body}}
         </div>
         <div class="article-attachments">
-          <ul class="attachments">
+          <!--<ul class="attachments">
             {{#each attachments}}
               <li>
                 <a href="{{url}}" target="_blank">{{name}}</a>
                 <span>({{size}})</span>
               </li>
             {{/each}}
-          </ul>
+          </ul>-->
         </div>
-        <!--<div class="article-meta">
-          {{#if article.author.url}}
-            <a href="{{article.author.url}}" target="_zendesk_lotus">{{article.author.name}}</a>
-          {{else}}
-            {{article.author.name}}
-          {{/if}} - {{date article.updated_at}}
-        </div>
-        <footer class="article-footer clearfix">
-          {{#with article}}
-            <div class="article-vote">
-              <span class="article-vote-question">{{t 'was_this_article_helpful'}}</span>
-              <div class="article-vote-controls">
-                {{vote 'up' class='article-vote-up' selected_class='article-voted' role='button'}}
-                {{vote 'down' class='article-vote-down' selected_class='article-voted' role='button'}}
-              </div>
-              <small class="article-vote-count">
-                {{vote 'label' class='article-vote-label'}}
-              </small>
-            </div>
-          {{/with}}
-          {{share}}
-        </footer> -->
       </article>
     </section>
-    <section class="side-column">
-     <p>{{related_articles}}</p>
+    <section class="side-column article-side-column">
+     <p>{{related_articles}}</p> 
     </section>
-    <section class="side-column">
+    <section class="side-column article-side-column">
       <p>{{recent_articles}}</p>
     </section>
-     <section class="side-column">
+     <section class="side-column article-side-column">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat urna non sapien feugiat, ac ullamcorper metus condimentum. Nunc blandit magna in ex ultrices fringilla. Sed euismod nisi vel lorem elementum, eu tincidunt felis ornare. Donec in mollis nunc, eu efficitur purus. Curabitur vitae viverra magna. Duis vitae finibus tellus. Aenean at sapien eget risus aliquet vestibulum id sit amet ligula. Pellentesque ullamcorper tristique leo vel lacinia. Ut tristique, ex a sollicitudin imperdiet, sapien velit condimentum lorem, et convallis lacus justo vitae turpis. Cras et velit non elit placerat fringilla. Quisque et arcu ipsum. Praesent ac quam ac nisl euismod maximus.</p>
     </section>
     <div class="article-more-questions">
@@ -62,5 +41,5 @@
     </div>
   </div>
 </div>
-
+  
 </main> <!--<main class="site-container"> is on header page-->
