@@ -2,7 +2,7 @@
   {{breadcrumbs}}
 </nav>
 
-<div class="search-results clearfix">
+<div class="search-results clearfix"> 
   <div class="column-container clearfix">
     <section class="main-column wide-column">
       <h1 class="search-results-heading">{{t 'results' query=query count=results_count}}</h1>
@@ -14,9 +14,10 @@
           <ul class="search-results-list">
             {{#each article_results}}
               <li class="search-result">
-                <a href="{{url}}" class="search-result-link">{{title}}</a>
-                <!--<div class="search-result-meta">{{meta}}</div>-->
+                <a href="{{url}}" class="search-result-link"><div class="search-result-div">
+                {{title}}
                 <div class="search-result-description">{{text}}</div>
+                </div></a>
               </li>
             {{/each}}
           </ul>
