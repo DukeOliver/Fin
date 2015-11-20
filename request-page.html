@@ -15,77 +15,82 @@
           </div>
         </a>
         <div id="collapseOne" class="panel-collapse collapse">
-          <dl class="request-details">
-            <dt>{{t 'submitted_by' requester_name=request.requester.name}}</dt>
-            {{#form 'organization' id='request-organization'}}
-            <dt>{{t 'organization'}}</dt>
-            <dd>{{select 'organization'}}</dd>
-            {{/form}}
-            {{#if group}}
-            <dt>{{t 'group'}}</dt>
-            <dd>
-              <span>{{group.name}}</span>
-            </dd>
-            {{/if}}
-            <dt>{{t 'status'}}</dt>
-            <dd>
-              <span class="request-status request-{{request.status}}" title="{{request.status_description}}">
-              {{request.status_name}}
-              </span>
-            </dd>
-            {{#if request.type}}
-            <dt>{{t 'type'}}</dt>
-            <dd>
-              <span>
-              {{request.type_name}}
-              {{#is request.type 'task'}}{{t 'task_due_date' due_date=request.due_date}}{{/is}}
-              </span>
-            </dd>
-            {{/if}}
-            {{#if request.priority}}
-            <dt>{{t 'priority'}}</dt>
-            <dd>
-              <span>{{request.priority_name}}</span>
-            </dd>
-            {{/if}}
-            {{#if assignee}}
-            <dt>{{t 'assignee'}}</dt>
-            <dd>
-              <span>{{assignee.name}}</span>
-            </dd>
-            {{/if}}
-            {{#each custom_fields}}
-            <dt>{{title}}</dt>
-            <dd>
-              <span>{{value}}</span>
-            </dd>
-            {{/each}}
-            {{#if attachments}}
-            <dt>{{t 'attachments_heading'}}</dt>
-            <dd>
-              <ul class="attachment-list">
-                {{#each attachments}}
-                <li>
-                  <a href="{{url}}" target="_blank">{{name}}</a>
-                  <span>({{size}})</span>
-                </li>
-                {{/each}}
-              </ul>
-            </dd>
-            {{/if}}
-            {{#if collaborators}}
-            <dt>{{t 'ccs'}}</dt>
-            <dd>
-              <span>{{t 'ccs_description'}}</span>
-              <ul class="attachment-list">
-                {{#each collaborators}}
-                <li>{{name}}</li>
-                {{/each}}
-              </ul>
-            </dd>
-            {{/if}}
-          </dl>
-          <!--{{link 'new_request' role='button'}}-->
+          <div class="accordion-inner-container">
+            <dl class="request-details">
+              <dt>{{t 'submitted_by' requester_name=request.requester.name}}</dt>
+              {{#form 'organization' id='request-organization'}}
+              <dt>{{t 'organization'}}</dt>
+              <dd>{{select 'organization'}}</dd>
+              {{/form}}
+              {{#if group}}
+              <dt>{{t 'group'}}</dt>
+              <dd>
+                <span>{{group.name}}</span>
+              </dd>
+              {{/if}}
+              <dt>{{t 'status'}}</dt>
+              <dd>
+                <span class="request-status request-{{request.status}}" title="{{request.status_description}}">
+                {{request.status_name}}
+                </span>
+              </dd>
+              {{#if request.type}}
+              <dt>{{t 'type'}}</dt>
+              <dd>
+                <span>
+                {{request.type_name}}
+                {{#is request.type 'task'}}{{t 'task_due_date' due_date=request.due_date}}{{/is}}
+                </span>
+              </dd>
+              {{/if}}
+              {{#if request.priority}}
+              <dt>{{t 'priority'}}</dt>
+              <dd>
+                <span>{{request.priority_name}}</span>
+              </dd>
+              {{/if}}
+              {{#if assignee}}
+              <dt>{{t 'assignee'}}</dt>
+              <dd>
+                <span>{{assignee.name}}</span>
+              </dd>
+              {{/if}}
+              {{#each custom_fields}}
+              <dt>{{title}}</dt>
+              <dd>
+                <span>{{value}}</span>
+              </dd>
+              {{/each}}
+              {{#if attachments}}
+              <dt>{{t 'attachments_heading'}}</dt>
+              <dd>
+                <ul class="attachment-list">
+                  {{#each attachments}}
+                  <li>
+                    <a href="{{url}}" target="_blank">{{name}}</a>
+                    <span>({{size}})</span>
+                  </li>
+                  {{/each}}
+                </ul>
+              </dd>
+              {{/if}}
+              {{#if collaborators}}
+              <dt>{{t 'ccs'}}</dt>
+              <dd>
+                <span>{{t 'ccs_description'}}</span>
+                <ul class="attachment-list">
+                  {{#each collaborators}}
+                  <li>{{name}}</li>
+                  {{/each}}
+                </ul>
+              </dd>
+              {{/if}}
+            </dl>
+            <div class="accordion-box">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus aliquet tristique. Donec finibus odio eu sollicitudin posuere. Donec id lectus et massa elementum venenatis eget vehicula purus. Duis scelerisque tincidunt tempor. Nullam ut ex sed mauris vehicula tempus. Sed dignissim orci ac ultricies lobortis. Integer faucibus, erat sed mollis lobortis, ligula diam ultricies erat, id dictum dui mauris at risus. Mauris quis metus nec elit porttitor pellentesque nec quis nisl.</p>
+              <p>Etiam ac metus nec ligula suscipit vulputate. Quisque cursus ipsum et felis tempus tempus. Suspendisse condimentum posuere varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie lorem augue, vel dictum mi luctus in. Nam luctus vehicula tellus, sed aliquam odio auctor ut. Curabitur elementum suscipit placerat. Sed tristique eros in egestas faucibus. Etiam porttitor magna id porttitor varius.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -122,7 +127,7 @@
       {{pagination}}
       {{#is request.status 'solved'}}
       <div class="request-follow-up">
-        <a href="/hc/en-us/requests/new?parent_id={{request.id}}">This ticket has been closed. Click here to create a follow-up.</a>
+        <a href="/hc/en-us/requests/new?parent_id={{request.id}}">This ticket has been closed. Click here to submit a follow-up.</a>
       </div>
       {{/is}}
       {{#form 'comment' class='comment-form'}}
@@ -134,11 +139,7 @@
         <div class="comment-attachments">
           {{upload}}
         </div>
-        <div class="comment-form-controls clearfix">
-          <div class="comment-mark-as-solved">
-            {{checkbox 'mark_as_solved'}}
-            {{label 'mark_as_solved'}}
-          </div>
+        <div class="request-page-submit-button">
           {{input type='submit'}}
         </div>
       </div>
