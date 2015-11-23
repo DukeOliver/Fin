@@ -481,19 +481,29 @@ button img, [role=button] img {
 
 /* Pagination */
 .pagination {
-  margin: 20px 0;
+  margin: 0 auto;
   text-align: center;
+  padding-bottom: -3px;
 }
 
 .pagination * {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .pagination li {
-  border: 1px solid #EEE;
   float: left;
   margin-left: -1px;
+  -webkit-transition: background-color 150ms ease;
+  -moz-transition: background-color 150ms ease;
+  -o-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
 }
+
+.pagination li:not(.pagination-current):hover {
+  background-color: #BBC9D3;  
+}
+
 [dir=rtl] .pagination li {
   float: right;
 }
@@ -505,8 +515,8 @@ button img, [role=button] img {
 }
 
 .pagination-current {
-  background-color: #f9f9f9;
-  color: #BEBEBE;
+  background-color: #60798A;
+  color: white;
 }
 
 .pagination-first {
@@ -542,7 +552,6 @@ button img, [role=button] img {
 /* ====================================================
    Header, Navigation, Content Frame
    ==================================================== */
-
 .header-inner {
   width: 75%;
   max-width: 1200px;
@@ -1324,7 +1333,7 @@ form.search::before { /* adds blank content into form */
   display: block;
 }
 
-.article-more-questions {
+.thin-bottom-bar {
   background-color: #fdfdfd;
   width: 700px;
   margin: 20px auto 0;
@@ -1336,11 +1345,11 @@ form.search::before { /* adds blank content into form */
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
 
-.article-more-questions a {
+.article-ticket-submit a {
   padding: 15px 180px;
 }
 
-.article-more-questions a:hover {
+.article-ticket-submit a:hover {
   color: #ff7000;
 }
 
@@ -1361,7 +1370,8 @@ form.search::before { /* adds blank content into form */
 }
 
 .article-side-column h3,
-.main-requests .side-column h3
+.main-requests .side-column h3,
+.search-results .side-column h3
 {
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
@@ -1369,7 +1379,8 @@ form.search::before { /* adds blank content into form */
 }
 
 .main-articles h3,
-.main-requests .side-column h3 {
+.main-requests .side-column h3,
+.search-results .side-column h3{
   font-size: 16px;
 }
 
@@ -2495,6 +2506,10 @@ body.community-enabled .search-results-column + .search-results-column {
   margin-right: 35px;
 }
 
+.search-results-heading {
+  text-align: center;  
+}
+
 .search-results-subheading {
   padding-bottom: 10px;
   margin-bottom: 0;
@@ -2999,5 +3014,9 @@ modal-open {
 
   .knowledge-base {
     width: 100%;
+  }
+  
+  .ticket-button-container {
+    margin-top: 68px; 
   }
 }
