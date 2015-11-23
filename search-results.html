@@ -4,12 +4,11 @@
 
 <div class="search-results clearfix"> 
   <div class="column-container clearfix">
-    <section class="main-column wide-column">
-      <h1 class="search-results-heading">{{t 'results' query=query count=results_count}}</h1>
+    <section class="main-column">
+      <h1 class="search-results-heading">
+        {{results_count}} results for "{{query}}"
+      </h1>
       <section class="search-results-column">
-        <h2 class="search-results-subheading">
-          {{t 'knowledge_base'}}
-        </h2>
         {{#if article_results}}
           <ul class="search-results-list">
             {{#each article_results}}
@@ -30,50 +29,37 @@
           </p>
         {{/if}}
       </section>
-
-      <!--{{#if help_center.community_enabled}}
-        <section class="search-results-column">
-          <h2 class="search-results-subheading">
-            {{t 'community'}}
-          </h2>
-          {{#if post_results}}
-            <ul class="search-results-list">
-              {{#each post_results}}
-                <li class="search-result">
-                  <a href="{{url}}" class="search-result-link">{{title}}</a>
-                  <div class="search-result-description">
-                    {{text}}
-                  </div>
-                  <div class="search-result-meta">
-                    <span class="search-result-meta-name">
-                      {{#if author.url}}
-                        <a href="{{author.url}}" target="_zendesk_lotus">{{author.name}}</a>
-                      {{else}}
-                        {{author.name}}
-                      {{/if}}
-                    </span>
-                    <span class="search-result-meta-time">{{date created_at}}</span>
-                    <span class="search-result-meta-count">
-                      {{t 'comments_count' count=comment_count}}
-                    </span>
-                  </div>
-                </li>
-              {{/each}}
-            </ul>
-          {{else}}
-            <p>
-              {{t 'no_results' query=query}}
-              {{#link 'topics'}}
-                {{t 'browse_community'}}
-              {{/link}}
-            </p>
-          {{/if}}
-        </section>
-      {{/if}}-->
     </section>
+     <section class="side-column centered-side-column">
+      <h3>How Does The Search Work?</h3>
+      <p>The search function on our support site uses a very interesting architecture. It involves whispering a query into the ear of one of our support hamsters, who then begin their journey to the Library of Atlantis. Unfortunately, some perish on the journey - but fear not! Every party of adventure hamsters carry a handful of Phoenix Down, in the event of a Game Over.</p>
+      <!-- Button trigger modal -->
+      <button type="button" class="modal-button" data-toggle="modal" data-target="#myModal">
+        Those Poor Hammies!
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="myModalLabel">Submit a Ticket</h1>
+            </div>
+            <div class="modal-body">
+              <p>And here goes all the fancy stuff!</p><br />
+              <img src="https://i.imgur.com/0tL6Lrr.jpg">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="modal-button-inner" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="thin-bottom-bar">{{pagination}}</div>
   </div>
 </div>
 
-{{pagination}}
+
 
 </main> <!--<main class="site-container"> is on header page-->
