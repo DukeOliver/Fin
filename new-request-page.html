@@ -4,7 +4,7 @@
     <li>Submit a Ticket</li>
   </ol>
 </nav>
-<div class="main-requests clearfix">
+<div class="main-requests new-request clearfix">
   <div class="column-container clearfix">
     <section class="main-column">
       <h1>Submit a Ticket{{#if parent}}
@@ -16,8 +16,31 @@
         {{request_form}}
       </div>
     </section>
-    <section class="side-column">
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat urna non sapien feugiat, ac ullamcorper metus condimentum. Nunc blandit magna in ex ultrices fringilla. Sed euismod nisi vel lorem elementum, eu tincidunt felis ornare. Donec in mollis nunc, eu efficitur purus. Curabitur vitae viverra magna. Duis vitae finibus tellus. Aenean at sapien eget risus aliquet vestibulum id sit amet ligula. Pellentesque ullamcorper tristique leo vel lacinia. Ut tristique, ex a sollicitudin imperdiet, sapien velit condimentum lorem, et convallis lacus justo vitae turpis. Cras et velit non elit placerat fringilla. Quisque et arcu ipsum. Praesent ac quam ac nisl euismod maximus.</p>
+    <section class="side-column centered-side-column">
+      <h3>Example Ticket</h3>
+      <p>Presented below is an example of a well-constructed ticket. For assistance on how to properly format your ticket to increase response time, be sure to check it out!</p>
+      <!-- Button trigger modal -->
+      <button type="button" class="modal-button" data-toggle="modal" data-target="#myModal">
+        Preview Demo Ticket
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="myModalLabel">Submit a Ticket</h1>
+            </div>
+            <div class="modal-body">
+              <p>And here goes all the fancy stuff!</p><br />
+              <img src="https://i.imgur.com/0tL6Lrr.jpg">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="modal-button-inner" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </div>
