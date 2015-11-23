@@ -231,6 +231,7 @@ button img, [role=button] img {
 .form-field p {
   color: #4b4b4b;
   font-size: 12px;
+  text-align: justify;
 }
 
 .form-field input[type=number], .form-field input.datepicker {
@@ -262,9 +263,6 @@ button img, [role=button] img {
 }
 
 .form footer {
-  border-top: 1px solid #EEE;
-  margin-top: 40px;
-  padding-top: 30px;
   text-align: right;
 }
 
@@ -331,21 +329,17 @@ button img, [role=button] img {
 
 .upload-dropzone {
  border: 1px solid #DDD;
-  /*hover off*/
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
+ -webkit-transition: background-color 250ms ease;
+ -moz-transition: background-color 250ms ease;
+ -o-transition: background-color 250ms ease;
+ transition: background-color 250ms ease;
 }
+
+
 
 
 .upload-dropzone:hover {
   background-color: #D6D6D6; 
-  /*hover on*/
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
 }
 
 /* Navigation menus */
@@ -395,7 +389,6 @@ button img, [role=button] img {
 }
 .breadcrumbs li a {
   color: #333;
-  /*hover off*/
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
   -o-transition: color 250ms ease;
@@ -403,12 +396,7 @@ button img, [role=button] img {
 }
 
 .breadcrumbs li a:hover {
-  color: #45d167;
-  /*hover on*/
-  -webkit-transition: color 250ms ease;
-  -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
-  transition: color 250ms ease;
+  color: #ff7000;
 }
 
 /* Labels */
@@ -607,7 +595,6 @@ button img, [role=button] img {
 .user-info > [role=button] { /* styling for username nav button */
   padding: 19px;
   color: #f4f6f6;
-  /* hover off */
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
   -o-transition: color 250ms ease;
@@ -616,11 +603,6 @@ button img, [role=button] img {
 
 .user-info > [role=button]:hover {
   color: #ff7000;
-  /* hover on */
-  -webkit-transition: color 250ms ease;
-  -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
-  transition: color 250ms ease;
 }
 
 .dropdown-menu { /* changing default values I can't access */
@@ -702,6 +684,10 @@ button img, [role=button] img {
 [dir=rtl] .side-column {
   margin-left: 0;
   margin-right: 45px;
+}
+
+.centered-side-column {
+  text-align: center;  
 }
 
 .wide-column {
@@ -1374,13 +1360,16 @@ form.search::before { /* adds blank content into form */
   font-size: 18px;
 }
 
-.article-side-column h3 {
+.article-side-column h3,
+.main-requests .side-column h3
+{
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
   margin: 0 0 10px;
 }
 
-.main-articles h3 {
+.main-articles h3,
+.main-requests .side-column h3 {
   font-size: 16px;
 }
 
@@ -1399,7 +1388,6 @@ form.search::before { /* adds blank content into form */
 
 .main-articles .related-articles li,
 .main-articles .recent-articles li {
-  /*hover off*/
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
   -o-transition: background-color 250ms ease;
@@ -1409,11 +1397,6 @@ form.search::before { /* adds blank content into form */
 .main-articles .related-articles li:hover,
 .main-articles .recent-articles li:hover {
   background-color: #f1f1f1;
-  /*hover on*/
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
 }
 
 .main-articles .related-articles li a:hover,
@@ -1515,6 +1498,16 @@ form.search::before { /* adds blank content into form */
 
 .main-requests .main-column:first-child {
   margin-bottom: 20px;
+}
+
+.new-request .upload-dropzone {
+  width: 500px;
+  float: left;
+}
+
+.new-request input[type=submit] {
+  padding: 0; 
+  padding: 14px 59px;
 }
 
 .request-follow-up {
@@ -1953,7 +1946,6 @@ body.community-enabled .search-results-column {
 
 .my-activities-sub-nav li a {
   border: 2px solid transparent;
-  /*hover off*/
   -webkit-transition: border-color 250ms ease;
   -moz-transition: border-color 250ms ease;
   -o-transition: border-color 250ms ease;
@@ -1967,29 +1959,18 @@ body.community-enabled .search-results-column {
                 transparent
                 rgba(128, 128, 128, 0.3)
                 transparent;
-  /*hover on*/
-  -webkit-transition: border-color 250ms ease;
-  -moz-transition: border-color 250ms ease;
-  -o-transition: border-color 250ms ease;
-  transition: border-color 250ms ease;
 }
 
 tbody tr {
-  /*hover off*/
-  -webkit-transition: background-color 150ms ease;
-  -moz-transition: background-color 150ms ease;
-  -o-transition: background-color 150ms ease;
-  transition: background-color 150ms ease;
+  -webkit-transition: background-color 200ms ease;
+  -moz-transition: background-color 200ms ease;
+  -o-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
 }
 
 tbody tr:hover {
-  /*hover on*/
   background-color: #f1f1f1;
   cursor: pointer;
-  -webkit-transition: background-color 150ms ease;
-  -moz-transition: background-color 150ms ease;
-  -o-transition: background-color 150ms ease;
-  transition: background-color 150ms ease;
 }
 
 .request-table-toolbar {
@@ -2546,7 +2527,6 @@ body.community-enabled .search-results-column + .search-results-column {
 
 .search-result {
   padding: 0;
-  /*hover off*/
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
   -o-transition: background-color 250ms ease;
@@ -2555,11 +2535,6 @@ body.community-enabled .search-results-column + .search-results-column {
 
 .search-result:hover {
   background-color: #f1f1f1;
-  /*hover on*/
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
 }
 
 .search-result-div {
@@ -2767,7 +2742,7 @@ body.community-enabled .search-results-column + .search-results-column {
 }
 
 /* ====================================================
-   Accordion CSS
+   Bootstrap Accordion CSS
    ==================================================== */
 
 .collapse {
@@ -2792,7 +2767,6 @@ body.community-enabled .search-results-column + .search-results-column {
   font-size: 13px;
   text-align: center;
   color: #B0B0B0;
-  /*hover off*/
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
   -o-transition: color 250ms ease;
@@ -2801,11 +2775,166 @@ body.community-enabled .search-results-column + .search-results-column {
 
 .panel-title:hover {
   color: #ff7000;
-  /*hover on*/
-  -webkit-transition: color 250ms ease;
-  -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
-  transition: color 250ms ease;
+}
+
+/* ====================================================
+   Bootstrap Modal CSS
+   ==================================================== */
+modal-open {
+  overflow: hidden;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+       -o-transition: opacity .15s linear;
+          transition: opacity .15s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+      -ms-transform: translate(0, -25%);
+       -o-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-header .close {
+  margin-top: -2px;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+/* this pushes the site to the left, turned it off
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll; */
+ 
+.modal-button {
+  margin: 10px 0;
+}
+
+.modal-button, 
+.modal-button-inner {
+  background-color: #60798a;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  -webkit-transition: background-color 250ms ease;
+  -moz-transition: background-color 250ms ease;
+  -o-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
+}
+
+.modal-button:hover, 
+.modal-button-inner:hover {
+  background-color: #ff7000;
 }
 
 /* =============================
