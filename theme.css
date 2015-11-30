@@ -85,7 +85,7 @@ td {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #000;
+  color: #333;
   font-weight: 400;
 }
 
@@ -663,7 +663,7 @@ button img, [role=button] img {
  * Column size
  */
 .column-container {
-  width: 1100px;
+  width: 1000px;
   margin: 20px auto;
 }
 
@@ -686,7 +686,7 @@ button img, [role=button] img {
 
 .side-column {
   display: block;
-  width: 380px;
+  width: 280px;
   float: right;
   margin-bottom: 20px;
 }
@@ -700,15 +700,20 @@ button img, [role=button] img {
 }
 
 .wide-column {
-  width: 1100px;
+  width: 1000px;
 }
 
 .article-column {
   min-height: 800px;
+  width: 700px;
 }
 
 .accordion-column {
   padding: 0;
+}
+
+.homepage-column {
+  width: 1000px; 
 }
 
 .accordion-box {
@@ -717,13 +722,112 @@ button img, [role=button] img {
   padding: 15px 20px;
   float: right;
   background-color: #f6f6f6;
-  width: 528px;
+  width: 428px;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
 
 .accordion-inner-container {
   border-top: 1px solid #e6e6e6; 
+}
+
+/* ====================================================
+   Homepage Categories and Elements
+   ==================================================== */
+.category-list li {
+  width: 25%;
+  padding-right: 12px;
+  padding-left: 12px;
+  float: left;
+}
+
+.category-list li a {
+  background-color: #fdfdfd;
+  display: block;
+  min-height: 230px;
+  text-align: center;
+  position: relative;
+  padding: 0 15px;
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  -webkit-transition: border 150ms ease;
+  -moz-transition: border 150ms ease;
+  -o-transition: border 150ms ease;
+  transition: border 150ms ease;
+}
+
+.item-green:hover {
+  border: 1px solid #349C53;
+}
+
+.item-blue:hover {
+  border: 1px solid #316b85;
+}
+
+.item-orange:hover {
+  border: 1px solid #d39147;
+}
+
+.item-red:hover {
+  border: 1px solid #d35a47;
+}
+
+.category-list li a h3 {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 48px;
+  padding-top: 55px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 21px;
+  color: #353535;
+}
+
+.category-list li a p {
+ color: #686868; 
+}
+
+.category-list-btn {
+  color: white;
+  background-color: blue;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.thin-top-bar {
+  background-color: #fdfdfd;
+  width: 976px;
+  margin: 20px auto 0;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+}
+
+.thin-top-bar p {
+  font-size: 16px;
+  color: #606060;
+}
+
+.btn-green {
+  background-color: #349C53;
+}
+
+.btn-blue {
+  background-color: #316b85;
+}
+
+.btn-orange {
+  background-color: #d39147;
+}
+
+.btn-red {
+  background-color: #d35a47;
 }
 
 /* ====================================================
@@ -1228,7 +1332,7 @@ form.search::before { /* adds blank content into form */
    ==================================================== */
 .sub-nav {
   background-color: #fdfdfd;
-  width: 1100px;
+  width: 1000px;
   margin: 20px auto 0;
   padding: 10px;
   text-align: center;
@@ -1290,19 +1394,16 @@ form.search::before { /* adds blank content into form */
   white-space: pre;
 }
 .markdown blockquote {
-  border-left: 1px solid #EEE;
-  color: #BEBEBE;
-  font-style: italic;
-  padding: 0 15px;
+
+  border-left: 2px solid #D0D0D0;
+  margin: 0 10px;
+  padding: 0 10px;
+  background-color: #efefef;
 }
 
 /* Article styles */
 .print-button {
   float: right; 
-}
-
-.article-column {
-  width: 700px;
 }
 
 .article-title .visibility-internal-icon:before {
@@ -1355,41 +1456,41 @@ form.search::before { /* adds blank content into form */
 
 .main-articles .article-title {
   border-bottom: 1px solid #eee;
-  padding-right: 70px;
   padding-bottom: 10px;
   margin: 0 0 10px;
+  font-size: 32px;
+  line-height: 44px;
 }
 
-.main-articles h1 {
-  font-size: 20px;  
-  margin: 0 ;
+.article-column h1 {
+  font-size: 26px;
+  line-height: 44px;
+  margin: 25px 0 10px 0;
 }
 
-.main-articles h2 {
+.article-column h2 {
   font-size: 18px;
+  line-height: 32px;
+  margin: 20px 0 10px 0;
 }
 
 .article-side-column h3,
 .main-requests .side-column h3,
-.search-results .side-column h3
-{
+.search-results .side-column h3 {
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
   margin: 0 0 10px;
 }
 
-.main-articles h3,
+.article-column h3,
 .main-requests .side-column h3,
 .search-results .side-column h3{
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 32px;
 }
 
-.main-articles h4 {
+.article-column h4 {
   font-size: 16px;
-}
-
-.main-articles h5 {
-  font-size: 14px;
 }
 
 .main-articles .related-articles li a,
@@ -1413,6 +1514,50 @@ form.search::before { /* adds blank content into form */
 .main-articles .related-articles li a:hover,
 .main-articles .recent-articles li a:hover {
   color: #ff7000;
+}
+
+.article-column p {
+  font-size: 14px;
+  line-height: 21px;
+  word-spacing: 0;
+  margin: 0 0 15px 0;
+}
+
+.article-column p,
+.article-column ul,
+.article-column ol {
+  font-family: helvetica, arial, sans-serif;
+}
+
+.article-column ul,
+.article-column ol {
+  margin: 15px 0 15px 15px;
+  list-style-position: outside;
+}
+
+.article-column li {
+  margin-left: 10px;  
+}
+
+.article-column a {
+  color: #428bca; 
+}
+
+.article-column a:hover {
+  color: #ff7000; 
+}
+
+.article-column td {
+  padding: 3px 3px 5px 3px;
+}
+
+.article-column td p {
+  margin: 0;
+}
+
+.article-column tbody tr:hover {
+  cursor: default;
+  background-color: transparent;
 }
 
 .article-body {
@@ -1861,7 +2006,7 @@ body.community-enabled .search-results-column {
 
 .comment-attachments {
   float: left;
-  width: 900px;
+  width: 800px;
 }
 
 .comment-form-controls {
@@ -2542,6 +2687,7 @@ body.community-enabled .search-results-column + .search-results-column {
 
 .search-result {
   padding: 0;
+  padding-left: 10px;
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
   -o-transition: background-color 250ms ease;
