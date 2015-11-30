@@ -12,10 +12,44 @@
     min-height: 60%;
   }
 </style>
+
+<div class="thin-top-bar"><p>Browse Our Help Center</p></div>
+
 <div class="main-requests clearfix">
   <div class="column-container clearfix">
-    <section class="main-column wide-column">
-      {{#if categories}}
+    <section class="homepage-column">
+      <ul class="category-list">
+        <li>
+          <a href="#" class="item-green">
+            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/gears.png')">Getting Started</h3>
+            <p>Learn the basics of installing and using Exago</p>
+            <div class="category-list-btn btn-green">More</div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-blue">
+            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/endusers.png')">End-Users</h3>
+            <p>This is the description text of whatever category this will be!</p>
+            <div class="category-list-btn btn-blue">More</div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-orange">
+            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/sleepyadmin.png')">Administrators</h3>
+            <p>This is the description text of whatever category this will be!</p>
+            <div class="category-list-btn btn-orange">More</div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-red">
+            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/question.png')">How-To's</h3>
+            <p>This is the description text of whatever category this will be!</p>
+            <div class="category-list-btn btn-red">More</div>
+          </a>
+        </li>
+      </ul>
+      
+      <!--{{#if categories}}
         <div class="category-tree">
           {{#each categories}}
             <section class="category">
@@ -70,7 +104,7 @@
 
           {{pagination}}
         </div>
-      {{/if}}
+      {{/if}}-->
     </section>
   </div>
 </div>
