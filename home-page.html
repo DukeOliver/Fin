@@ -13,100 +13,120 @@
   }
 </style>
 
-<div class="thin-top-bar"><p>Browse Our Help Center</p></div>
+<div class="thin-top-bar"><p>Announcement: doughnuts are now free-flowing in the kitchen</p></div>
 
 <div class="main-requests clearfix">
   <div class="column-container clearfix">
     <section class="homepage-column">
-      <ul class="category-list">
-        <li>
-          <a href="#" class="item-green">
+      <ul class="category-list" id="homepage-accordion">
+        <li class="panel">
+          <a href="#getting-started-accordion" data-toggle="collapse" data-parent="#homepage-accordion">
             <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/gears.png')">Getting Started</h3>
             <p>Learn the basics of installing and using Exago</p>
-            <div class="category-list-btn btn-green">More</div>
           </a>
+          <div id="getting-started-accordion" class="collapse">
+            <ul class="inner-panel">
+              <li>Oh goodness</li>
+              <li>OH GOD</li>
+              <li>GIMME THAT ACCORDION</li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <a href="#" class="item-blue">
+        <li class="panel">
+          <a href="#end-users-accordion" data-toggle="collapse" data-parent="#homepage-accordion">
             <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/endusers.png')">End-Users</h3>
-            <p>This is the description text of whatever category this will be!</p>
-            <div class="category-list-btn btn-blue">More</div>
+            <p>Find articles dedicated to creating and designing reports</p>
           </a>
+          <div id="end-users-accordion" class="collapse">
+            <ul class="inner-panel">
+              <li>Oh goodness</li>
+              <li>OH GOD</li>
+              <li>GIMME THAT ACCORDION</li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <a href="#" class="item-orange">
+        <li class="panel">
+          <a href="#administrators-accordion" data-toggle="collapse" data-parent="#homepage-accordion">
             <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/sleepyadmin.png')">Administrators</h3>
-            <p>This is the description text of whatever category this will be!</p>
-            <div class="category-list-btn btn-orange">More</div>
+            <p>View technical articles about the back-end of Exago</p>
           </a>
+          <div id="administrators-accordion" class="collapse">
+            <ul class="inner-panel">
+              <li>Oh goodness</li>
+              <li>OH GOD</li>
+              <li>GIMME THAT ACCORDION</li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <a href="#" class="item-red">
-            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/question.png')">How-To's</h3>
-            <p>This is the description text of whatever category this will be!</p>
-            <div class="category-list-btn btn-red">More</div>
+        <li class="panel">
+          <a href="#how-to-guides-accordion" data-toggle="collapse" data-parent="#homepage-accordion">
+            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/question.png')">How-To Guides</h3>
+            <p>View guides on Exago's most prominent features</p>
           </a>
+          <div id="how-to-guides-accordion" class="collapse">
+            <ul class="inner-panel">
+              <li>Oh goodness</li>
+              <li>OH GOD</li>
+              <li>GIMME THAT ACCORDION</li>
+            </ul>
+          </div>
+        </li>
+        <li class="panel">
+          <a href="#services-accordion" data-toggle="collapse" data-parent="#homepage-accordion">
+            <h3 style="background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/question.png')">Services</h3>
+            <p>View guides on Exago's most prominent features</p>
+          </a>
+          <div id="services-accordion" class="collapse">
+            <ul class="inner-panel">
+              <li>Oh goodness</li>
+              <li>OH GOD</li>
+              <li>GIMME THAT ACCORDION</li>
+            </ul>
+          </div>
         </li>
       </ul>
-      
-      <!--{{#if categories}}
-        <div class="category-tree">
-          {{#each categories}}
-            <section class="category">
-              {{#if ../has_multiple_categories}}
-                <h2><a href="{{url}}">{{name}}</a></h2>
-              {{/if}}
-              {{#each sections}}
-                <section class="section">
-                  <h3>
-                    {{#if internal}}
-                      <span class="visibility-internal" data-title="{{t 'internal'}}">
-                        <span class="visibility-internal-icon"></span>
-                      </span>
-                    {{/if}}
-                    <a href="{{url}}">{{name}}</a>
-                  </h3>
-                  {{#if articles}}
-                    <ul class="article-list">
-                      {{#each articles}}
-                        <li {{#if promoted}} class="article-promoted" {{/if}}>
-                          {{#if promoted}}
-                            <span data-title="{{t 'promoted'}}">★</span>
-                          {{/if}}
-                          <a href="{{url}}">{{title}}</a>
-                        </li>
-                      {{/each}}
-                    </ul>
-                    {{#if more_articles}}
-                      <a href="{{url}}" class="see-all-articles">
-                        {{t 'show_all_articles' count=article_count}}
-                      </a>
-                    {{/if}}
-                  {{else}}
-                    <i class="section-empty">
-                      <a href="{{url}}">{{t 'empty'}}</a>
-                    </i>
-                  {{/if}}
-                </section>
-              {{else}}
-                <i class="category-empty">
-                  <a href="{{url}}">{{t 'empty'}}</a>
-                </i>
-              {{/each}}
+    </section>
+    <section class="twitter-column">
+      <a class="twitter-timeline" href="https://twitter.com/ExagoInc" data-widget-id="671428096084606979" height="441" data-chrome="nofooter noheader">Tweets by @ExagoInc</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-              {{#if more_sections}}
-                <div>
-                  <a href="{{url}}">{{t 'see_all_sections'}}</a>
-                </div>
-              {{/if}}
-            </section>
-          {{/each}}
-
-          {{pagination}}
-        </div>
-      {{/if}}-->
     </section>
   </div>
 </div>
+
+<!--twitter widget styling script, frackin' iframes!-->
+<script>
+$(window).load(function()
+{
+// Define the style variables
+var $background_color = "#ffffff";
+var $font = "'Open Sans', sans-serif;";
+var $tweet_padding = "12px";
+var $font_weight = "normal";
+var $border_radius = "0";
+var $text_color = "#787878";
+var $link_color = "#f36a3c";
+var $name_color = "#f36a3c";
+var $subtext_color = "#37363a";
+var $sublink_color = "#37363a";
+var $avatar_border = "1px solid #cccccc";
+var $avatar_border_radius = "0px";
+var $avatar_display = "none";
+var $icon_color = "#37363a";
+var $icon_hover_color = "#f36a3c";
+var $header_background = "#f36a3c";
+var $header_text_color = "#ffffff";
+var $follow_button_link_color = "#5ea9dd";
+var $footer_background = "#f36a3c";
+var $footer_tweetbox_background = "#bb5633";
+var $footer_tweetbox_textcolor = "#ffffff";
+var $footer_tweetbox_border = "0px";
+var $load_more_background = "#bb5633";
+var $load_more_text_color = "#ffffff";
+
+// Apply the styles
+$("iframe").contents().find('head').append('<style>.html, body, h1, h2, h3, blockquote, p, ol, ul, li, img, iframe, button, .tweet-box-button{font-family:'+$font+' !important;font-weight:'+$font_weight+' !important;} .tweet{padding-left:' + $tweet_padding + ' !important;} .timeline{border-radius: ' + $border_radius + '!important;} .thm-dark .retweet-credit,.h-feed, .stats strong{color:' + $text_color + ' !important;}a:not(.follow-button):not(.tweet-box-button):not(.expand):not(.u-url), .load-more{color:' + $link_color + ' ;} .follow-button{color:' + $follow_button_link_color + ' !important;} .timeline-header{background:' + $header_background + '; border-radius:' + $border_radius + ' ' + $border_radius + ' 0px 0px;} .timeline-header h1 a{color:' + $header_text_color + ' !important;} .timeline-footer{border-radius:0px 0px ' + $border_radius + ' ' + $border_radius + ' !important; background:' + $footer_background + ' !important;} .tweet-box-button{background-color:' + $footer_tweetbox_background + ' !important; color:' + $footer_tweetbox_textcolor + ' !important; border:' + $footer_tweetbox_border + ' !important;} .timeline .stream, .tweet-actions{background:' + $background_color + ' !important;} .tweet-actions{box-shadow:0 0 10px 5px' + $background_color + ' !important;} .ic-mask{background-color:' + $icon_color + ' !important;} a:hover .ic-mask, a:focus .ic-mask{background-color:' + $icon_hover_color + ' !important;} .header .avatar{border-radius: '+ $avatar_border_radius + ' !important; border:' + $avatar_border + ' !important; display:' + $avatar_display + ' !important;} .p-name{color:'+$name_color+' !important;} span.p-nickname, .u-url, .expand{color:'+$sublink_color+' !important;} .load-more, .no-more-pane {background-color:' + $load_more_background + ' !important; color:' + $load_more_text_color + '!important;} .retweet-credit{color:' + $subtext_color + ' !important;}</style>');
+});
+</script>
 
 </main> <!--<main class="site-container"> is on header page-->
