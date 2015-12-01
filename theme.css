@@ -713,12 +713,12 @@ button img, [role=button] img {
 }
 
 .homepage-column {
-  width: 600px;
+  width: 500px;
   float: left;
 }
 
 .twitter-column {
-  width: 400px;
+  width: 500px;
   float: right;
 }
 
@@ -741,18 +741,18 @@ button img, [role=button] img {
    Homepage Categories and Elements
    ==================================================== */
 .category-list li {
-  width: 95%;
   margin-bottom: 10px;
+  margin-right: 25px;
 }
 
-.inner-panel li { /*temporary!*/
+.category-list .inner-panel li { /*temporary!*/
   margin-bottom: 0; 
 }
 
 .category-list li a {
   background-color: #fdfdfd;
   display: block;
-  min-height: 80px;
+  min-height: 75px;
   position: relative;
   padding: 0 15px;
   border: 1px solid transparent;
@@ -770,23 +770,22 @@ button img, [role=button] img {
   background-size: 35px;
   font-size: 21px;
   color: #353535;
-  padding: 10px 10px 1px 50px;
+  padding: 3px 10px 1px 47px;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 .category-list li a p {
   color: #686868;
   padding-bottom: 1px;
+  padding-top: 3px;
+  overflow: hidden;
 }
 
-.category-list-btn { /*no longer exists, put inside accordion?*/
-  color: white;
-  background-color: gray;
-  border: 1px solid black;
+.category-arrow {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 25px;
+  right: 30px;
 }
 
 .thin-top-bar {
@@ -2894,12 +2893,12 @@ body.community-enabled .search-results-column + .search-results-column {
   height: 0;
   overflow: hidden;
   -webkit-transition: height 0.35s ease;
-          transition: height 0.35s ease;
+  transition: height 0.35s ease;
 }
 
 .panel-title {
   margin: 0;
-   padding: 10px;
+  padding: 10px;
   font-size: 13px;
   text-align: center;
   color: #B0B0B0;
