@@ -713,14 +713,20 @@ button img, [role=button] img {
 }
 
 .homepage-column {
-  width: 1000px; 
+  width: 600px;
+  float: left;
+}
+
+.twitter-column {
+  width: 400px;
+  float: right;
 }
 
 .accordion-box {
   border: 1px solid rgba(0,0,0,0.05);
   margin: 20px;
   padding: 15px 20px;
-  float: right;
+  display: inline-block; /* because float:right screws with the accordion collapse transition*/
   background-color: #f6f6f6;
   width: 428px;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
@@ -735,20 +741,21 @@ button img, [role=button] img {
    Homepage Categories and Elements
    ==================================================== */
 .category-list li {
-  width: 25%;
-  padding-right: 12px;
-  padding-left: 12px;
-  float: left;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+.inner-panel li { /*temporary!*/
+  margin-bottom: 0; 
 }
 
 .category-list li a {
   background-color: #fdfdfd;
   display: block;
-  min-height: 230px;
-  text-align: center;
+  min-height: 80px;
   position: relative;
   padding: 0 15px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid transparent;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   -webkit-transition: border 150ms ease;
@@ -757,54 +764,38 @@ button img, [role=button] img {
   transition: border 150ms ease;
 }
 
-.item-green:hover {
-  border: 1px solid #349C53;
-}
-
-.item-blue:hover {
-  border: 1px solid #316b85;
-}
-
-.item-orange:hover {
-  border: 1px solid #d39147;
-}
-
-.item-red:hover {
-  border: 1px solid #d35a47;
-}
-
 .category-list li a h3 {
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 48px;
-  padding-top: 55px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  background-position: top left;
+  background-size: 35px;
   font-size: 21px;
   color: #353535;
+  padding: 10px 10px 1px 50px;
+  margin-top: 10px;
 }
 
 .category-list li a p {
- color: #686868; 
+  color: #686868;
+  padding-bottom: 1px;
 }
 
-.category-list-btn {
+.category-list-btn { /*no longer exists, put inside accordion?*/
   color: white;
-  background-color: blue;
+  background-color: gray;
+  border: 1px solid black;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px 0;
 }
 
 .thin-top-bar {
   background-color: #fdfdfd;
-  width: 976px;
+  width: 1000px;
   margin: 20px auto 0;
   padding: 10px;
   text-align: center;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid transparent;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
@@ -812,22 +803,6 @@ button img, [role=button] img {
 .thin-top-bar p {
   font-size: 16px;
   color: #606060;
-}
-
-.btn-green {
-  background-color: #349C53;
-}
-
-.btn-blue {
-  background-color: #316b85;
-}
-
-.btn-orange {
-  background-color: #d39147;
-}
-
-.btn-red {
-  background-color: #d35a47;
 }
 
 /* ====================================================
