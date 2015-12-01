@@ -5,16 +5,15 @@
     <li>{{request.subject}}</li>
   </ol>
 </nav>
+
 <div class="main-requests clearfix">
   <div class="column-container clearfix">
     <section class="main-column wide-column accordion-column">
-      <div id="accordion">
-        <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion2">
-          <div class="panel-heading">
-            <h4 class="panel-title">Click here to view detailed information about this ticket</h4>
-          </div>
+      <div id="request-accordion">
+        <a href="#ticket-detailed-info" data-toggle="collapse">
+          <h4 class="panel-title">Click here to view detailed information about this ticket</h4>
         </a>
-        <div id="collapseOne" class="panel-collapse collapse">
+        <div id="ticket-detailed-info" class="collapse">
           <div class="accordion-inner-container">
             <dl class="request-details">
               <dt>{{t 'submitted_by' requester_name=request.requester.name}}</dt>
@@ -135,7 +134,8 @@
         {{user_avatar class='user-avatar'}}
         </div>-->
       <div class="comment-container">
-        {{textarea 'body' rows='4'}}
+        <!--{{textarea 'body' rows='4'}}-->
+        {{wysiwyg 'body'}}
         <div class="comment-attachments">
           {{upload}}
         </div>
