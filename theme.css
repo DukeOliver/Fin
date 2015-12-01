@@ -740,16 +740,12 @@ button img, [role=button] img {
 /* ====================================================
    Homepage Categories and Elements
    ==================================================== */
-.category-list li {
+.homepage-panel {
   margin-bottom: 10px;
   margin-right: 25px;
 }
 
-.category-list .inner-panel li { /*temporary!*/
-  margin-bottom: 0; 
-}
-
-.category-list li a {
+.category-list-item {
   background-color: #fdfdfd;
   display: block;
   min-height: 75px;
@@ -764,7 +760,11 @@ button img, [role=button] img {
   transition: border 150ms ease;
 }
 
-.category-list li a h3 {
+.category-list-item:hover {
+  border: 1px solid #c8c8c8;
+}
+
+.category-list-item h3 {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 35px;
@@ -775,7 +775,7 @@ button img, [role=button] img {
   overflow: hidden;
 }
 
-.category-list li a p {
+.category-list-item p {
   color: #686868;
   padding-bottom: 1px;
   padding-top: 3px;
@@ -786,6 +786,79 @@ button img, [role=button] img {
   position: absolute;
   top: 25px;
   right: 30px;
+}
+
+.category-list .inner-panel {
+  background-color: #fdfdfd;
+  border-top: 1px solid #e4e4e4;
+}
+
+.category-list .inner-panel li {
+  padding: 10px 10px 10px 20px;
+  background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/arrowright.png");
+  background-repeat: no-repeat;
+  background-size: 9px;
+  background-position: 8px 15px;
+  -webkit-transition: background-color 150ms ease;
+  -moz-transition: background-color 150ms ease;
+  -o-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+}
+
+.category-list .inner-panel li:hover {
+  background-color: #e5e5e5; 
+}
+
+.more-articles-btn {
+  height: 35px;
+  line-height: 36px;
+  background-color: gray;
+  text-align: center;
+  color: #FFFFFF;
+  -webkit-transition: background-color 150ms ease;
+  -moz-transition: background-color 150ms ease;
+  -o-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+}
+
+.green-btn {
+  background-color: #349C53; 
+}
+
+.green-btn:hover {
+  background-color: #2A7F44; 
+}
+
+.blue-btn {
+  background-color: #316B85;
+}
+
+.blue-btn:hover {
+  background-color: #295B71;
+}
+
+.yellow-btn {
+  background-color: #D39147;
+}
+
+.yellow-btn:hover {
+  background-color: #B47D3E;
+}
+
+.orange-btn {
+  background-color: #D35A47;
+}
+
+.orange-btn:hover {
+  background-color: #B44C3C;
+}
+
+.purple-btn {
+  background-color: #673AB7;
+}
+
+.purple-btn:hover {
+  background-color: #553195;
 }
 
 .thin-top-bar {
