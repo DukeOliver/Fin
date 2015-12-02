@@ -93,10 +93,11 @@
         {{else}}
           <p>{{t 'no_requests'}}</p>
         {{/if}}
-
-        {{pagination}}
       </div>
     </section>
+    {{#if pagination}}
+    <div class="thin-bottom-bar wide-bar">{{pagination}}</div>
+    {{/if}}
   </div>
 </div>
 
