@@ -40,10 +40,10 @@ a {
   font-family:'Open Sans', sans-serif;
   text-decoration: none;
   color: #303030;
-  -webkit-transition: color 250ms ease, background-color 250ms ease;
-  -moz-transition: color 250ms ease,  background-color 250ms ease;
-  -o-transition: color 250ms ease,  background-color 250ms ease;
-  transition: color 250ms ease, background-color 250ms ease;
+  -webkit-transition: color 200ms ease, background-color 200ms ease;
+  -moz-transition: color 200ms ease,  background-color 200ms ease;
+  -o-transition: color 200ms ease,  background-color 200ms ease;
+  transition: color 200ms ease, background-color 200ms ease;
 }
 
 a:hover {
@@ -690,6 +690,7 @@ button img, [role=button] img {
   float: right;
   margin-bottom: 20px;
 }
+
 [dir=rtl] .side-column {
   margin-left: 0;
   margin-right: 45px;
@@ -1149,8 +1150,6 @@ form.search::before { /* adds blank content into form */
   margin-bottom: 135px;
 }
 
-
-
 .category-tree h2 ~ *, .category-tree h3 ~ * {
   display: none;
 }
@@ -1171,16 +1170,6 @@ form.search::before { /* adds blank content into form */
   font-weight: lighter;
 }
 
-.category-tree .section h3 {
-  margin: 0;
-}
-
-.category-tree .section h3 a {
-  color: inherit;
-  font-weight: bold;
-  font-size: 14px;
-}
-
 .category-tree .section {
   margin: 5px 20px;
 }
@@ -1197,30 +1186,20 @@ form.search::before { /* adds blank content into form */
   margin-bottom: 5px;
 }
 
-.category-description, .section-description {
-  color: #BBB;
-  margin-bottom: 30px;
-  margin-top: 0px;
-}
-
 .section-tree .section {
   display: inline-block;
-  padding: 0 50px 50px 0;
+  padding: 0 10px 20px 0;
   vertical-align: top;
   width: 49.5%;
+  min-height: 230px;
 }
 
-.section-tree .section h3 {
-  font-weight: bold;
-  margin-bottom: 20px;
+.section-tree .section:nth-child(2n + 1) {
+  border-right: 1px solid #f1f1f1; 
 }
 
-.section-tree .section h3 a {
-  color: inherit;
-}
-
-.section-tree .article-list li {
-  margin-bottom: 5px;
+.section-tree .section:nth-child(2n) {
+  padding-left: 40px;
 }
 
 .section-subscribe, .section-unsubscribe,
@@ -1241,20 +1220,58 @@ form.search::before { /* adds blank content into form */
 }
 
 .article-list li {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .see-all-articles {
-  background: #f2f2f2;
-  border-radius: 5px;
+  background: #60798A;
+  color: white;
   font-size: 12px;
-  padding: 3px 10px;
+  padding: 3px 50px;
+}
+
+.see-all-articles:hover {
+  background: #ff7000;
 }
 
 .category-tree .see-all-articles {
   position: relative;
   top: -10px;
   left: 20px;
+}
+
+.main-categories h1 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.main-categories .category-description,
+.main-categories .section-description {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  color: #888;
+}
+
+.main-categories .section-tree h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.main-categories .section-tree h3 a:hover {
+  color: #ff7000; 
+}
+
+.main-categories .article-list li {
+  padding-left: 15px;
+  background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/arrowright.png");
+  background-repeat: no-repeat;
+  background-size: 9px;
+  background-position: 0 5px;
+}
+
+.main-categories .article-list li a:hover {
+  color: #ff7000; 
 }
 
 /* ====================================================
@@ -1331,7 +1348,6 @@ form.search::before { /* adds blank content into form */
 .article-promoted span {
   cursor: default;
   font-family: "entypo";
-  margin-right: 5px;
   position: relative;
 }
 
@@ -1442,10 +1458,15 @@ form.search::before { /* adds blank content into form */
 }
 .markdown blockquote {
 
-  border-left: 2px solid #D0D0D0;
-  margin: 0 10px;
-  padding: 0 10px;
+  border-left: 3px solid #D0D0D0;
+  margin: 10px 20px;
+  padding: 10px;
   background-color: #efefef;
+  font-size: 12px;
+}
+
+.markdown blockquote p {
+  font-size: 12px; 
 }
 
 /* Article styles */
@@ -1491,6 +1512,10 @@ form.search::before { /* adds blank content into form */
   border: 1px solid rgba(0,0,0,0.05);
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+}
+
+.wide-bar {
+  width: 100%; 
 }
 
 .article-ticket-submit a {
