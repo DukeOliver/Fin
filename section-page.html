@@ -2,29 +2,50 @@
   {{breadcrumbs}}
 </nav>
 
-<h1>{{#if section.internal}}
-  <span class="visibility-internal" data-title="{{t 'internal'}}">
-    <span class="visibility-internal-icon"></span>
-  </span>
-{{/if}} {{section.name}}</h1>
-<p class="section-description">{{section.description}}</p>
-{{#if section.articles}}
-  <ul class="article-list">
-    {{#each section.articles}}
-      <li {{#if promoted}} class="article-promoted" {{/if}}>
-        {{#if promoted}}
-          <span data-title="{{t 'promoted'}}">★</span>
-        {{/if}}
-        <a href="{{url}}">{{title}}</a>
-      </li>
-    {{/each}}
-  </ul>
-{{else}}
-  <i class="section-empty">
-    <a href="{{section.url}}">{{t 'empty'}}</a>
-  </i>
-{{/if}}
+<div class="main-categories clearfix">
+  <div class="column-container clearfix">
+    <section class="main-column">
+      <h1>{{#if section.internal}}
+        <span class="visibility-internal" data-title="{{t 'internal'}}">
+          <span class="visibility-internal-icon"></span>
+        </span>
+      {{/if}}{{section.name}}</h1>
+      <p class="section-description">{{section.description}}</p>
+      {{#if section.articles}}
+        <ul class="article-list">
+          {{#each section.articles}}
+            <li {{#if promoted}} class="article-promoted" {{/if}}>
+              {{#if promoted}}
+                <span data-title="{{t 'promoted'}}">★</span>
+              {{/if}}
+              <a href="{{url}}">{{title}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <i class="section-empty">
+          <a href="{{section.url}}">{{t 'empty'}}</a>
+        </i>
+      {{/if}}
+    </section>
+    <section class="side-column article-side-column">
+      <h3>Something Fresh Goes Here</h3>
+      <p>Now, this is a story all about how my life got flipped-turned 
+        upside down, and I'd like to take a minute just sit right there, 
+        I'll tell you how I became the prince of a town called Bel Air.</p>
+    </section>
+    <section class="side-column article-side-column">
+      <h3>Smell Ya Later!</h3>
+      <p>In west Philadelphia born and raised, on the playground was where 
+        I spent most of my days. Chillin' out maxin' relaxin' all cool, and 
+        all shootin some b-ball outside of the school when a couple of guys 
+        who were up to no good started making trouble in my neighborhood. I 
+        got in one little fight and my mom got scared, she said 'you're
+        movin' with your auntie and uncle in Bel Air.'</p>
+    </section>
+  </div>
+</div>
 
-{{pagination}}
+<div class="thin-bottom-bar">{{pagination}}</div>
 
 </main> <!--<main class="site-container"> is on header page-->
