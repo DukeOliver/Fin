@@ -672,7 +672,7 @@ button img, [role=button] img {
   display: inline-block;
   vertical-align: top;
   background-color: #fdfdfd;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid transparent;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
@@ -728,7 +728,7 @@ button img, [role=button] img {
 }
 
 .accordion-box {
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid transparent;
   margin: 20px;
   padding: 15px 20px;
   display: inline-block; /* because float:right screws with the accordion collapse transition*/
@@ -888,7 +888,7 @@ button img, [role=button] img {
 .hero-search {
   height: 250px;
   padding-top: 70px; /* pushes search bar down within this div */
-  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/search-blue.png);
+  background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/search-blue.png");
   background-position: 0 0;
   background-size: 600px;
   background-repeat: repeat;
@@ -978,7 +978,7 @@ form.search::before { /* adds blank content into form */
   padding-top: 13px; /* pushes text down into center of button */
   text-align: center;
   color: white;
-  background-color: #60798a;
+  background-color: #607887;
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
   -o-transition: background-color 250ms ease;
@@ -1403,7 +1403,7 @@ form.search::before { /* adds blank content into form */
   margin: 20px auto 0;
   padding: 10px;
   text-align: center;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid transparent;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
@@ -1427,7 +1427,11 @@ form.search::before { /* adds blank content into form */
 
 .markdown img {
   max-width: 100%;
+  border: 1px solid #a0a0a0;
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.15);
 }
+
 .markdown hr {
   background-color: #EEE;
   border: 0;
@@ -1455,7 +1459,6 @@ form.search::before { /* adds blank content into form */
 .markdown pre {
   background: #f9f9f9;
   border: 1px solid #EEE;
-  border-radius: 3px;
   padding: 10px 15px;
   overflow: auto;
   white-space: pre;
@@ -1463,7 +1466,7 @@ form.search::before { /* adds blank content into form */
 .markdown blockquote {
 
   border-left: 3px solid #D0D0D0;
-  margin: 10px 20px;
+  margin: 10px 20px 15px 20px;
   padding: 10px;
   background-color: #efefef;
   font-size: 12px;
@@ -1513,21 +1516,26 @@ form.search::before { /* adds blank content into form */
   padding: 15px 0;
   float: left;
   text-align: center;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid transparent;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
 
+.ticket-submit-bar {
+  background-color: #3E6FA4; 
+  color: white;
+  -webkit-transition: background-color 150ms ease;
+  -moz-transition: background-color 150ms ease;
+  -o-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+}
+
+.ticket-submit-bar:hover {
+  background-color: #518DCE;
+}
+
 .wide-bar {
   width: 100%; 
-}
-
-.article-ticket-submit a {
-  padding: 15px 180px;
-}
-
-.article-ticket-submit a:hover {
-  color: #ff7000;
 }
 
 .main-articles .article-title {
@@ -1541,13 +1549,13 @@ form.search::before { /* adds blank content into form */
 .article-column h1 {
   font-size: 26px;
   line-height: 44px;
-  margin: 25px 0 10px 0;
+  margin: 25px 0 0 0;
 }
 
 .article-column h2 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 32px;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 0 0;
 }
 
 .article-side-column h3,
@@ -1644,6 +1652,11 @@ form.search::before { /* adds blank content into form */
   table-layout: fixed;
 }
 
+.article-left-img {
+  float: left;
+  padding-right: 20px;
+}
+
 .article-footer {
   border-bottom: 1px solid #EEE;
   margin-top: 15px;
@@ -1702,6 +1715,11 @@ form.search::before { /* adds blank content into form */
   color: #FFF;
   height: 30px;
   line-height: 30px;
+}
+
+pre.prettyprint {
+  margin-bottom: 15px;
+  border: 1px solid #d0d0d0 !important;
 }
 
 /* ====================================================
@@ -3098,7 +3116,6 @@ modal-open {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, .2);
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
