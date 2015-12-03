@@ -1,17 +1,9 @@
-<nav class="sub-nav"> <!--{ {breadcrumbs} }-->
+<nav class="sub-nav">
   <ol class="breadcrumbs">
     <li><a href="/hc/en-us">Exago Help Center</a></li>
     <li>My Tickets</li>
   </ol>
 </nav>
-
-<!--<nav class="my-activities-nav nav-bordered">
-  <ul>
-    <li>{{t 'requests'}}</li>
-    <li>{{link 'contributions'}}</li>
-    <li>{{link 'subscriptions'}}</li>
-  </ul>
-</nav>-->
 
 <div class="main-requests clearfix">
   <div class="column-container clearfix">
@@ -82,9 +74,15 @@
                   </td>
                   <td>{{date updated_at timeago=true}}</td>
                   <td>
-                    <span class="request-status request-{{status}}" title="{{status_description}}">
+                    {{#is status "answered"}}
+                      <span class="request-status request-{{status}}" title="{{status_description}}">
+                     Reply
+                      </span>
+                    {{else}}
+                      <span class="request-status request-{{status}}" title="{{status_description}}">
                       {{status_name}}
-                    </span>
+                      </span>
+                      {{/is}}
                   </td>
                 </tr>
               {{/each}}
@@ -101,4 +99,5 @@
   </div>
 </div>
 
-</main> <!--<main class="site-container"> is on header page-->
+
+</div> <!--<div class="site-container"> is on header page-->
