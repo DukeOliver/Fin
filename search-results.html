@@ -13,10 +13,12 @@
           <ul class="search-results-list">
             {{#each article_results}}
               <li class="search-result">
-                <a href="{{url}}" class="search-result-link"><div class="search-result-div">
-                {{title}}
-                <div class="search-result-description">{{text}}</div>
-                </div></a>
+                <a href="{{url}}" class="search-result-link">
+                  <div class="search-result-div">{{title}}
+                    <p class="search-result-description">{{text}}</p>
+                    <!--<div class="search-result-meta">{{meta}}</div>-->
+                  </div>
+                </a>
               </li>
             {{/each}}
           </ul>
@@ -56,10 +58,10 @@
         </div>
       </div>
     </section>
+    {{#if pagination}}
     <div class="thin-bottom-bar">{{pagination}}</div>
+    {{/if}}
   </div>
 </div>
 
-
-
-</main> <!--<main class="site-container"> is on header page-->
+</div> <!--<div class="site-container"> is on header page-->
