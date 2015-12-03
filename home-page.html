@@ -13,7 +13,7 @@
   }
 </style>
 
-<div class="thin-top-bar"><p><strong>NEWSFLASH:</strong> I'll kick your butt all the way to <span style="color:#B23C3C">pizza hut</span></p></div>
+<div class="thin-top-bar"><p><strong>MOM, OMG:</strong> It's not a phase, IT'S WHO I REALLY AM why can't you respect that</p></div>
 
 <div class="main-homepage clearfix">
   <div class="column-container clearfix">
@@ -27,7 +27,7 @@
           </a>
           <div id="getting-started-accordion" class="collapse">
             <ul class="inner-panel">
-              <a href="/hc/en-us/articles/214127988-The-Article-Title-Is-Short-Capitalized"><li>The article title is short and capitalized</li></a>
+              <a href="/hc/en-us/articles/214127988-The-article-title-should-be-short-as-possible"><li>The article title should be short as possible</li></a>
               <a href="#"><li>And in the morning, I'm making waffles!!!</li></a>
               <a href="#"><li>Jeezum crow do you even KNOW the muffin man?</li></a>
               <a href="/hc/en-us/categories/202189828-Getting-Started"><div class="more-articles-btn green-btn">View More Articles</div></a>
@@ -113,6 +113,7 @@ var $font = "'Open Sans', sans-serif;";
 var $tweet_padding = "12px";
 var $font_weight = "normal";
 var $border_radius = "0";
+var $timeline_header_padding = "5px";
 var $text_color = "#787878";
 var $link_color = "#f36a3c";
 var $name_color = "#f36a3c";
@@ -153,7 +154,7 @@ var $load_more_text_color = "#ffffff";
       }
   
 // Apply the styles
-$("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h2, h3, blockquote, p, ol, ul, li, img, iframe, button, .tweet-box-button{font-family:'+$font+' !important;font-weight:'+$font_weight+' !important;} .tweet{padding-left:' + $tweet_padding + ' !important;} .timeline{border-radius: ' + $border_radius + '!important;} .thm-dark .retweet-credit,.h-feed, .stats strong{color:' + $text_color + ' !important;}a:not(.follow-button):not(.tweet-box-button):not(.expand):not(.u-url), .load-more{color:' + $link_color + ' ;} .follow-button{color:' + $follow_button_link_color + '; display:' + $display_button + ' !important;} .timeline-header{background:' + $header_background + '; border-radius:' + $border_radius + ' ' + $border_radius + ' 0px 0px;} .timeline-header h1 a{color:' + $header_text_color + ' !important;} .timeline-footer{border-radius:0px 0px ' + $border_radius + ' ' + $border_radius + ' !important; background:' + $footer_background + ' !important;} .tweet-box-button{background-color:' + $footer_tweetbox_background + ' !important; color:' + $footer_tweetbox_textcolor + ' !important; border:' + $footer_tweetbox_border + ' !important;} .timeline .stream, .tweet-actions{background:' + $background_color + ' !important;} .tweet-actions{box-shadow:0 0 10px 5px' + $background_color + ' !important;} .ic-mask{background-color:' + $icon_color + ' !important;} a:hover .ic-mask, a:focus .ic-mask{background-color:' + $icon_hover_color + ' !important;} .header .avatar{border-radius: '+ $avatar_border_radius + ' !important; border:' + $avatar_border + ' !important; display:' + $avatar_display + ' !important;} .p-name{color:'+$name_color+' !important;} span.p-nickname, .u-url, .expand{color:'+$sublink_color+' !important;} .load-more, .no-more-pane {background-color:' + $load_more_background + ' !important; color:' + $load_more_text_color + '!important;} .retweet-credit{color:' + $subtext_color + ' !important;}</style>');
+$("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h2, h3, blockquote, p, ol, ul, li, img, iframe, button, .tweet-box-button{font-family:'+$font+' !important;font-weight:'+$font_weight+' !important;} .tweet{padding-left:' + $tweet_padding + ' !important;} .timeline{border-radius: ' + $border_radius + '!important;} .thm-dark .retweet-credit,.h-feed, .stats strong{color:' + $text_color + ' !important;}a:not(.follow-button):not(.tweet-box-button):not(.expand):not(.u-url), .load-more{color:' + $link_color + ' ;} .follow-button{color:' + $follow_button_link_color + '; display:' + $display_button + ' !important;} .timeline-header{background:' + $header_background + '; border-radius:' + $border_radius + ' ' + $border_radius + ' 0px 0px; padding:' + $timeline_header_padding + '} .timeline-header h1 a{color:' + $header_text_color + ' !important;} .timeline-footer{border-radius:0px 0px ' + $border_radius + ' ' + $border_radius + ' !important; background:' + $footer_background + ' !important;} .tweet-box-button{background-color:' + $footer_tweetbox_background + ' !important; color:' + $footer_tweetbox_textcolor + ' !important; border:' + $footer_tweetbox_border + ' !important;} .timeline .stream, .tweet-actions{background:' + $background_color + ' !important;} .tweet-actions{box-shadow:0 0 10px 5px' + $background_color + ' !important;} .ic-mask{background-color:' + $icon_color + ' !important;} a:hover .ic-mask, a:focus .ic-mask{background-color:' + $icon_hover_color + ' !important;} .header .avatar{border-radius: '+ $avatar_border_radius + ' !important; border:' + $avatar_border + ' !important; display:' + $avatar_display + ' !important;} .p-name{color:'+$name_color+' !important;} span.p-nickname, .u-url, .expand{color:'+$sublink_color+' !important;} .load-more, .no-more-pane {background-color:' + $load_more_background + ' !important; color:' + $load_more_text_color + '!important;} .retweet-credit{color:' + $subtext_color + ' !important;}</style>');
 }
 });
   
