@@ -1737,6 +1737,10 @@ form.search::before { /* adds blank content into form */
   float: left;
 }
 
+.upload-pool {
+  overflow: visible;
+}
+
 .new-request input[type=submit] {
   padding: 0; 
   padding: 14px 59px;
