@@ -10,7 +10,7 @@
           <span class="visibility-internal" data-title="{{t 'internal'}}">
             <span class="visibility-internal-icon"></span>
           </span>
-        {{/if}} {{article.title}}</h1>
+        {{/if}}{{article.title}}</h1>
         <div class="article-body markdown">
           {{article.body}}
         </div>
@@ -18,18 +18,74 @@
       </article>
     </section>
     <section class="side-column article-side-column">
-     <p>{{related_articles}}</p> 
+      <h3>Table of Contents</h3>
+      <div id="anchormenu">
+        building menu...
+      </div>
     </section>
     <section class="side-column article-side-column">
-      <p>{{recent_articles}}</p>
+      {{related_articles}} 
     </section>
-     <section class="side-column article-side-column">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat urna non sapien feugiat, ac ullamcorper metus condimentum. Nunc blandit magna in ex ultrices fringilla. Sed euismod nisi vel lorem elementum, eu tincidunt felis ornare. Donec in mollis nunc, eu efficitur purus. Curabitur vitae viverra magna. Duis vitae finibus tellus. Aenean at sapien eget risus aliquet vestibulum id sit amet ligula. Pellentesque ullamcorper tristique leo vel lacinia. Ut tristique, ex a sollicitudin imperdiet, sapien velit condimentum lorem, et convallis lacus justo vitae turpis. Cras et velit non elit placerat fringilla. Quisque et arcu ipsum. Praesent ac quam ac nisl euismod maximus.</p>
+    <section class="side-column article-side-column">
+      {{recent_articles}}
     </section>
-      <a href="/hc/en-us/requests/new">
-        <div class="thin-bottom-bar ticket-submit-bar">Have more questions? Submit a ticket</div>
-      </a>
+    <a href="/hc/en-us/requests/new"><div class="thin-bottom-bar ticket-submit-bar">Have more questions? Submit a ticket</div></a>
   </div>
 </div>
+
+<script type="text/javascript">
+  // Duke sez: thanks chirp.com.au!
+  
+  var buildMenu = function(targetId, headingTag) {
+    var target = document.getElementById(targetId);
+    var headings = document.getElementsByTagName(headingTag || "h1");
+
+    if(headings.length >= 1) {
+      // make the OL of links
+      var menuList = document.createElement("OL");
+      for(var i=0; i < headings.length; i++) {
+        var anchorName = "";
+        if(headings[i].id) {
+          anchorName = headings[i].id;
+        } else {
+          anchorName = "section_" + i;
+          headings[i].setAttribute("id", anchorName);
+        }
+
+        var headingText = headings[i].firstChild.nodeValue
+
+        // headings[i].firstChild.nodeValue = (i+1) + ". " + headingText;
+
+        var menuLink = document.createElement("A");
+        menuLink.setAttribute("href", "#" + anchorName);
+        menuLink.appendChild(document.createTextNode(headingText));
+
+        var listItem = document.createElement("LI");
+        listItem.appendChild(menuLink);
+
+        menuList.appendChild(listItem);
+      }
+
+      // remove all nodes from inside target element
+      while(target.hasChildNodes()) target.removeChild(target.firstChild);
+
+      // insert our generated menu into the target element
+      target.appendChild(menuList);
+    } else {
+      // remove the target element from the DOM
+      target.parentNode.removeChild(target);
+    }
+  };
+
+  if(document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", function() {
+      buildMenu("anchormenu", "h1");
+    }, false);
+  } else {
+    window.attachEvent("onload", function() {
+      buildMenu("anchormenu", "h1");
+    });
+  }
+</script>
   
 </div> <!--<div class="site-container"> is on header page-->
