@@ -58,11 +58,19 @@
                   <td>{{id}}</td>
                   <td class="request-subject">
                     <a href="{{url}}">
-                      {{#if subject}}
-                        {{subject}}
+                      {{#is status "answered"}}
+                        {{#if subject}}
+                          <strong>{{subject}}</strong>
+                        {{else}}
+                      <strong>{{excerpt description characters=50}}</strong>
+                        {{/if}}
                       {{else}}
-                        {{excerpt description characters=50}}
-                      {{/if}}
+                        {{#if subject}}
+                          {{subject}}
+                        {{else}}
+                          {{excerpt description characters=50}}
+                        {{/if}}
+                      {{/is}}
                     </a>
                   </td>
                   <td>
