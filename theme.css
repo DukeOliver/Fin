@@ -800,6 +800,7 @@ button img, [role=button] img {
 
 .category-list .inner-panel li {
   padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid #ECECEC;
   background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/arrowright.png");
   background-repeat: no-repeat;
   background-size: 9px;
@@ -1266,7 +1267,8 @@ form.search::before { /* adds blank content into form */
   color: #ff7000; 
 }
 
-.main-categories .article-list li {
+.main-categories .article-list li,
+#anchormenu ol li {
   padding-left: 15px;
   background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/arrowright.png");
   background-repeat: no-repeat;
@@ -1433,7 +1435,7 @@ form.search::before { /* adds blank content into form */
 }
 
 .markdown hr {
-  background-color: #EEE;
+  background-color: #D7D7D7;
   border: 0;
   height: 1px;
 }
@@ -1458,10 +1460,12 @@ form.search::before { /* adds blank content into form */
 }
 .markdown pre {
   background: #f9f9f9;
-  border: 1px solid #EEE;
+  background-image: -webkit-repeating-linear-gradient(top,#F3F3F3 0px,#f3f3f3 22px,#E4E4E4 22px,#e4e4e4 44px);
+  margin-bottom: 15px;
+  border: 1px solid #d0d0d0 !important;
   padding: 10px 15px;
   overflow: auto;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 .markdown blockquote {
 
@@ -1546,7 +1550,8 @@ form.search::before { /* adds blank content into form */
   line-height: 44px;
 }
 
-.article-column h1 {
+.article-column h1:not(.article-title) {
+  color: #528CF1;
   font-size: 26px;
   line-height: 44px;
   margin: 25px 0 0 0;
@@ -1578,12 +1583,18 @@ form.search::before { /* adds blank content into form */
 }
 
 .main-articles .related-articles li a,
-.main-articles .recent-articles li a {
+.main-articles .recent-articles li a,
+#anchormenu ol li a {
   color: #505050;
 }
 
+#anchormenu ol li a {
+  border-bottom: 1px dotted lightgray; 
+}
+
 .main-articles .related-articles li,
-.main-articles .recent-articles li {
+.main-articles .recent-articles li,
+#anchormenu ol li {
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
   -o-transition: background-color 250ms ease;
@@ -1591,12 +1602,14 @@ form.search::before { /* adds blank content into form */
 }
 
 .main-articles .related-articles li:hover,
-.main-articles .recent-articles li:hover {
+.main-articles .recent-articles li:hover,
+#anchormenu ol li:hover {
   background-color: #f1f1f1;
 }
 
 .main-articles .related-articles li a:hover,
-.main-articles .recent-articles li a:hover {
+.main-articles .recent-articles li a:hover,
+#anchormenu ol li a:hover {
   color: #ff7000;
 }
 
@@ -1617,18 +1630,19 @@ form.search::before { /* adds blank content into form */
 .article-column ol {
   margin: 15px 0 15px 15px;
   list-style-position: outside;
+  font-size: 14px;
 }
 
 .article-column li {
-  margin-left: 10px;  
+  margin-left: 10px;
 }
 
 .article-column a {
-  color: #428bca; 
+  color: #EB7907;
 }
 
 .article-column a:hover {
-  color: #ff7000; 
+  text-decoration: underline;
 }
 
 .article-column td {
@@ -1650,11 +1664,22 @@ form.search::before { /* adds blank content into form */
 
 .article-body table {
   table-layout: fixed;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.15);
 }
 
 .article-left-img {
   float: left;
   padding-right: 20px;
+}
+
+.article-center-img {
+  text-align: center; 
+}
+
+.article-right-img {
+  float: right;
+  padding-left: 20px;
 }
 
 .article-footer {
@@ -1718,6 +1743,7 @@ form.search::before { /* adds blank content into form */
 }
 
 pre.prettyprint {
+  padding: 0 5px !important;
   margin-bottom: 15px;
   border: 1px solid #d0d0d0 !important;
 }
@@ -1967,7 +1993,8 @@ body.community-enabled .search-results-column {
 }
 
 .article-body td {
-  border-width: 1px;
+  border: 1px solid #909090;
+
 }
 
 /* Comments - Article, Request and Post pages */
@@ -3215,7 +3242,7 @@ modal-open {
    ============================= */
 @media screen and (max-width: 730px) {
 
-  main {
+  .site-container {
     min-width: 490px;
   }
 
