@@ -3,7 +3,7 @@
 </nav>
 
 <div class="main-categories clearfix">
-  <div class="column-container clearfix">
+  <div class="column-container">
     <section class="main-column category-column">
       <h1>{{category.name}}</h1>
       <p class="category-description">{{category.description}}</p>
@@ -54,25 +54,18 @@
         </i>
       {{/if}}
     </section>
-    <section class="side-column article-side-column">
-      <h3>Help Center Categories</h3>
-      <ul>
-        <li>Getting Started</li>
-        <li>End-Users</li>
-        <li>Administrators</li>
-        <li>How-To Guides</li>
-        <li>Services</li>
-      </ul>
-    </section>
-    <section class="side-column article-side-column">
-      <h3>Smell Ya Later!</h3>
-      <p>In west Philadelphia born and raised, on the playground was where 
-        I spent most of my days. Chillin' out maxin' relaxin' all cool, and 
-        all shootin some b-ball outside of the school when a couple of guys 
-        who were up to no good started making trouble in my neighborhood. I 
-        got in one little fight and my mom got scared, she said 'you're
-        movin' with your auntie and uncle in Bel Air.'</p>
-    </section>
+    <div id="sidebar">
+      <section class="side-column article-side-column">
+        <h3>Help Center Categories</h3>
+        <ul>
+          <li><a href="#">Getting Started</a></li>
+          <li><a href="#">End-Users</a></li>
+          <li><a href="#">Administrators</a></li>
+          <li><a href="#">How-To Guides</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </section>
+    </div>
   </div>
 </div>
 
