@@ -17,18 +17,20 @@
          <!--<div class="print-button clearfix"><script>var pfHeaderImgUrl = 'https://p5.zdassets.com/hc/theme_assets/806071/200153628/logo-orange.png';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = 'https://p5.zdassets.com/hc/themes/806071/205336438/style-a72a6c4eb638fb434562794b5d5107b2.css?brand_id=506898&locale=en-us';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if ('https:' === document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Print Friendly and PDF"/></a></div>-->
       </article>
     </section>
-    <section class="side-column article-side-column">
-      <h3>Table of Contents</h3>
-      <div id="anchormenu">
-        building menu...
-      </div>
-    </section>
-    <section class="side-column article-side-column">
-      {{related_articles}} 
-    </section>
-    <section class="side-column article-side-column">
-      {{recent_articles}}
-    </section>
+    <div id="sidebar">
+      <section class="side-column article-side-column">
+        <h3>Table of Contents</h3>
+        <div id="anchormenu">
+          building menu...
+        </div>
+      </section>
+      <section class="side-column article-side-column">
+        {{related_articles}} 
+      </section>
+      <section class="side-column article-side-column">
+        {{recent_articles}}
+      </section>
+    </div>
     <a href="/hc/en-us/requests/new"><div class="thin-bottom-bar ticket-submit-bar">Have more questions? Submit a ticket</div></a>
   </div>
 </div>
@@ -43,7 +45,7 @@
     if(headings.length >= 1) {
       // make the OL of links
       var menuList = document.createElement("OL");
-      for(var i=0; i < headings.length; i++) {
+      for (var i=0; i < headings.length; i++) {
         var anchorName = "";
         if(headings[i].id) {
           anchorName = headings[i].id;
