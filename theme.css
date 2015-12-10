@@ -42,7 +42,6 @@ a {
   color: #303030;
   -webkit-transition: color 200ms ease, background-color 200ms ease;
   -moz-transition: color 200ms ease,  background-color 200ms ease;
-  -o-transition: color 200ms ease,  background-color 200ms ease;
   transition: color 200ms ease, background-color 200ms ease;
 }
 
@@ -170,7 +169,6 @@ input[type=submit] {
   padding: 10px 30px;
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
   transition: background-color 250ms ease;
 }
 
@@ -331,7 +329,6 @@ button img, [role=button] img {
  border: 1px solid #DDD;
  -webkit-transition: background-color 250ms ease;
  -moz-transition: background-color 250ms ease;
- -o-transition: background-color 250ms ease;
  transition: background-color 250ms ease;
 }
 
@@ -391,7 +388,6 @@ button img, [role=button] img {
   color: #333;
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
   transition: color 250ms ease;
 }
 
@@ -495,7 +491,6 @@ button img, [role=button] img {
   margin-left: -1px;
   -webkit-transition: background-color 150ms ease;
   -moz-transition: background-color 150ms ease;
-  -o-transition: background-color 150ms ease;
   transition: background-color 150ms ease;
 }
 
@@ -611,7 +606,6 @@ button img, [role=button] img {
   color: #f4f6f6;
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
   transition: color 250ms ease;
 }
 
@@ -739,6 +733,26 @@ button img, [role=button] img {
   float: right;
 }
 
+.twitter-header {
+  width: 100%;
+  padding: 5px 10px;
+  color: #494949;
+  text-align: center;
+  /*background: linear-gradient(135deg, #2E4559 0%, #4B6C88 100%);*/
+  background: #fdfdfd;
+  border: 1px solid #E8E8E8;
+  border-bottom: none;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.twitter-feed-icon {
+  position: relative;
+  top: 3px;
+  width: 17px;
+  height: 17px;
+}
+
 .accordion-box {
   border: 1px solid transparent;
   margin: 20px;
@@ -762,6 +776,26 @@ button img, [role=button] img {
   margin-right: 25px;
 }
 
+.homepage-panel:hover > .category-list-item > .gears-icon {
+  fill: #7BAFC4;
+}
+
+.homepage-panel:hover > .category-list-item > .users-icon {
+  fill: #65a194;
+}
+
+.homepage-panel:hover > .category-list-item > .admin-icon {
+  fill: #C68743;
+}
+
+.homepage-panel:hover > .category-list-item > .howto-icon {
+  fill: #A9584A;
+}
+
+.homepage-panel:hover > .category-list-item > .services-icon {
+  fill: #9064AF;
+}
+
 .category-list-item {
   background-color: #fdfdfd;
   display: block;
@@ -773,7 +807,6 @@ button img, [role=button] img {
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
   -webkit-transition: border 150ms ease;
   -moz-transition: border 150ms ease;
-  -o-transition: border 150ms ease;
   transition: border 150ms ease;
 }
 
@@ -813,14 +846,15 @@ button img, [role=button] img {
   background-repeat: no-repeat;
   background-size: 9px;
   background-position: 8px 15px;
-  -webkit-transition: background-color 150ms ease;
-  -moz-transition: background-color 150ms ease;
-  -o-transition: background-color 150ms ease;
-  transition: background-color 150ms ease;
+  -webkit-transition: background-color 150ms ease, color 150ms ease;
+  -moz-transition: background-color 150ms ease, color 150ms ease;
+  transition: background-color 150ms ease, color 150ms ease;
 }
 
 .category-list .inner-panel li:hover {
-  background-color: #e5e5e5; 
+  background-color: #e5e5e5;
+
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
 .more-articles-btn {
@@ -829,50 +863,51 @@ button img, [role=button] img {
   background-color: gray;
   text-align: center;
   color: #FFFFFF;
+  text-shadow: 1px 1px 0 rgba(61, 61, 61, 0.4);
   -webkit-transition: background-color 150ms ease;
   -moz-transition: background-color 150ms ease;
-  -o-transition: background-color 150ms ease;
   transition: background-color 150ms ease;
 }
 
-.green-btn {
-  background-color: gray; 
-}
-
-.green-btn:hover {
-  background-color: #2A7F44; 
-}
 
 .blue-btn {
-  background-color: gray;
+  background-color: #7BAFC4;
 }
 
 .blue-btn:hover {
-  background-color: #295B71;
+  background-color: #628999;
 }
 
-.yellow-btn {
-  background-color: gray;
+.green-btn {
+  background-color: #65a194; 
 }
 
-.yellow-btn:hover {
-  background-color: #B47D3E;
+.green-btn:hover {
+  background-color: #49746B; 
 }
 
 .orange-btn {
-  background-color: gray;
+  background-color: #C68743;
 }
 
 .orange-btn:hover {
-  background-color: #B44C3C;
+  background-color: #996833;
+}
+
+.red-btn {
+  background-color: #A9584A;
+}
+
+.red-btn:hover {
+  background-color: #86453A;
 }
 
 .purple-btn {
-  background-color: gray;
+  background-color: #9064AF;
 }
 
 .purple-btn:hover {
-  background-color: #553195;
+  background-color: #704E88;
 }
 
 .thin-top-bar {
@@ -896,26 +931,27 @@ button img, [role=button] img {
   width: 35px;
   height: 35px;
   vertical-align: middle;
+  transition: fill 650ms ease;
 }
 
 .gears-icon {
-  fill: gray; 
+  fill: #4A6B87; 
 }
 
 .users-icon {
-  fill: gray; 
+  fill: #4A6B87; 
 }
 
 .admin-icon {
-  fill: gray; 
+  fill: #4A6B87; 
 }
 
 .howto-icon {
- fill: gray; 
+ fill: #4A6B87; 
 }
 
 .services-icon {
-  fill: gray; 
+  fill: #4A6B87; 
 }
 
 /* ====================================================
@@ -924,9 +960,9 @@ button img, [role=button] img {
 .hero-search {
   height: 250px;
   padding-top: 70px; /* pushes search bar down within this div */
-  background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/search-gray.png");
+  background-image: url("//p5.zdassets.com/hc/theme_assets/806071/200153628/search-blue3.png");
   background-position: 0 0;
-  background-size: 600px;
+  background-size: 700px;
   background-repeat: repeat;
   background-attachment: fixed;
   box-shadow: rgba(0, 0, 0, 0.6) 0 -7px 20px -7px inset;
@@ -963,24 +999,32 @@ form.search::before { /* adds blank content into form */
 }
 
 /***** Search Button *****/
+
+.search-container-border {
+  border: 5px solid rgba(0, 0, 0, 0.15);  
+}
+
 .search-container
 .search input[type=submit] {
   width: 20%;
   height: 55px;
   float: left;
-  background-color: gray;
+  background: #ffab34; /* Old browsers */
+  background: -moz-linear-gradient(left, #ffab34 0%, #ff6b01 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #ffab34 0%, #ff6b01 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(left, #FFC16A 0%, #ff6b01 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab34', endColorstr='#ff6b01',GradientType=1); /* IE6-9 fallback on horizontal gradient */
   color: white;
   font-size: 16px;
-  text-shadow: rgba(40, 60, 70, 0.5) 1px 1px 0;
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4), 2px 2px 0px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 650ms ease;
 }
 
 .search-container
 .search input[type=submit]:hover {
-  background-color: #ff7000;
+  -webkit-box-shadow: inset 140px 0px 200px -50px #FF6b01;
+  -moz-box-shadow: inset 140px 0px 200px -50px #FF6b01;
+  box-shadow: inset 140px 0px 200px -50px #FF6b01;
 }
 
 /***** Homepage Ticket Buttons *****/
@@ -998,7 +1042,7 @@ form.search::before { /* adds blank content into form */
   padding: 0 120px; /* pushes container in from both sides */
   max-width: 800px;
   margin: 0 auto; /* centers the buttons */
-  margin-top: 95px; /* pushes buttons down from search bar */
+  margin-top: 35px; /* pushes buttons down from search bar */
 }
 
 .ticket-button-column {
@@ -1014,16 +1058,18 @@ form.search::before { /* adds blank content into form */
   padding-top: 13px; /* pushes text down into center of button */
   text-align: center;
   color: white;
-  background-color: gray;
-  -webkit-transition: background-color 250ms ease;
-  -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
-  text-shadow: rgba(40, 60, 70, 0.5) 1px 1px 0;
+  text-shadow: 1px 1px 0px rgba(61, 61, 61, 0.2), 2px 2px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(16, 17, 18, 0.1);
+  -webkit-transition: background-color 700ms cubic-bezier(0.175, 0.885, 0.335, 1), border-color 700ms cubic-bezier(0.175, 0.885, 0.335, 1), text-shadow 700ms cubic-bezier(0.175, 0.885, 0.335, 1);
+  -moz-transition: background-color 700ms cubic-bezier(0.175, 0.885, 0.335, 1), border-color 700ms cubic-bezier(0.175, 0.885, 0.335, 1), text-shadow 700ms cubic-bezier(0.175, 0.885, 0.335, 1);
+  transition: background-color 700ms cubic-bezier(0.175, 0.885, 0.335, 1), border-color 700ms cubic-bezier(0.175, 0.885, 0.335, 1), text-shadow 700ms cubic-bezier(0.175, 0.885, 0.335, 1);
 }
 
 .ticket-button-column > a:hover {
   background-color: #45d167;
+  border-color: #45d167;
+  text-shadow: 1px 1px 0 rgba(61, 61, 61, 0.2);
 }
 
 .button-text {
@@ -1039,7 +1085,6 @@ form.search::before { /* adds blank content into form */
   color: lightgray;
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
   transition: color 250ms ease;
 }
 
@@ -1110,7 +1155,6 @@ form.search::before { /* adds blank content into form */
   opacity: 0.25;
   -webkit-transition: opacity 250ms ease;
   -moz-transition: opacity 250ms ease;
-  -o-transition: opacity 250ms ease;
   transition: opacity 250ms ease;
 }
 
@@ -1566,7 +1610,6 @@ form.search::before { /* adds blank content into form */
   color: white;
   -webkit-transition: background-color 150ms ease;
   -moz-transition: background-color 150ms ease;
-  -o-transition: background-color 150ms ease;
   transition: background-color 150ms ease;
 }
 
@@ -1636,7 +1679,6 @@ form.search::before { /* adds blank content into form */
 .main-categories .side-column li {
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
   transition: background-color 250ms ease;
 }
 
@@ -2269,7 +2311,6 @@ body.community-enabled .search-results-column {
   border: 2px solid transparent;
   -webkit-transition: border-color 250ms ease;
   -moz-transition: border-color 250ms ease;
-  -o-transition: border-color 250ms ease;
   transition: border-color 250ms ease;
 }
 
@@ -2285,7 +2326,6 @@ body.community-enabled .search-results-column {
 tbody tr {
   -webkit-transition: background-color 200ms ease;
   -moz-transition: background-color 200ms ease;
-  -o-transition: background-color 200ms ease;
   transition: background-color 200ms ease;
 }
 
@@ -2854,7 +2894,6 @@ body.community-enabled .search-results-column + .search-results-column {
   padding-left: 10px;
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
   transition: background-color 250ms ease; 
 }
 
@@ -2935,8 +2974,6 @@ body.community-enabled .search-results-column + .search-results-column {
   right: 85px;
   -webkit-transition: bottom .5s ease-in, color .5s ease-in;
   -moz-transition: bottom .5s ease-in, color .5s ease-in;
-  -ms-transition: bottom .5s ease-in, color .5s ease-in;
-  -o-transition: bottom .5s ease-in, color .5s ease-in;
   transition: bottom .5s ease-in, color .5s ease-in;
 }
 
@@ -3111,7 +3148,6 @@ body.community-enabled .search-results-column + .search-results-column {
   color: #B0B0B0;
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
-  -o-transition: color 250ms ease;
   transition: color 250ms ease;
 }
 
@@ -3129,8 +3165,8 @@ modal-open {
 .fade {
   opacity: 0;
   -webkit-transition: opacity .15s linear;
-       -o-transition: opacity .15s linear;
-          transition: opacity .15s linear;
+  -moz-transition: opacity .15s linear;
+  transition: opacity .15s linear;
 }
 
 .fade.in {
@@ -3152,18 +3188,17 @@ modal-open {
 
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
+   -moz-transition:      -moz-transform .3s ease-out;
           transition:         transform .3s ease-out;
   -webkit-transform: translate(0, -25%);
-      -ms-transform: translate(0, -25%);
-       -o-transform: translate(0, -25%);
+     -moz-transform: translate(0, -25%);
           transform: translate(0, -25%);
 }
 
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
-       -o-transform: translate(0, 0);
+     -moz-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
@@ -3269,7 +3304,6 @@ modal-open {
   padding: 10px 20px;
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
-  -o-transition: background-color 250ms ease;
   transition: background-color 250ms ease;
 }
 
@@ -3290,7 +3324,7 @@ modal-open {
   .search-container {
     width: 90%;
   }
-
+  
   .ticket-button-column {
     width: 100%;
     float: none;
