@@ -3,7 +3,7 @@
 </nav>
 
 <div class="search-results clearfix"> 
-  <div class="column-container clearfix">
+  <div class="column-container">
     <section class="main-column">
       <h1 class="search-results-heading">
         {{results_count}} results for "{{query}}"
@@ -32,32 +32,11 @@
         {{/if}}
       </section>
     </section>
-     <section class="side-column centered-side-column">
-      <h3>How Does The Search Work?</h3>
-      <p>The search function on our support site uses a very interesting architecture. It involves whispering a query into the ear of one of our support hamsters, who then begin their journey to the Library of Atlantis. Unfortunately, some perish on the journey - but fear not! Every party of adventure hamsters carry a handful of Phoenix Down, in the event of a Game Over.</p>
-      <!-- Button trigger modal -->
-      <button type="button" class="modal-button" data-toggle="modal" data-target="#myModal">
-        Those Poor Hammies!
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title" id="myModalLabel">We don't murder hamsters</h1>
-            </div>
-            <div class="modal-body">
-              <p>IT'S NOT IN OUR CONTRACT</p><br />
-              <img src="//p5.zdassets.com/hc/theme_assets/806071/200153628/hamster.png">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="modal-button-inner" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div id="sidebar">
+    <section class="side-column article-side-column">
+        {{recent_articles}}
+      </section>
+    </div>
     {{#if pagination}}
     <div class="thin-bottom-bar">{{pagination}}</div>
     {{/if}}
