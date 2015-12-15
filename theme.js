@@ -2,7 +2,20 @@
  */
 
 $(document).ready(function() {
+
+    // Show div html based on role
+    if (HelpCenter.user.role=="anonymous"){
+      $("div.anonymous").show();
+    }
+
+    if (HelpCenter.user.role=="end_user"){
+      $("div.end_user").show();
+    }
   
+    if (HelpCenter.user.role=="agent" || HelpCenter.user.role=="manager"){
+      $("div.manager").show();
+    }
+
    // Change text in search bar
   $("#query").attr('placeholder','Search Our Knowledge Base');
   
