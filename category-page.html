@@ -5,8 +5,13 @@
 <div class="main-categories clearfix">
   <div class="column-container">
     <section class="main-column category-column">
+      {{#is category.name 'Downloads'}}
+      <h1>This is the Downloads page!</h1>
+      <p class="category-description">It is completely customizable!</p>
+      {{else}}
       <h1>{{category.name}}</h1>
       <p class="category-description">{{category.description}}</p>
+      {{/is}}
       {{#if category.sections}}
         <div class="section-tree">
           {{#each sections}}
@@ -17,10 +22,8 @@
                     <span class="visibility-internal-icon"></span>
                   </span>
                 {{/if}}
-
                 <a href="{{url}}">{{name}}</a>
               </h3>
-
               {{#if articles}}
                 <ul class="article-list">
                   {{#each articles}}
@@ -47,22 +50,22 @@
             </section>
           {{/each}}
         </div>
-
       {{else}}
-        <i class="category-empty">
+      <p>We're empty!</p>
+        <!--<i class="category-empty">
           <a href="{{category.url}}">{{t 'empty'}}</a>
-        </i>
+        </i>-->
       {{/if}}
     </section>
     <div id="sidebar">
       <section class="side-column article-side-column">
         <h3>Help Center Categories</h3>
         <ul>
-          <li><a href="#">Getting Started</a></li>
-          <li><a href="#">End-Users</a></li>
-          <li><a href="#">Administrators</a></li>
-          <li><a href="#">How-To Guides</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="/hc/en-us/categories/202189828">Getting Started</a></li>
+          <li><a href="/hc/en-us/categories/202178497">End-Users</a></li>
+          <li><a href="/hc/en-us/categories/202189808">Administrators</a></li>
+          <li><a href="/hc/en-us/categories/202189818">How-To Guides</a></li>
+          <li><a href="/hc/en-us/categories/202178507">Services</a></li>
         </ul>
       </section>
     </div>
