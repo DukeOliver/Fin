@@ -1,11 +1,11 @@
-<nav class="sub-nav"> <!--{ {breadcrumbs} }-->
+<nav class="sub-nav">
   <ol class="breadcrumbs">
     <li><a href="/hc/en-us">Exago Help Center</a></li>
     <li>Submit a Ticket</li>
   </ol>
 </nav>
 <div class="main-requests new-request clearfix">
-  <div class="column-container clearfix">
+  <div class="column-container">
     <section class="main-column">
       <h1>Submit a Ticket{{#if parent}}
         <span class="follow-up-hint">
@@ -15,33 +15,35 @@
       <div class="form submit-ticket-dropzone">
         {{request_form}}
       </div>
-    </section>
-    <section class="side-column centered-side-column">
-      <h3>Example Ticket</h3>
-      <p>Presented below is an example of a well-constructed ticket. For assistance on how to properly format your ticket to increase response time, be sure to check it out!</p>
-      <!-- Button trigger modal -->
-      <button type="button" class="modal-button" data-toggle="modal" data-target="#myModal">
-        Preview Demo Ticket
-      </button>
+      </section>
+      <div id="sidebar">
+      <section class="side-column centered-side-column">
+        <h3>Example Ticket</h3>
+        <p>Presented below is an example of a well-constructed ticket. For assistance on how to properly format your ticket to increase response time, be sure to check it out!</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="modal-button" data-toggle="modal" data-target="#myModal">
+          Preview Demo Ticket
+        </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title" id="myModalLabel">Submit a Ticket</h1>
-            </div>
-            <div class="modal-body">
-              <p>And here goes all the fancy stuff!</p><br />
-              <img src="https://i.imgur.com/0tL6Lrr.jpg">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="modal-button-inner" data-dismiss="modal">Close</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="myModalLabel">Submit a Ticket</h1>
+              </div>
+              <div class="modal-body">
+                <p>And here goes all the fancy stuff!</p><br />
+                <img src="https://i.imgur.com/0tL6Lrr.jpg">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="modal-button-inner" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 
