@@ -1,7 +1,10 @@
 <!-- add code here that should appear in the document head -->
-<meta name="description" content="The Help Center, Knowledge Base, and Support Site of Exago, a Self-Service Business Intelligence Solution for reporting, dashboards, and analytics." />
+<meta name="description" content="The Support Center and Knowledge Base of Exago, a Self-Service Business Intelligence Solution for reporting, dashboards, and analytics." />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+
+<!-- conditional fields -->
+<script src="https://zendesk.tv/conditional_fields/helpcenter.js"></script> <script>var cfaRules = [{"fieldType":"tagger","field":28135878,"value":"ticket_version_2013.2","select":[29511867],"formId":129427,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2013.2","select":[29511867],"formId":201388,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2013.2","select":[29511867],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2014.1","select":[29511787],"formId":129427,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2014.1","select":[29511787],"formId":201388,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2014.1","select":[29511787],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2015.1","select":[29374197],"formId":129427,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2015.1","select":[29374197],"formId":201388,"requireds":[]},{"fieldType":"tagger","field":28135878,"value":"ticket_version_2015.1","select":[29374197],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":29502458,"value":"report_issue","select":[29512747,29512797,29503008,29512807,29512817,29503158,29503168],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":29502458,"value":"system_issue","select":[29513047],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":29502458,"value":"ui_issue","select":[29512747,29502378,29502748,29512767,29512777,29502768,29502758,29502848],"formId":209608,"requireds":[]},{"fieldType":"checkbox","field":29502848,"value":"yes","select":[29512897],"formId":209608,"requireds":[]},{"fieldType":"checkbox","field":29503168,"value":"yes","select":[29512787],"formId":209608,"requireds":[]},{"fieldType":"checkbox","field":29512267,"value":"yes","select":[29512527],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":29512747,"value":"internet_explorer_10","select":[29512757],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":29512747,"value":"internet_explorer_11","select":[29512757],"formId":209608,"requireds":[]},{"fieldType":"tagger","field":29512747,"value":"internet_explorer_9","select":[29512757],"formId":209608,"requireds":[]}];</script>
 
 <!-- bootstrap js, 3.3.6 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -11,3 +14,17 @@
 
 <!-- jquery -->
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- let it snow! -->
+<script src="{{asset 'snowstorm-min.js'}}"></script>
+<script>
+  snowStorm.snowColor = 'rgba(255, 255, 255, 0.6)';
+  snowStorm.snowStick = true;
+  snowStorm.flakesMaxActive = 44;
+  snowStorm.flakesMax = 100;
+  snowStorm.freezeOnBlur = true;
+  snowStorm.flakeBottom = 251;
+  snowStorm.vMaxX = 1.5;
+  snowStorm.vMaxY = 1.2;
+  snowStorm.targetElement = 'searchsnow';
+</script>
