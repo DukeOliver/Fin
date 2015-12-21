@@ -1,32 +1,77 @@
 <div class="error">
-  <p>Ȅ̟̞ͧ͟R̻͓͙̩̦͈̫̒̿̅ͣ͛R̬̘̥Ŏ̴̤R͎̼͕̹̾̆͝ ̀̏̕4̰̮͓̼̮̺̬̍̑0̜̮̰͔͓̭̏̉4̦̗̮̳͂̆ ̷͇̯̙́̓͛P͍̏ͪ͛̉ͣ̒̌A̝͍̲̳̩̰̲̐͌̓͊̄ͮ̆̕GẺ̛͛̾ ͚̖N̜͇͖̜ͪͅÔ̸̼̌̌́T̟̺̎̄͆͆̐ͬ ̴̤͓̝̬̹͂̃ͥ̾̑̈́F̻͓̘̬͇̋͆̃ͦͅͅO͋͆̽͏̘ͅU̺̿̽́͑ͨͧ̿N̑ͣ͑́̎̓Ď̛̖͇͚̳̻̣̣ͤ</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/Fzqnknxxj98?autoplay=1" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class="error clearfix">
-  <img src="https://i.imgur.com/wg15JPM.jpg">
-  <img src="https://i.imgur.com/wg15JPM.jpg">
-  <img src="https://i.imgur.com/wg15JPM.jpg">
+  <h1 id="groovy">ERROR 404</h1>
 </div>
-<!--<div class="error-page">
-  <h1>{{t 'oops'}}</h1>
 
-  {{#is error 'unauthorized'}}
-    <h2>{{link 'sign_in'}}</h2>
-  {{/is}}
+<script>
+var colorTime = 0,
+    waveTheta = 0,
+    maxCount = 100,
+    colorIncrement = -10,
+    waveIncrement = 0.1,
+    xPos = [ -2, -1, 0, 1, 2 ],
+    yPos = [ -2, -1, 0, 1, 2 ],
+    props = {};
 
-  {{#is error 'forbidden'}}
-    <h2>{{t 'not_authorized'}}</h2>
-  {{/is}}
+var getTextShadow = function( x, y, hue ) {
+  return ', ' + x + 'px ' + y + 'px hsl(' + hue + ', 100%, 50%)';
+};
 
-  {{#is error 'not_found'}}
-    <h2>{{t 'nonexistent_page'}}</h2>
-    <p>{{t 'mistyped_address_or_moved_page'}}</p>
-  {{/is}}
+var animate = function() {
+  var shadows = '0 0 transparent',
+      hue0 = colorTime % 360,
+      i, j, x, y,
+      iLen = xPos.length, 
+      jLen = yPos.length;
 
-  {{#link 'help_center'}}
-    {{t 'back_to_homepage'}}
-  {{/link}}
-</div>
--->
+  // outline
+  for ( i = 0; i < iLen; i++ ) {
+    x = xPos[i];
+    for ( j = 0; j < jLen; j++ ) {
+      y = yPos[j];
+      shadows += getTextShadow( x, y, hue0 );
+    }
+  }
 
+  // renders rainbow river
+  for ( i = 1; i < maxCount; i++ ) {
+    var normI = i / maxCount,
+        hue = ( normI * 360 * 2 + colorTime ) % 360;
+    x = ~~( ( Math.sin( normI * Math.PI * 2 + waveTheta ) - Math.sin( waveTheta ) )  * 50 );
+    y = i * 3;
+    shadows += getTextShadow( x, y, hue );
+  }
+
+  props.groovy.style.textShadow = shadows;
+  colorTime += colorIncrement;
+  waveTheta += waveIncrement;
+  setTimeout( animate, 30 );
+};
+
+var init = function() {
+
+  props.groovy = document.getElementById('groovy');
+
+  setTimeout( animate, 1 );
+
+};
+
+window.addEventListener( 'DOMContentLoaded', init, false);
+</script>
+
+<!-- let it snow! -->
+<script src="{{asset 'snowstorm-min.js'}}"></script>
+<script>
+  snowStorm.snowColor = 'orange';
+  snowStorm.snowStick = false;
+  snowStorm.flakesMaxActive = 250;
+  snowStorm.flakesMax = 250;
+  snowStorm.freezeOnBlur = true;
+  snowStorm.flakeBottom = 251;
+  snowStorm.vMaxX = 1.5;
+  snowStorm.vMaxY = 10;
+  snowStorm.targetElement = 'searchsnow';
+</script>
 </div> <!--<div class="site-container"> is on header page-->
