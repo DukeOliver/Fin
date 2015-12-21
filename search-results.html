@@ -14,8 +14,9 @@
             {{#each article_results}}
               <li class="search-result">
                 <a href="{{url}}" class="search-result-link">
-                  <div class="search-result-div">{{title}}
+                  <div class="search-result-div"><h3>{{title}}</h3>
                     <p class="search-result-description">{{text}}</p>
+                    <!-- author is invisible to end-users -->
                     <div class="search-result-meta">{{meta}}</div>
                   </div>
                 </a>
