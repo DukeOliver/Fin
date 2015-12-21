@@ -24,7 +24,7 @@
 
       <div class="request-table-toolbar">
         {{#form 'requests_filter' class='request-table-toolbar'}}
-          {{input 'query' id='quick-search' type='search' class='requests-search'}}
+          {{input 'query' id='quick-search' type='search' class='requests-search'}} {{input type="submit" name="commit" value="Search" class='requests-search-button'}}
           <div class="request-table-filters">
             {{label 'organization' for='request-organization-select' class='request-filter'}}
             {{select 'organization' id='request-organization-select' class='request-filter'}}
