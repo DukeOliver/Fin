@@ -4,22 +4,77 @@
 
 <div class="main-categories clearfix">
   <div class="column-container">
-    <section class="main-column category-column">
-      {{#is category.name 'Downloads'}}
-      <h1>This is the Downloads page!</h1>
-      <p class="category-description">It is completely customizable!</p>
+    {{#is category.name 'Downloads'}}
+    <section class="main-column downloads-title">
+      <h1>Downloads</h1>
+      <p class="downloads-description">Listed below are the files your account has been granted access to</p>
+      <section class="downloads-section wide-downloads app-downloads">
+        <h3>Application Installers</h3>
+        <p>Click to view Windows &amp; Linux downloads and release notes</p>
+        <ul>
+          <li style="font-weight:600;font-size:15px"><a href="/hc/en-us/articles/214947178">Exago v2015.1 <span style="color:lightgray">|</span> Build 3.1</a></li>
+          <li style="opacity:.8"><a href="#">Exago v2014.1 <span style="color:lightgray">|</span> Build 2.9</a></li>
+          <li style="opacity:.8"><a href="#">Exago v2013.2 <span style="color:lightgray">|</span> Build 3.7</a></li>
+        </ul>
+      </section>
+      <section class="downloads-section half-downloads">
+        <h3>v2015.1 Guides</h3>
+        <ul>
+          <li><a href="#" class="guide-dl-btn pdf-btn">v2015.1 User Guide</a></li>
+          <li><a href="#" class="guide-dl-btn doc-btn">v2015.1 User Guide</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">v2015.1 Technical Guide</a></li>
+        </ul>
+      </section>
+      <section class="downloads-section half-downloads">
+        <h3>v2014.1 Guides</h3>
+        <ul>
+          <li><a href="#" class="guide-dl-btn pdf-btn">v2014.1 User Guide</a></li>
+          <li><a href="#" class="guide-dl-btn doc-btn">v2014.1 User Guide</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">v2014.1 Technical Guide</a></li>
+        </ul>
+      </section>
+      <section class="downloads-section half-downloads">
+        <h3>Evaluations</h3>
+        <ul>
+          <li><a href="#" class="guide-dl-btn pdf-btn">Setup Application</a></li>
+          <li><a href="#" class="guide-dl-btn doc-btn">Some Thingy Thang</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">Another Thingy for People</a></li>
+        </ul>
+      </section>
+      <section class="downloads-section half-downloads">
+        <h3>Special</h3>
+        <ul>
+          <li><a href="#" class="guide-dl-btn doc-btn">Follow Your Dreams</a></li>
+          <li><a href="#" class="guide-dl-btn doc-btn">Eat Tangerines</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">Don't You Dare Be Means</a></li>
+        </ul>
+      </section>
+    </section>
+    <div id="sidebar">
+      <section class="side-column article-side-column">
+        <h3>Download Information</h3>
+        <p>This is a description about what happens when you click each download link, something something it happens automatically. If it doesn't prompt you for a location, blah blah do this other thing instead. Some more information about downloads, I need fluff. Below are some steps for something.<p>
+        <br>
+        <ol>
+          <li>Did you brush your teeth this morning? Very well, you may have ... but did you remember to floss? I guess you better go back home then.</li><br>
+          <li>Maybe I need another list item, to explain whatever I'm talking about. How is it not even snowing outside?</li><br>
+          <li>Click here to submit a ticket if you're having issues with linear gradients, as there isn't a support group for something like that.</li><br>
+        </ol>
+      </section>
+    </div>
       {{else}}
+      <section class="main-column category-column">
       <h1>{{category.name}}</h1>
       <p class="category-description">{{category.description}}</p>
-      {{/is}}
       {{#if category.sections}}
         <div class="section-tree">
           {{#each sections}}
             <section class="section">
               <h3>
                 {{#if internal}}
-                  <span class="visibility-internal" data-title="{{t 'internal'}}">
-                    <span class="visibility-internal-icon"></span>
+                  <span class="visibility-internal" data-title="Crouching Goat, Hidden...Goat">
+                    <img src="//p5.zdassets.com/hc/theme_assets/806071/200153628/Goat-icon.png" width="35">
+                    
                   </span>
                 {{/if}}
                 <a href="{{url}}">{{name}}</a>
@@ -59,7 +114,7 @@
     </section>
     <div id="sidebar">
       <section class="side-column article-side-column">
-        <h3>Help Center Categories</h3>
+        <h3>Knowledge Base Categories</h3>
         <ul>
           <li><a href="/hc/en-us/categories/202189828">Getting Started</a></li>
           <li><a href="/hc/en-us/categories/202178497">End-Users</a></li>
@@ -69,6 +124,7 @@
         </ul>
       </section>
     </div>
+    {{/is}}
   </div>
 </div>
 
