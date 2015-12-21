@@ -38,7 +38,12 @@
         </div>
       </section>
       <section class="side-column article-side-column">
-        {{related_articles}} 
+        {{#is article.id 214947178}}
+        <p>bacon!</p>
+        {{label}}
+        {{else}}
+        {{related_articles}}
+        {{/is}}
       </section>
       <section class="side-column article-side-column">
         {{recent_articles}}
