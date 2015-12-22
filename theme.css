@@ -111,7 +111,7 @@ input[type="checkbox"] + label {
 }
 
 input, textarea {
-  border: 1px solid #DDD;
+  border: 1px solid #c0c0c0;
   padding: 10px;
   outline: none;
 }
@@ -218,6 +218,7 @@ button img, [role=button] img {
 .form-field label {
   display: block;
   margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .form-field input[type=checkbox] + label {
@@ -1245,12 +1246,12 @@ form.search::before { /* adds blank content into form */
   min-height: 230px;
 }
 
-.section-tree .section:nth-child(2n + 1) {
+/*.section-tree .section:nth-child(2n + 1) {
   border-right: 1px solid #f1f1f1; 
-}
+}*/
 
 .section-tree .section:nth-child(2n) {
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .section-subscribe, .section-unsubscribe,
@@ -1271,7 +1272,7 @@ form.search::before { /* adds blank content into form */
 }
 
 .article-list {
-  margin-bottom: 15px;  
+  margin-bottom: 5px;  
 }
 
 .article-list li {
@@ -1279,16 +1280,12 @@ form.search::before { /* adds blank content into form */
 }
 
 .see-all-articles {
-  background: #273B4C;
-  border: 1px solid #1B2833;
-  color: white;
-  font-size: 12px;
-  padding: 5px 50px;
-  margin: 0 10px;
+  color: #ff6b01;
+  margin: 0;
 }
 
 .see-all-articles:hover {
-  background: #334D64;
+  text-decoration: underline;
 }
 
 .category-tree .see-all-articles {
@@ -1494,6 +1491,35 @@ form.search::before { /* adds blank content into form */
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.install-btn {
+  padding: 3px 95px 3px 10px;  
+}
+
+.install-btn:after {
+  width: 80px;
+}
+
+.build-btn-1:after {
+  content: "Build 3.1";
+  color: #ff6b01;
+  background: #fdfdfd;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.build-btn-2:after {
+  content: "Build 2.93";
+  color: silver;
+  background: #fdfdfd;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.build-btn-3:after {
+  content: "Build 3.7";
+  color: silver;
+  background: #fdfdfd;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 
 /* ====================================================
    Community box
@@ -1654,25 +1680,31 @@ form.search::before { /* adds blank content into form */
   border: 0;
   height: 1px;
 }
+
 .markdown ul, .markdown ol {
   list-style-position: inside;
   padding: 0 15px;
 }
+
 .markdown ul {
   list-style-type: disc;
 }
+
 .markdown ol {
   list-style-type: decimal;
 }
+
 .markdown ol ul, .markdown ul ul {
   list-style-type: circle;
 }
+
 .markdown ol ol ul,
 .markdown ol ul ul,
 .markdown ul ol ul,
 .markdown ul ul ul {
   list-style-type: square;
 }
+
 .markdown pre {
   background: #f9f9f9;
   background-image: -webkit-repeating-linear-gradient(top,#F3F3F3 0px,#f3f3f3 22px,#E4E4E4 22px,#e4e4e4 44px);
@@ -1682,8 +1714,8 @@ form.search::before { /* adds blank content into form */
   overflow: auto;
   white-space: pre-wrap;
 }
-.markdown blockquote {
 
+.markdown blockquote {
   border-left: 3px solid #D0D0D0;
   margin: 10px 20px 15px 20px;
   padding: 10px;
@@ -1693,6 +1725,11 @@ form.search::before { /* adds blank content into form */
 
 .markdown blockquote p {
   font-size: 12px; 
+}
+
+.markdown code {
+  font-family: 'Courier', serif;
+  font-size: 15px;
 }
 
 /* Article styles */
@@ -2006,6 +2043,10 @@ pre.prettyprint {
 /* ====================================================
    Requests
    ==================================================== */
+.request_cc_emails > ul {
+  background-color: #fff; 
+}
+
 ul[data-hc-pills-container][data-hc-focus=true] {
   border: 1px solid #ddd; 
 }
@@ -2056,7 +2097,7 @@ label[for=request_ticket_form_id] {
 }
 
 .new-request .upload-dropzone {
-  width: 500px;
+  width: 697px;
   float: left;
 }
 
@@ -2066,7 +2107,7 @@ label[for=request_ticket_form_id] {
 
 .new-request input[type=submit] {
   padding: 0; 
-  padding: 14px 59px;
+  padding: 13.5px 59px;
 }
 
 .request-follow-up {
@@ -2203,6 +2244,54 @@ label[for=request_ticket_form_id] {
 .page-header h1 {
   font-size: 20px;
   font-weight: 400;
+}
+
+/*"version" label in request form*/
+.request_custom_fields_28135878 {
+  margin: 0 auto;
+  width: 50%; 
+  text-align: center;
+}
+
+/*"how important is this" in request form*/
+.request_custom_fields_28126367 {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+/*request form checkboxes*/
+.request_custom_fields_29512267,
+.request_custom_fields_29502358, 
+.request_custom_fields_29512367 {
+  position: relative;
+}
+
+.request_custom_fields_29512267 > label,
+.request_custom_fields_29502358 > label,
+.request_custom_fields_29512367 > label {
+  padding-left: 20px; 
+}
+
+#request_custom_fields_29512267,
+#request_custom_fields_29502358,
+#request_custom_fields_29512367 {
+  position: absolute;
+  top: 2px;
+}
+
+/*"priority" in request form*/
+.request_custom_fields_29512517 {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+/*"type of issue" in request form*/
+.request_custom_fields_29502458 {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
 }
 
 body.community-enabled .search-results-column {
@@ -2525,15 +2614,28 @@ tbody tr:hover {
 }
 
 .request-table-toolbar {
-  background: #f2f2f2;
   display: table;
-  padding: 8px;
   width: 100%;
+}
+
+
+.request-table-toolbar form {
+  font-size: 0; /*removes default margin b/w form and button*/
+}
+
+#quick-search {
+  font-size: 13px;
+}
+
+.request-table td,
+.request-table th {
+  border-top: 0; 
 }
 
 .request-table-filters {
   display: table-cell;
   text-align: right;
+  font-size: 13px;
 }
 [dir=rtl] .request-table-filters {
   text-align: left;
@@ -2550,12 +2652,42 @@ tbody tr:hover {
 }
 
 .request-table-toolbar .requests-search-button {
-  background-color: #9C9C9C;
+  border: 1px solid silver;
+  border-left: 0;
+  font-size: 13px;
+  background-color: #fff;
+  color: #202020;
   padding: 6px 10px;
 }
 
 .request-table-toolbar .requests-search-button:hover {
-  background-color: #757575; 
+  background-color: #ECECEC; 
+}
+
+.request-table-filters label {
+  padding: 3px;
+  font-size: 13px;
+}
+
+#request-status-select {
+  width: 210px;
+  height: 32px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #c0c0c0;
+  border-radius: 0;
+  background: transparent url('https://p5.zdassets.com/hc/theme_assets/806071/200153628/arrowdown.png') no-repeat 182px 8px;
+  background-size: 15px 15px;
+  outline: 0;
+  transition: border 150ms ease;
+}
+
+#request-status-select::-ms-expand{
+    display: none;
+}
+
+#request-status-select:hover {
+  border: 1px solid #8D8D8D; 
 }
 
 .request-id {
@@ -3104,10 +3236,17 @@ body.community-enabled .search-results-column + .search-results-column {
   transition: color 250ms ease;
 }
 
+.search-result-div h3:hover {
+  text-decoration: underline; 
+}
+
 .search-result-description {
   padding-top: 0;
   color: gray;
-  font-size: 12px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .search-result-meta {
