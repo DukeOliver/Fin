@@ -213,6 +213,7 @@ button img, [role=button] img {
 
 .form-field ~ .form-field {
   margin-top: 25px;
+  clear: both;
 }
 
 .form-field label {
@@ -709,11 +710,10 @@ button img, [role=button] img {
   padding: 5px 10px;
   color: #494949;
   text-align: center;
-  /*background: linear-gradient(135deg, #2E4559 0%, #4B6C88 100%);*/
   background: #fdfdfd;
   border: 1px solid #E8E8E8;
   border-bottom: none;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0..05);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
   font-weight: bold;
 }
 
@@ -1707,7 +1707,7 @@ form.search::before { /* adds blank content into form */
 
 .markdown pre {
   background: #f9f9f9;
-  background-image: -webkit-repeating-linear-gradient(top,#F3F3F3 0px,#f3f3f3 22px,#E4E4E4 22px,#e4e4e4 44px);
+  background-image: -webkit-repeating-linear-gradient(top,#e8e8e8 0px,#e8e8e8 22px,#f3f3f3 22px,#f3f3f3 44px);
   margin-bottom: 15px;
   border: 1px solid #d0d0d0 !important;
   padding: 10px 15px;
@@ -1836,12 +1836,6 @@ form.search::before { /* adds blank content into form */
   font-size: 15px;
 }
 
-/*.main-requests .side-column h3,
-.search-results .side-column h3{
-  font-size: 18px;
-  line-height: 32px;
-}*/
-
 .article-column h4 {
   font-size: 16px;
 }
@@ -1884,9 +1878,9 @@ form.search::before { /* adds blank content into form */
   color: #ff6b01;
 }
 
-.search-result:hover > .search-result-div .search-result-link > h3 {
+/*.search-result:hover > .search-result-div .search-result-link > h3 {
   color: #ff6b01;
-}
+}*/
 
 .article-column p {
   font-size: 14px;
@@ -2068,6 +2062,7 @@ label[for=request_ticket_form_id] {
 
 .main-requests h1 {
   margin: 0;
+  line-height: 1.1;
   font-weight: normal;
   font-size: 24px;
   color: #595959;
@@ -2246,14 +2241,38 @@ label[for=request_ticket_form_id] {
   font-weight: 400;
 }
 
-/*"version" label in request form*/
+/*Ticket fields*/
+/*"version"*/
 .request_custom_fields_28135878 {
-  margin: 0 auto;
-  width: 50%; 
+  margin: 40px 0 40px 80px;
+  padding-right: 40px;
+  float: left;
+}
+
+/*"ALL Builds"*/
+.request_custom_fields_29374197,
+.request_custom_fields_29511787,
+.request_custom_fields_29511867,
+.request_custom_fields_29563478,
+.request_custom_fields_29563088 {
+  margin: 40px 40px 40px 0;
+  border-left: 1px solid #E0E0E0;
+  padding-left: 40px;
+}
+
+/*Version + ALL builds*/
+.request_custom_fields_28135878,
+.request_custom_fields_29374197,
+.request_custom_fields_29511787,
+.request_custom_fields_29511867,
+.request_custom_fields_29563478,
+.request_custom_fields_29563088 {
+  display: inline-block;
+  width: 40%;
   text-align: center;
 }
 
-/*"how important is this" in request form*/
+/*"how important is this"*/
 .request_custom_fields_28126367 {
   margin: 0 auto;
   width: 50%;
@@ -2280,14 +2299,14 @@ label[for=request_ticket_form_id] {
   top: 2px;
 }
 
-/*"priority" in request form*/
+/*"priority"*/
 .request_custom_fields_29512517 {
   margin: 0 auto;
   width: 50%;
   text-align: center;
 }
 
-/*"type of issue" in request form*/
+/*"type of issue"*/
 .request_custom_fields_29502458 {
   margin: 0 auto;
   width: 50%;
@@ -2350,6 +2369,75 @@ body.community-enabled .search-results-column {
 }
 
 /* Comments - Article, Request and Post pages */
+.zd-comment h1 {
+  font-size: 22px;
+}
+
+.zd-comment h2 {
+  font-size: 20px;
+}
+
+.zd-comment h3 {
+  font-size: 18px; 
+}
+
+.zd-comment h4 {
+  font-size: 16px;
+}
+
+.zd-comment h5 {
+  font-size: 14px;
+}
+
+.zd-comment h1,
+.zd-comment h2,
+.zd-comment h3,
+.zd-comment h4,
+.zd-comment h5 {
+  color: #333;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.zd-comment ul {
+  margin: 5px;
+  list-style-type: disc;
+}
+
+.zd-comment ol {
+  margin: 5px;
+  list-style-type: decimal; 
+}
+
+.zd-comment blockquote {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  padding-right: 30px;
+  border-left: 3px solid #C1C1C1;
+  background: #E6E6E6;
+}
+
+.zd-comment code {
+  font-family: Courier, monospace;
+  border: 1px solid #E4E4E4;
+  background-color: #F4F4F4;
+  color: #43516C;
+  margin: 2px;
+  padding: 0 2px;
+}
+
+.zd-comment pre {
+  font-family: Courier, monospace;
+  border: 1px solid #e4e4e4;
+  background-color: #F4f4f4;
+  background-image: -webkit-repeating-linear-gradient(top,#e8e8e8 0px,#e8e8e8 19px,#f3f3f3 19px,#f3f3f3 38px);
+  line-height: 19px;
+  overflow: auto;
+  white-space: pre-wrap;
+  padding: 0 10px;
+  margin: 15px 0;
+}
 
 .zd-comment a {
   color: #ff6b01;
@@ -2582,8 +2670,10 @@ body.community-enabled .search-results-column {
 }
 
 .my-activities-sub-nav {
-  margin-bottom: 15px;
+  margin: 5px 0 30px;
+  padding-bottom: 10px;
   text-align: center;
+  border-bottom: 1px solid #EAEAEA;
 }
 
 .my-activities-sub-nav li a {
@@ -2627,9 +2717,9 @@ tbody tr:hover {
   font-size: 13px;
 }
 
-.request-table td,
 .request-table th {
-  border-top: 0; 
+  border-top: 0;
+  padding: 20px 12px 5px;
 }
 
 .request-table-filters {
@@ -2670,13 +2760,14 @@ tbody tr:hover {
 }
 
 #request-status-select {
+  padding-left: 5px;
   width: 210px;
   height: 32px;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid #c0c0c0;
   border-radius: 0;
-  background: transparent url('https://p5.zdassets.com/hc/theme_assets/806071/200153628/arrowdown.png') no-repeat 182px 8px;
+  background: white url('https://p5.zdassets.com/hc/theme_assets/806071/200153628/arrowdown.png') no-repeat 182px 8px;
   background-size: 15px 15px;
   outline: 0;
   transition: border 150ms ease;
@@ -3222,22 +3313,23 @@ body.community-enabled .search-results-column + .search-results-column {
 }
 
 .search-result:hover {
-  background-color: #f1f1f1;
+  background-color: #f8f8f8;
 }
 
 .search-result-div {
-  padding: 20px 0; 
+  padding: 15px 0; 
 }
 
 .search-result-div h3 {
+  display: inline-block;
   font-size: 16px; 
-  -webkit-transition: color 250ms ease;
-  -moz-transition: color 250ms ease;
-  transition: color 250ms ease;
+  -webkit-transition: color 150ms ease;
+  -moz-transition: color 150ms ease;
+  transition: color 150ms ease;
 }
 
 .search-result-div h3:hover {
-  text-decoration: underline; 
+  color: #ff6b01;
 }
 
 .search-result-description {
@@ -3651,6 +3743,25 @@ modal-open {
 .modal-button:hover, 
 .modal-button-inner:hover {
   background-color: #ff6b01;
+}
+
+/* ====================================================
+   Up Arrow
+   ==================================================== */
+.uparrow{
+  width: 90px;
+  height: 90px;
+  opacity: 0.3;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  text-indent: -9999px;
+  background: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/goatbody1.svg') no-repeat;
+}
+
+.uparrow:hover{
+  opacity:0.6;
 }
 
 /* =============================
