@@ -1,7 +1,7 @@
 <nav class="sub-nav">
   <ol class="breadcrumbs">
     <li><a href="/hc/en-us">Exago Help Center</a></li>
-    <li><a href="/hc/en-us/requests">My Tickets</a></li>
+    <li><a href="/hc/en-us/requests">My Requests</a></li>
     <li>{{request.subject}}</li>
   </ol>
 </nav>
@@ -11,7 +11,7 @@
     <section class="main-column wide-column accordion-column">
       <div id="request-accordion">
         <a href="#ticket-detailed-info" data-toggle="collapse">
-          <h4 class="panel-title">Click here to view detailed information about this ticket</h4>
+          <h4 class="panel-title">Click here to view detailed information about this Request</h4>
         </a>
         <div id="ticket-detailed-info" class="collapse">
           <div class="accordion-inner-container">
@@ -28,7 +28,7 @@
                 <span>{{group.name}}</span>
               </dd>
               {{/if}}-->
-              <dt>Ticket Status</dt>
+              <dt>Request Status</dt>
               <dd>
                 <span class="request-status request-{{request.status}}" title="{{request.status_description}}">
                 {{request.status_name}}
@@ -88,7 +88,7 @@
     <section class="main-column wide-column">
       {{satisfaction}}
       <h1>
-        <span class="request-id">Ticket #{{request.id}}</span>
+        <span class="request-id">Request #{{request.id}}</span>
         {{request.subject}}
       </h1>
       <br>
@@ -119,7 +119,7 @@
       {{pagination}}
       {{#is request.status 'solved'}}
       <div class="request-follow-up">
-        <a href="/hc/en-us/requests/new?parent_id={{request.id}}">This ticket has been closed. Click here to submit a follow-up.</a>
+        <a href="/hc/en-us/requests/new?parent_id={{request.id}}">This request has been closed. Click here to submit a follow-up.</a>
       </div>
       {{/is}}
       {{#form 'comment' class='comment-form'}}
