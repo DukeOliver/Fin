@@ -703,6 +703,8 @@ button img, [role=button] img {
   margin: 10px;
   padding: 40px;
   border: 1px solid lightgray;
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 }
 
 .twitter-header {
@@ -946,7 +948,9 @@ form.search::before { /* adds blank content into form */
 }
 
 .search-container
-.search input[type=search] {
+.search input[type=search],
+.search-container
+#query {
   width: 80%;
   padding: 8px 12px;
   background-color: #fdfdfd;
