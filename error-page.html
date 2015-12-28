@@ -62,6 +62,7 @@ window.addEventListener( 'DOMContentLoaded', init, false);
 </script>
 
 <!-- let it snow! -->
+<!--[if gte IE 10]>-->
 <script src="{{asset 'snowstorm-min.js'}}"></script>
 <script>
   snowStorm.snowColor = 'orange';
@@ -74,4 +75,5 @@ window.addEventListener( 'DOMContentLoaded', init, false);
   snowStorm.vMaxY = 10;
   snowStorm.targetElement = 'searchsnow';
 </script>
+<!--<![endif]-->
 </div> <!--<div class="site-container"> is on header page-->
