@@ -2,8 +2,7 @@
  */
 
 $(document).ready(function() {
-    
-  
+ 
   //Up Arrow
   $(window).scroll(function(){  
     // if the user scrolled the page more than 200 pixels, show the 'up' arrow image
@@ -40,7 +39,10 @@ $(document).ready(function() {
   $("#query").attr('placeholder','Search Our Knowledge Base');
   
   // change text in request-list search bar
-  $('#quick-search').attr('placeholder','Search Tickets');
+  $('#quick-search').attr('placeholder','Search Requests');
+  
+  // change text in form's CC box
+  $('#request_collaborators_').attr('placeholder','Add Email Address');
 
   // toggle categories and sections on the home page
   $(".category-tree").on("click", "h2 a, h3 a", function() {
