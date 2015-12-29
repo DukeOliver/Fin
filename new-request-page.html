@@ -21,15 +21,28 @@
   </div>
 </div>
 
-<script>
-window.onload = function() {
-  window.scrollTo(0,0);
-};
-</script>
-
+<!-- append custom text to fields -->
 <script>
   $(".request_subject").append('<p style="color:red">This is a test message</p>');
-  
 </script>
+
+<!-- wrap div tags around certain elements for styling -->
+<script>
+$(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088").wrapAll('<div class="formfield-background clearfix"></div>');
+</script>
+
+<!--Auto-select 2015.1 as the default version in forms -->
+<script>
+window.onload = function() {
+  var versionSelect = document.getElementById("request_custom_fields_28135878");
+  
+  if (versionSelect !== null)
+  {
+  	var i = versionSelect.value = "ticket_version_2015.1";
+  	window.scrollTo(0,0);
+  }
+  }
+</script>
+
 
 </div> <!--<div class="site-container"> is on header page-->
