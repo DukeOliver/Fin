@@ -13,17 +13,31 @@
         {{#if article_results}}
           <ul class="search-results-list">
             {{#each article_results}}
+            <![if !IE]>
               <li class="search-result">
                 <a href="{{url}}" class="search-result-link">
                   <div class="search-result-div"><h3>{{title}}</h3>
-                    <!-- author is invisible to end-users -->
+                    
                     <div class="search-result-meta">{{meta}}</div>
                     <p class="search-result-description">{{text}}</p>
                   </div>
                 </a>
               </li>
+            <![endif]>
+            <!--[if IE]>
+            <li class="search-result">
+              <div class="search-result-div">
+                <h3>
+                  <a href="{{url}}" class="search-result-link">
+                  {{title}}
+                  </a>
+                </h3>
+                <p class="search-result-description">{{text}}</p>
+              </div>
+            </li>
+            <![endif]-->
             {{/each}}
-          </ul>
+        </ul>
         {{else}}
           <p>
             {{t 'no_results' query=query}}
