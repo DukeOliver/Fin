@@ -21,28 +21,74 @@
   </div>
 </div>
 
-<!-- append custom text to fields -->
-<script>
-  $(".request_subject").append('<p style="color:red">This is a test message</p>');
-</script>
-
 <!-- wrap div tags around certain elements for styling -->
 <script>
-$(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088").wrapAll('<div class="formfield-background clearfix"></div>');
+  //build and version
+  $(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088").wrapAll('<div class="version-build-bg clearfix"></div>');
 </script>
 
 <!--Auto-select 2015.1 as the default version in forms -->
 <script>
-window.onload = function() {
-  var versionSelect = document.getElementById("request_custom_fields_28135878");
-  
-  if (versionSelect !== null)
-  {
-  	var i = versionSelect.value = "ticket_version_2015.1";
-  	window.scrollTo(0,0);
-  }
+  window.onload = function() {
+    var versionSelect = document.getElementById("request_custom_fields_28135878");
+    if (versionSelect !== null)
+    {
+      var i = versionSelect.value = "ticket_version_2015.1";
+      window.scrollTo(0,0);
+    }
   }
 </script>
 
+<!-- remove CC from 'report site issue' -->
+<script>
+  $(document).ready(function () {
+    if(window.location.href.indexOf("211898") > -1) 
+    {
+      $(".request_cc_emails").css("display", "none");
+    }
+  });
+</script>
+
+<!-- Custom descriptions for input fields -->
+<script>
+  $(document).ready(function () {
+   //these messages apply across every form
+   $(".request_cc_emails").append('<p class="cc-desc">Send a copy of this request to others within your organization.</p>');
+  $(".version-build-bg").before('<label class="version-build-bg-title">Your Exago Environment</label>');
+      $(".version-build-bg").after('<p class="version-build-bg-desc">To determine your version of Exago, press CTRL-SHIFT-V in an open window of the application.</p>');
+    $("#new_request > footer").after('<p class="form-required-fields">fields marked <span>*</span> are required</p>');
+  
+    //these messages only apply on certain forms
+    if(window.location.href.indexOf("211898") > -1) {
+      //report a site issue
+      $(".request_subject").append('<p style="color:purple">Report a site issue test text</p>');
+  
+      //ask a question
+      } else if(window.location.href.indexOf("201388") > -1) { 
+      
+      //request a feature
+      } else if(window.location.href.indexOf("129427") > -1) { 
+
+      //report an issue
+      } else if(window.location.href.indexOf("209608") > -1) { 
+  $(".request_custom_fields_29534178").append('<p><strong>Note:</strong> Exago uses generic error messages to hide the full stack trace from end users. This stack trace can be found within the log file. Please note that If you\'re using Remote Execution or the error is related to scheduled reports, the log file will be located in the Scheduler install directory. Otherwise, the log file can be found in the temp directory of the Exago install directory. For more troubleshooting information, see the <a class="form-desc-link" href="/hc/en-us/articles/215759157">Troubleshooting article</a>.</p>');
+    }
+  });
+</script>
+
+<!-- disables form textboxes for ie8 -->
+<!--[if IE 8]>
+<script>
+  $(document).ready(function () {
+    $(".request_cc_emails").prepend('<div style="text-align:center;font-size:16px;color:red">NOTICE: This form does not work for Internet Explorer 8.<br>Please upgrade your browser or contact your administrator.</div>');
+
+    var form = document.getElementById("new_request");
+    var elements = form.elements;
+    for (var i = 0, len = elements.length; i < len; ++i) {
+      elements[i].readOnly = true;
+    }
+  });
+</script>
+<![endif]-->
 
 </div> <!--<div class="site-container"> is on header page-->
