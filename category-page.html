@@ -13,8 +13,8 @@
         <p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p>
         <ul>
           <li><a href="/hc/en-us/articles/214947178" class="guide-dl-btn install-btn build-btn-1" style="font-weight:600">Exago v2015.1</a></li>
-          <li><a href="#" class="guide-dl-btn install-btn build-btn-2">Exago v2014.1</a></li>
-          <li><a href="#" class="guide-dl-btn install-btn build-btn-3">Exago v2013.2</a></li>
+          <li><a href="/hc/en-us/articles/216071347" class="guide-dl-btn install-btn build-btn-2">Exago v2014.1</a></li>
+          <li><a href="/hc/en-us/articles/215425688" class="guide-dl-btn install-btn build-btn-3">Exago v2013.2</a></li>
         </ul>
       </section>
       <section class="downloads-section half-downloads">
@@ -36,31 +36,31 @@
         </ul>
       </section>
       <section class="downloads-section half-downloads">
-        <h3>Evaluations</h3>
+        <h3>Category</h3>
         <ul>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Setup Application</a></li>
-          <li><a href="#" class="guide-dl-btn doc-btn">Some Thingy Thang</a></li>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Another Thingy for People</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">Entry</a></li>
+          <li><a href="#" class="guide-dl-btn doc-btn">Entry</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">Entry</a></li>
         </ul>
       </section>
       <section class="downloads-section half-downloads">
-        <h3>Special</h3>
+        <h3>Category</h3>
         <ul>
           <li><a href="#" class="guide-dl-btn doc-btn">Custom Template</a></li>
           <li><a href="#" class="guide-dl-btn doc-btn">Sunset Funset Theme</a></li>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Dianetics</a></li>
+          <li><a href="#" class="guide-dl-btn pdf-btn">Other Item</a></li>
         </ul>
       </section>
     </section>
     <div id="sidebar">
       <section class="side-column article-side-column">
         <h3>Download Information</h3>
-        <p>This is a description about what happens when you click each download link, something something it happens automatically. If it doesn't prompt you for a location, blah blah do this other thing instead. Some more information about downloads, I need fluff. Below are some steps for something.<p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus volutpat lacus dignissim finibus. Ut in imperdiet tortor, quis condimentum ligula. Pellentesque sodales id erat quis fermentum. Ut elementum est nec mi maximus, et molestie dolor ullamcorper. Quisque blandit in nisl non volutpat. Phasellus aliquet sem lacus. Aenean ut tincidunt velit. Mauris id augue lacinia lacus molestie pharetra. Morbi facilisis a felis eget mattis.<p>
         <br>
         <ol>
-          <li>Did you brush your teeth this morning? Very well, you may have ... but did you remember to floss? I guess you better go back home then.</li><br>
-          <li>Maybe I need another list item, to explain whatever I'm talking about. How is it not even snowing outside?</li><br>
-          <li>Click here to submit a request if you're having issues with linear gradients, as there isn't a support group for something like that.</li><br>
+          <li>Maecenas in efficitur metus, et mollis nunc. Donec vulputate sapien convallis, tempus tortor sit amet, accumsan nisi. Pellentesque id viverra quam, non rutrum erat.</li><br>
+          <li>Sed ac purus ac lectus pulvinar placerat. Quisque leo ligula, maximus et ipsum sit amet, mollis sollicitudin arcu. Integer ac nunc neque.</li><br>
+          <li>Praesent accumsan in turpis eget pharetra. Sed dapibus vehicula metus, vel volutpat ligula ornare ut.</li><br>
         </ol>
       </section>
     </div>
@@ -71,7 +71,7 @@
       {{#if category.sections}}
         <div class="section-tree">
           {{#each sections}}
-            <section class="section">
+            <section class="category-sections">
               <h3>
                 {{#if internal}}
                   <span class="visibility-internal" data-title="32">
@@ -127,5 +127,18 @@
     {{/is}}
   </div>
 </div>
+
+<!--remove border from category sections along the bottom -->
+<script>
+window.onload = function() {
+  var boxes = document.getElementsByClassName('category-sections').length;
+    if (boxes % 2 == 0) {
+      $('.category-sections:nth-last-child(-n+2)').css('border-bottom', '0')
+    } else {
+      $('.category-sections:last-child').css('border-bottom', '0')
+  }
+  }
+</script>
+
 
 </div> <!--<div class="site-container"> is on header page-->
