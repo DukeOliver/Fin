@@ -1,78 +1,28 @@
-<div class="error">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Fzqnknxxj98?autoplay=1" frameborder="0" allowfullscreen></iframe>
+<nav class="sub-nav">
+  <ol class="breadcrumbs">
+    <li><a href="/hc/en-us">Exago Help Center</a></li>
+    <li>Error Page</li>
+  </ol>
+</nav>
+
+<div class="column-container clearfix">
+  <section class="main-column wide-column">
+    <p style="text-align:center"><span style="font-size: 24px">Error 404</span><br><br>You may have clicked a broken link!<br><a href="/hc/en-us">Return to the Home Page</a> or <a href="#">contact the site administrator</a></p>
+  </section>
 </div>
-<div class="error clearfix">
-  <h1 id="groovy">ERROR 404</h1>
-</div>
-
-<script>
-var colorTime = 0,
-    waveTheta = 0,
-    maxCount = 100,
-    colorIncrement = -10,
-    waveIncrement = 0.1,
-    xPos = [ -2, -1, 0, 1, 2 ],
-    yPos = [ -2, -1, 0, 1, 2 ],
-    props = {};
-
-var getTextShadow = function( x, y, hue ) {
-  return ', ' + x + 'px ' + y + 'px hsl(' + hue + ', 100%, 50%)';
-};
-
-var animate = function() {
-  var shadows = '0 0 transparent',
-      hue0 = colorTime % 360,
-      i, j, x, y,
-      iLen = xPos.length, 
-      jLen = yPos.length;
-
-  // outline
-  for ( i = 0; i < iLen; i++ ) {
-    x = xPos[i];
-    for ( j = 0; j < jLen; j++ ) {
-      y = yPos[j];
-      shadows += getTextShadow( x, y, hue0 );
-    }
-  }
-
-  // renders rainbow river
-  for ( i = 1; i < maxCount; i++ ) {
-    var normI = i / maxCount,
-        hue = ( normI * 360 * 2 + colorTime ) % 360;
-    x = ~~( ( Math.sin( normI * Math.PI * 2 + waveTheta ) - Math.sin( waveTheta ) )  * 50 );
-    y = i * 3;
-    shadows += getTextShadow( x, y, hue );
-  }
-
-  props.groovy.style.textShadow = shadows;
-  colorTime += colorIncrement;
-  waveTheta += waveIncrement;
-  setTimeout( animate, 30 );
-};
-
-var init = function() {
-
-  props.groovy = document.getElementById('groovy');
-
-  setTimeout( animate, 1 );
-
-};
-
-window.addEventListener( 'DOMContentLoaded', init, false);
-</script>
 
 <!-- let it snow! -->
 <!--[if gte IE 10]>-->
 <script src="{{asset 'snowstorm-min.js'}}"></script>
 <script>
-  snowStorm.snowColor = 'orange';
-  snowStorm.snowStick = false;
-  snowStorm.flakesMaxActive = 250;
-  snowStorm.flakesMax = 250;
+ snowStorm.snowColor = 'rgba(255, 255, 255, 0.6)';
+  snowStorm.snowStick = true;
+  snowStorm.flakesMaxActive = 44;
+  snowStorm.flakesMax = 100;
   snowStorm.freezeOnBlur = true;
   snowStorm.flakeBottom = 251;
   snowStorm.vMaxX = 1.5;
-  snowStorm.vMaxY = 10;
+  snowStorm.vMaxY = 1.2;
   snowStorm.targetElement = 'searchsnow';
 </script>
 <!--<![endif]-->
