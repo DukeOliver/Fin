@@ -2,11 +2,19 @@
  */
 
 $(document).ready(function() {
- 
+  
+  //Hidden 'report a site issue' in ticket form
+  //remove the options from the dropdown selector
+  $('#request_issue_type_select option[value="211898"]').remove();
+  //remove the options from the nesty-input after it's been created. 
+  $('.nesty-panel').on('DOMNodeInserted', function(e){
+    $(this).children('ul').children().remove('#211898');
+  });
+  
   //Up Arrow
   $(window).scroll(function(){  
-    // if the user scrolled the page more than 200 pixels, show the 'up' arrow image
-    if ($(this).scrollTop() > 200) {
+    // if the user scrolled the page more than 1000 pixels, show the 'up' arrow image
+    if ($(this).scrollTop() > 1000) {
       $('.uparrow').fadeIn();
     }
     // hide the 'up' arrow image
@@ -21,7 +29,7 @@ $(document).ready(function() {
     $("html, body").animate({ scrollTop: 0}, 1000);
     return false;
   });
-
+  
     // Show div html based on role
     if (HelpCenter.user.role=="anonymous"){
       $("div.anonymous").show();
@@ -42,7 +50,7 @@ $(document).ready(function() {
   $('#quick-search').attr('placeholder','Search Requests');
   
   // change text in form's CC box
-  $('#request_collaborators_').attr('placeholder','Add Email Address');
+  $('#request_collaborators_').attr('placeholder','Add email address');
 
   // toggle categories and sections on the home page
   $(".category-tree").on("click", "h2 a, h3 a", function() {
