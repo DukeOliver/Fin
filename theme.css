@@ -513,9 +513,10 @@ button img, [role=button] img {
    Header, Navigation, Content Frame
    ==================================================== */
 .header-inner {
-  width: 75%;
   max-width: 1200px;
-  margin: 0 auto; /* centers the header */
+  min-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header {
@@ -699,11 +700,16 @@ button img, [role=button] img {
   float: right;
 }
 
-.inner-ticket-container {
+.border1 {
   margin: 10px;
+  padding: 0;
+  border: 1px solid lightgray;
+}
+
+.border2 {
+  margin: 5px;
   padding: 40px;
   border: 1px solid lightgray;
-  position: relative;
 }
 
 .twitter-header {
@@ -932,9 +938,10 @@ display: none;
 }
 
 .search-container {
-  width: 80%;
-  max-width: 1100px;
-  margin: 0 auto; /* centers the search container */
+  max-width: 1150px;
+  min-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 form.search::before { /* adds blank content into form */
@@ -1004,7 +1011,7 @@ form.search::before { /* adds blank content into form */
 
 .ticket-button-container {
   padding: 0 120px; /* pushes container in from both sides */
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto; /* centers the buttons */
   margin-top: 24px; /* pushes buttons down from search bar */
 }
@@ -1367,7 +1374,7 @@ form.search::before { /* adds blank content into form */
 }
 
 .downloads-section:not(:nth-child(n+6)) {
-  border-bottom: 1px dotted lightgray;
+  /*border-bottom: 1px dotted lightgray;*/
   margin-bottom: 20px;
 }
 
@@ -2137,7 +2144,7 @@ label[for=request_ticket_form_id] {
 }
 
 .new-request .upload-dropzone {
-  width: 690px;
+  width: 685px;
   float: left;
 }
 
@@ -2338,7 +2345,8 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29511787,
 .request_custom_fields_29511867,
 .request_custom_fields_29563478,
-.request_custom_fields_29563088 {
+.request_custom_fields_29563088,
+.request_custom_fields_29645988 {
   margin: 20px 40px 20px 0 !important;
   border-left: 1px solid #9E9E9E;
   padding-left: 40px;
@@ -2350,7 +2358,8 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29511787,
 .request_custom_fields_29511867,
 .request_custom_fields_29563478,
-.request_custom_fields_29563088 {
+.request_custom_fields_29563088,
+.request_custom_fields_29645988 {
   display: inline-block;
   width: 40%;
   text-align: center;
@@ -2387,26 +2396,72 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29534178,
 .request_custom_fields_29512527,
 .request_custom_fields_29575477,
+.request_custom_fields_29660197,
+.request_custom_fields_29561668,
+.request_custom_fields_29561748,
+.request_custom_fields_29561928,
 .request_custom_fields_29612928, 
 .request_custom_fields_29612938,
 .request_custom_fields_29626807,
 .request_custom_fields_29612948,
 .request_custom_fields_29612958,
 .request_custom_fields_29512747,
-.request_custom_fields_29512797 {
+.request_custom_fields_29612618,
+.request_custom_fields_29612628,
+.request_custom_fields_29626727,
+.request_custom_fields_29626887,
+.request_custom_fields_29512797,
+.request_custom_fields_29513047,
+.request_custom_fields_29503008 {
   margin-left: 10px;
   padding-left: 20px;
+  padding-top: 0;
   margin-top: 0 !important;
-  border-left: 5px solid silver;
-}
-
-.request_custom_fields_29575477 {
-  width: 20%;
+  border-left: 5px solid #DBDBDB;
 }
 
 .request_custom_fields_29512747,
-.request_custom_fields_29512797 {
+.request_custom_fields_29612628,
+.request_custom_fields_29626727,
+.request_custom_fields_29626887 {
+  padding-top: 15px;  
+}
+
+.request_custom_fields_29575477 > a,
+.request_custom_fields_29561668 > a,
+.request_custom_fields_29561748 > a,
+.request_custom_fields_29561928 > a{
+  width: 20%;
+}
+
+.request_custom_fields_29512747 > a,
+.request_custom_fields_29612618 > a,
+.request_custom_fields_29612628 > a,
+.request_custom_fields_29626727 > a,
+.request_custom_fields_29626887 > a,
+.request_custom_fields_29512797 > a,
+.request_custom_fields_29513047 > a,
+.request_custom_fields_29626557 > a {
   width: 30%; 
+}
+
+.request_custom_fields_29575477 label,
+.request_custom_fields_29561668 label,
+.request_custom_fields_29660197 label {
+  font-size: 13px !important;
+  color: #A5A5A5;
+}
+
+.request_custom_fields_29561668,
+.request_custom_fields_29660197 {
+  padding-top: 2px; 
+}
+
+/*'what type of issue is this'*/
+.request_custom_fields_29502458 {
+  background-color: #dddddd;
+  padding: 20px;
+  text-align: center;
 }
 
 /*'what type of issue is this / report design/execution checkboxes*/
@@ -2415,18 +2470,36 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29581548,
 .request_custom_fields_29503158,
 .request_custom_fields_29512817 {
+  font-size: 13px;
+  text-align: center;
+  color: #939393;
   display: inline-block;
+  padding-top: 0;
   margin: 0 10px;
   margin-top: 0 !important;
-  padding-top: 5px;
 }
 
-.request_custom_fields_29503008 {
-  margin-left: 10px;
+
+
+/*'report an issue' form misc hidden conditional fields, 2nd indent*/
+.request_custom_fields_29626557,
+.request_custom_fields_29612968,
+.request_custom_fields_29612978,
+.request_custom_fields_29612988,
+.request_custom_fields_29612918,
+.request_custom_fields_29675247 {
+  margin-left: 45px;
   padding-left: 20px;
-  border-left: 5px solid silver;
+  margin-bottom: 10px;
+  margin-top: 0!important;
+  border-left: 3px solid #ECECEC;
 }
 
+/* 'what type of issue is this' descriptions */
+.type-of-issue-desc > p {
+  padding: 10px 10px 10px 0;
+  font-size: 16px;
+}
 
 /*'fields with asterisk are required' message*/
 .form-required-fields {
@@ -3877,15 +3950,15 @@ modal-open {
    Up Arrow
    ==================================================== */
 .uparrow{
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   opacity: 0.3;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 50px;
+  right: 50px;
   display: none;
   text-indent: -9999px;
-  background: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/goatbody1.svg') no-repeat;
+  background: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/up-arrows15.svg') no-repeat;
 }
 
 .uparrow:hover{
@@ -3895,68 +3968,4 @@ modal-open {
 /* =============================
    Media Queries
    ============================= */
-@media screen and (max-width: 730px) {
-
-  .site-container {
-    min-width: 700px;
-  }
-
-  .search-container {
-    width: 90%;
-  }
-  
-  .ticket-button-column {
-    width: 100%;
-    float: none;
-    margin-bottom: 10px;
-  }
-
-  .small-button-container {
-    margin-top: 70px;
-  }
-
-  .ticket-button {
-    width: 100%;
-  }
-
-  .button-text {
-    display: none;
-  }
-
-  .search-container
-  .search
-  input[type=search] {
-    width: 70%;
-  }
-
-  .search-container
-  .search
-  input[type=submit] {
-    width: 30%;
-  }
- 
-  .header {
-    min-width: 490px;
-  }
-
-  .header-inner {
-    width: 95%;
-  }
-
-  .nav-link > a {
-    padding-left: 10px;
-    padding-right: 5px;
-  }
-
-  .user-info > [role=button] {
-    padding-left: 10px;
-  }
-
-  .knowledge-base {
-    width: 100%;
-  }
-  
-  .ticket-button-container {
-    margin-top: 68px; 
-  }
-}
+/*coming soon!*/
