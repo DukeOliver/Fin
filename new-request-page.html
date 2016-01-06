@@ -7,14 +7,16 @@
 <div class="main-requests new-request clearfix">
   <div class="column-container">
     <section class="main-column wide-column">
-      <div class="inner-ticket-container">
-        <h1>Submit a Request{{#if parent}}
-          <span class="follow-up-hint">
-            {{follow_up}}
-          </span>
-          {{/if}}</h1>
-        <div class="form submit-ticket-dropzone">
-          {{request_form}}
+      <div class="border1">
+        <div class="border2">
+          <h1>Submit a Request{{#if parent}}
+            <span class="follow-up-hint">
+              {{follow_up}}
+            </span>
+            {{/if}}</h1>
+          <div class="form submit-ticket-dropzone">
+            {{request_form}}
+          </div>
         </div>
       </div>
     </section>
@@ -24,7 +26,7 @@
 <!-- wrap div tags around certain elements for styling -->
 <script>
   //build and version
-  $(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088").wrapAll('<div class="version-build-bg clearfix"></div>');
+  $(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088, .request_custom_fields_29645988").wrapAll('<div class="version-build-bg clearfix"></div>');
 </script>
 
 <!--Auto-select 2015.1 as the default version in forms -->
@@ -61,7 +63,7 @@
     //these messages only apply on certain forms
     if(window.location.href.indexOf("211898") > -1) {
       //report a site issue
-      $(".request_subject").append('<p style="color:purple">Report a site issue test text</p>');
+      $(".version-build-bg").prepend('<p style="color:#d21818;text-align:center">These fields are required by our system, but do not matter for this particular form.<br>Feel free to enter any value.</p>');
   
       //ask a question
       } else if(window.location.href.indexOf("201388") > -1) { 
@@ -71,16 +73,22 @@
 
       //report an issue
       } else if(window.location.href.indexOf("209608") > -1) { 
-  $(".request_custom_fields_29534178").append('<p><strong>Note:</strong> Exago uses generic error messages to hide the full stack trace from end users. This stack trace can be found within the log file. Please note that If you\'re using Remote Execution or the error is related to scheduled reports, the log file will be located in the Scheduler install directory. Otherwise, the log file can be found in the temp directory of the Exago install directory. For more troubleshooting information, see the <a class="form-desc-link" href="/hc/en-us/articles/215759157">Troubleshooting article</a>.</p>');
-    }
-  });
+  $(".request_custom_fields_29534178").append('<p><strong>Note:</strong> Exago uses generic error messages to hide the full stack trace from end users. This stack trace can be found within the log file. Please note that If you\'re using Remote Execution or the error is related to scheduled reports, the log file will be located in the Scheduler install directory. Otherwise, the log file can be found in the temp directory of the Exago install directory. For more troubleshooting information, see the <a class="form-desc-link" href="/hc/en-us/articles/215759157">Troubleshooting article</a>. If you do not have access to the log file, please contact your administrator.</p>');
+   $(".request_custom_fields_29606897>label").append('<p style="display:inline-block">If you are not certain of whether changes have been made, please contact your administrator.</p>');
+  $(".request_custom_fields_29575477").prepend('<p style="font-size:14px;color:#202020;padding-bottom:5px">What version and build were you running prior to updating?</p>');
+  $(".request_custom_fields_29512797").prepend('<div class="type-of-issue-desc"><p>Issues relating to the structure of reports, report output, and execution.</p></div>');
+  $(".request_custom_fields_29612618").prepend('<div class="type-of-issue-desc"><p>Front-end issues relating to menus, buttons, customization, and other visual components of Exago.</p></div>');
+  $(".request_custom_fields_29513047").prepend('<div class="type-of-issue-desc"><p>Back-end features and settings, including the Administration Console, API-related issues, and integration.</p></div>');
+  $(".request_custom_fields_29512797").append('<label style="margin:0;padding:15px 0 2px;">Please select which forms are affected:</label>');
+  }
+  }); 
 </script>
 
 <!-- disables form textboxes for ie8 -->
 <!--[if IE 8]>
 <script>
   $(document).ready(function () {
-    $(".request_cc_emails").prepend('<div style="text-align:center;font-size:16px;color:red">NOTICE: This form does not work for Internet Explorer 8.<br>Please upgrade your browser or contact your administrator.</div>');
+    $(".request_cc_emails").prepend('<div style="text-align:center;font-size:16px;color:red">NOTICE: This form does not work for Internet Explorer 8.<br>Please <a href="http://www.whatbrowser.org/intl/en/" style="color:blue;text-decoration:underline">upgrade your browser</a> or contact your administrator.</div>');
 
     var form = document.getElementById("new_request");
     var elements = form.elements;
