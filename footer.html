@@ -12,7 +12,11 @@
       <li><a href="http://exagoinc.com/">Exago, Inc.</a></li>
       <li><a href="http://exagoinc.com/privacy.html">Terms of Use</a></li>
       <li><a href="http://exagoinc.com/privacy.html">Privacy Policy</a></li>
+      {{#if signed_in}}
       <li><a href="/hc/en-us/requests/new?ticket_form_id=211898">Report Site Issue</a></li>
+      {{else}}
+      <li><a href="mailto:dkisch@exagoinc.com">Report Site Issue</a></li>
+      {{/if}}
     </ul>
   </nav>
 </footer>
