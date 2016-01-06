@@ -8,6 +8,7 @@
     <section class="main-column downloads-title">
       <h1>Downloads</h1>
       <p class="downloads-description">Listed below are the files your account has been granted access to</p>
+      {{#if signed_in}}
       <section class="downloads-section wide-downloads app-downloads">
         <h3>Application Installers</h3>
         <p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p>
@@ -17,50 +18,35 @@
           <li><a href="/hc/en-us/articles/215425688" class="guide-dl-btn install-btn build-btn-3">Exago v2013.2</a></li>
         </ul>
       </section>
+      {{else}}
+      {{/if}}
       <section class="downloads-section half-downloads">
         <h3>v2015.1 Guides</h3>
         <p>Our most-recent manuals</p>
         <ul>
-          <li><a href="#" class="guide-dl-btn pdf-btn">User Guide</a></li>
-          <li><a href="#" class="guide-dl-btn doc-btn">User Guide</a></li>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
+          <li><a href="/hc/en-us/article_attachments/204757178/Exago_User_Guide_2015.1.pdf" class="guide-dl-btn pdf-btn">User Guide</a></li>
+          <li><a href="/hc/en-us/article_attachments/204775247/Exago_User_Guide_2015.1.doc" class="guide-dl-btn doc-btn">User Guide</a></li>
+          <li><a href="/hc/en-us/article_attachments/204757158/Exago_Technical_Guide_2015.1.pdf" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
         </ul>
       </section>
       <section class="downloads-section half-downloads">
         <h3>v2014.1 Guides</h3>
         <p>Older manuals for legacy users</p>
         <ul>
-          <li><a href="#" class="guide-dl-btn pdf-btn">User Guide</a></li>
-          <li><a href="#" class="guide-dl-btn doc-btn">User Guide</a></li>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
+          <li><a href="/hc/en-us/article_attachments/204775217/Exago_User_Guide_2014.1.pdf" class="guide-dl-btn pdf-btn">User Guide</a></li>
+          <li><a href="/hc/en-us/article_attachments/204775237/Exago_User_Guide_2014.1.doc" class="guide-dl-btn doc-btn">User Guide</a></li>
+          <li><a href="/hc/en-us/article_attachments/204775227/Exago_Technical_Guide_2014.1.pdf" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
         </ul>
       </section>
-      <section class="downloads-section half-downloads">
-        <h3>Category</h3>
-        <ul>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Entry</a></li>
-          <li><a href="#" class="guide-dl-btn doc-btn">Entry</a></li>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Entry</a></li>
-        </ul>
-      </section>
-      <section class="downloads-section half-downloads">
-        <h3>Category</h3>
-        <ul>
-          <li><a href="#" class="guide-dl-btn doc-btn">Custom Template</a></li>
-          <li><a href="#" class="guide-dl-btn doc-btn">Sunset Funset Theme</a></li>
-          <li><a href="#" class="guide-dl-btn pdf-btn">Other Item</a></li>
-        </ul>
-      </section>
+      <div class="manager agent"><span class="visibility-internal" data-title="hidden link to source of file downloads"><a href="/hc/en-us/sections/203678918"><img src="{{asset 'goatbody1.svg'}}" width="20"></a></span></div>
     </section>
     <div id="sidebar">
       <section class="side-column article-side-column">
         <h3>Download Information</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus volutpat lacus dignissim finibus. Ut in imperdiet tortor, quis condimentum ligula. Pellentesque sodales id erat quis fermentum. Ut elementum est nec mi maximus, et molestie dolor ullamcorper. Quisque blandit in nisl non volutpat. Phasellus aliquet sem lacus. Aenean ut tincidunt velit. Mauris id augue lacinia lacus molestie pharetra. Morbi facilisis a felis eget mattis.<p>
+        <p>Included on this page are files we offer to our users. Upon click, the download should begin automatically. If not, your browser will prompt you for a download location.<p>
         <br>
         <ol>
-          <li>Maecenas in efficitur metus, et mollis nunc. Donec vulputate sapien convallis, tempus tortor sit amet, accumsan nisi. Pellentesque id viverra quam, non rutrum erat.</li><br>
-          <li>Sed ac purus ac lectus pulvinar placerat. Quisque leo ligula, maximus et ipsum sit amet, mollis sollicitudin arcu. Integer ac nunc neque.</li><br>
-          <li>Praesent accumsan in turpis eget pharetra. Sed dapibus vehicula metus, vel volutpat ligula ornare ut.</li><br>
+          <li>PDF and DOC files are free to be distributed amongst your team. Every major release will receive a new version of the guide, so be sure to update your own guides when your systems administrator updates Exago.</li><br>
         </ol>
       </section>
     </div>
@@ -74,8 +60,8 @@
             <section class="category-sections">
               <h3>
                 {{#if internal}}
-                  <span class="visibility-internal" data-title="32">
-                    <img src="//p5.zdassets.com/hc/theme_assets/806071/200153628/goatbody1.svg" width="20">
+                  <span class="visibility-internal" data-title="hidden category">
+                    <img src="{{asset 'goatbody1.svg'}}" width="20">
                     
                   </span>
                 {{/if}}
