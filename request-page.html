@@ -135,9 +135,14 @@
         <div class="request-page-submit-button">
           {{input type='submit'}}
         </div>
+        <div class="comment-form-controls clearfix">
+          <div class="comment-mark-as-solved">
+            {{checkbox 'mark_as_solved'}}
+            {{label 'mark_as_solved'}}
+          </div>
+        </div>
       </div>
       {{/form}}
-      {{chat_about_my_ticket}}
     </section>
   </div>
 </div>
