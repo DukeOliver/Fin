@@ -9,11 +9,12 @@
     <section class="main-column wide-column">
       <div class="border1">
         <div class="border2">
-          <h1>Submit a Request{{#if parent}}
+          <h1>Submit a Request</h1>
+          {{#if parent}}
             <span class="follow-up-hint">
               {{follow_up}}
             </span>
-            {{/if}}</h1>
+          {{/if}}
           <div class="form submit-ticket-dropzone">
             {{request_form}}
           </div>
@@ -79,8 +80,47 @@
   $(".request_custom_fields_29512797").prepend('<div class="type-of-issue-desc"><p>Issues relating to the structure of reports, report output, and execution.</p></div>');
   $(".request_custom_fields_29612618").prepend('<div class="type-of-issue-desc"><p>Front-end issues relating to menus, buttons, customization, and other visual components of Exago.</p></div>');
   $(".request_custom_fields_29513047").prepend('<div class="type-of-issue-desc"><p>Back-end features and settings, including the Administration Console, API-related issues, and integration.</p></div>');
-  $(".request_custom_fields_29512797").append('<label style="margin:0;padding:15px 0 2px;">Please select which forms are affected:</label>');
+  $(".request_custom_fields_29512797").append('<label style="margin:0;padding:15px 0 2px;">Please select all affected output types:</label>');
   }
+  
+  // This is a hack to get "Suggested articles" links in the New Request
+  // page to open in a new window/tab.  We poll the DOM at a regular interval
+  // to check for the existance of suggestion links that we haven't fixed yet.
+  // When we find such links, we set their target attribute to "_blank"
+  var addTargetToSuggestionLinks = function() {
+		var suggestionsDiv = document.querySelector("#new_request .searchbox-suggestions");
+  	if (suggestionsDiv === null)
+    {
+      setTimeout(addTargetToSuggestionLinks, 250);
+    	return;
+    }
+    
+    // Every time new suggestions are loaded, our marker element
+    // is cleared out so we know whether or not the targets
+    // of each suggestion link have already been added
+    if (document.getElementById("targets_added") !== null)
+    {
+      setTimeout(addTargetToSuggestionLinks, 250);
+      return;
+    }
+    
+    var targetsAddedMarker = document.createElement("div");
+    targetsAddedMarker.id = "targets_added";
+    targetsAddedMarker.style.display = "none";
+    suggestionsDiv.appendChild(targetsAddedMarker);
+    
+    var suggestionLinks = suggestionsDiv.querySelectorAll("a");
+  
+  	for (var i = 0; i < suggestionLinks.length; i++)
+    {
+      suggestionLinks[i].target = "_blank";
+    }
+    
+    setTimeout(addTargetToSuggestionLinks, 500);
+  };
+  
+  addTargetToSuggestionLinks();
+
   }); 
 </script>
 
