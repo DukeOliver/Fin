@@ -72,15 +72,6 @@
               </dd>
               {{/if}}
             </dl>
-            <div class="accordion-box">
-              <h3>Privacy Notice</h3>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus aliquet tristique. Donec finibus odio eu sollicitudin posuere. Donec id lectus et massa elementum venenatis eget vehicula purus. Duis scelerisque tincidunt tempor. Nullam ut ex sed mauris vehicula tempus. Sed dignissim orci ac ultricies lobortis. Integer faucibus, erat sed mollis lobortis, ligula diam ultricies erat, id dictum dui mauris at risus. Mauris quis metus nec elit porttitor pellentesque nec quis nisl.</p>
-              <p>Etiam ac metus nec ligula suscipit vulputate. Quisque cursus ipsum et felis tempus tempus. Suspendisse condimentum posuere varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie lorem augue, vel dictum mi luctus in. Nam luctus vehicula tellus, sed aliquam odio auctor ut. Curabitur elementum suscipit placerat. Sed tristique eros in egestas faucibus. Etiam porttitor magna id porttitor varius.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus aliquet tristique. Donec finibus odio eu sollicitudin posuere. Donec id lectus et massa elementum venenatis eget vehicula purus. Duis scelerisque tincidunt tempor. Nullam ut ex sed mauris vehicula tempus. Sed dignissim orci ac ultricies lobortis. Integer faucibus, erat sed mollis lobortis, ligula diam ultricies erat, id dictum dui mauris at risus. Mauris quis metus nec elit porttitor pellentesque nec quis nisl.</p>
-              <p>Etiam ac metus nec ligula suscipit vulputate. Quisque cursus ipsum et felis tempus tempus. Suspendisse condimentum posuere varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie lorem augue, vel dictum mi luctus in. Nam luctus vehicula tellus, sed aliquam odio auctor ut. Curabitur elementum suscipit placerat. Sed tristique eros in egestas faucibus. Etiam porttitor magna id porttitor varius.</p>
-
-            </div>
           </div>
         </div>
       </div>
@@ -117,8 +108,9 @@
         {{/each}}
       </ul>
       {{pagination}}
+
       {{#is request.status 'solved'}}
-      <div class="request-follow-up">
+      <div class="request-follow-up" style="display:none">
         <a href="/hc/en-us/requests/new?parent_id={{request.id}}">This request has been closed. Click here to submit a follow-up.</a>
       </div>
       {{/is}}
@@ -148,3 +140,18 @@
 </div>
 
 </div> <!--<div class="site-container"> is on header page-->
+
+<script>
+  // Only show the "submit a follow-up" button if the ticket
+  // is closed (ie. there is no comment field). This is a hack
+  // but Zendesk doesn't distinguish between "closed" and "solved"
+  // with the context available in Curlybars
+  if (document.querySelector(".comment-form") === null)
+  {
+  	var requestFollowupButton = document.querySelector(".request-follow-up");
+  	if (requestFollowupButton !== null)
+    {
+				requestFollowupButton.style.display = "block";
+    }
+  }
+</script>
