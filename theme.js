@@ -123,5 +123,20 @@ $(document).ready(function() {
   $("#request-organization select").on("change", function() {
     this.form.submit();
   });
-
+  
+  
+  // This is a hack to make sure the recent_articles side section
+  // on the articles page will not display if there are no recent 
+  // articles to show. Same for related_articles.
+  var recentArticlesSection = document.getElementById("recent_articles");
+  if (recentArticlesSection && recentArticlesSection.innerHTML.indexOf("<li>") === -1)
+  {
+  	recentArticlesSection.style.display = "none";
+  }
+  
+  var relatedArticlesSection = document.getElementById("related_articles");
+  if (relatedArticlesSection && relatedArticlesSection.innerHTML.indexOf("<li>") === -1)
+  {
+  	relatedArticlesSection.style.display = "none";
+  }
 });
