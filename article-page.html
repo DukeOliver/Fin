@@ -41,15 +41,13 @@
           building menu...
         </div>
       </section>
-      <section class="side-column article-side-column">
-        {{#is article.id 214947178}}
-        <p>test block for download page</p>
-        {{label}}
-        {{else}}
+      {{#is article.id 214947178}}
+      {{else}}
+      <section id="related_articles" class="side-column article-side-column">
         {{related_articles}}
-        {{/is}}
       </section>
-      <section class="side-column article-side-column">
+      {{/is}}
+      <section id="recent_articles" class="side-column article-side-column">
         {{recent_articles}}
       </section>
     </div>
