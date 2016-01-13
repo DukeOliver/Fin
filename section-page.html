@@ -46,4 +46,13 @@
   </div>
 </div>
 
+<!--custom text for 'Download Links' section -->
+<script>
+  if(window.location.href.indexOf("203678918") > -1) {
+  var dlUrl = "http://support.exagoinc.com/hc/en-us/categories/202053837";
+  var className = "hidden-dl-section-description";
+  $("p.section-description").html("<p>This is a storage page for our guide files.<br>If you found yourself here in error, <a class =' " + className + " ' href=' " + dlUrl + " '>click here to view the official downloads page.</a></p>");
+  }
+</script>
+
 </div> <!--<div class="site-container"> is on header page-->
