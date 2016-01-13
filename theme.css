@@ -499,19 +499,28 @@ button img, [role=button] img {
 
 /* Notification Banner */
 .notification-notice {
-  position: absolute;
+
+}
+
+.notification-alert {
+
 }
 
 .notification-error {
-  position: absolute;
   background: #e36a6a;
   border-color: #8f2e2e;
 }
 
+.notification-lock {
+
+}
+
 .notification {
-  margin-top: 220px;
+  top: 220px;
+  position: absolute;
   font-family: 'Open Sans', sans-serif;
 }
+
 
 /* ====================================================
    Header, Navigation, Content Frame
@@ -802,7 +811,7 @@ display: none;
   margin-top: 3px;
   padding-left: 10px;
   overflow: hidden;
-  transition: color 100ms ease;
+  transition: color 200ms ease;
 }
 
 .homepage-panel:hover .category-list-item > h3 {
@@ -885,7 +894,7 @@ display: none;
 }
 
 .upgrade-link {
-  color: #ff6b01;  
+  color: #eea978;  
 }
 
 .upgrade-link:hover {
@@ -897,7 +906,7 @@ display: none;
   width: 35px;
   height: 35px;
   vertical-align: middle;
-  transition: fill 100ms ease;
+  transition: fill 200ms ease;
 }
 
 /*.gears-icon {
@@ -924,7 +933,8 @@ display: none;
 .users-icon,
 .admin-icon,
 .howto-icon,
-.services-icon {
+.services-icon,
+.about-icon {
  fill: #494949;  
 }
 
@@ -1378,8 +1388,7 @@ form.search::before { /* adds blank content into form */
   text-align: center;
 }
 
-.downloads-section:not(:nth-child(n+6)) {
-  /*border-bottom: 1px dotted lightgray;*/
+.downloads-section:not(:nth-child(n+7)) {
   margin-bottom: 20px;
 }
 
@@ -1416,7 +1425,16 @@ form.search::before { /* adds blank content into form */
 }
 
 .dl-btn-container {
-  text-align: center; 
+  text-align: center;
+}
+
+.installer-btn-container {
+  text-align: center;
+  opacity: .5;
+}
+
+.eula-click {
+  opacity: 1; 
 }
 
 .dl-btn {
@@ -1448,7 +1466,7 @@ form.search::before { /* adds blank content into form */
   background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/windows7.svg');
 }
 
-.win-btn:hover {
+.win-btn:hover:enabled {
   background: #ddd; 
 }
 
@@ -1469,7 +1487,7 @@ form.search::before { /* adds blank content into form */
   background-image: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/linux.svg');
 }
 
-.linux-btn:hover {
+.linux-btn:hover:enabled {
   background: #ddd; 
 }
 
@@ -1550,6 +1568,21 @@ form.search::before { /* adds blank content into form */
   color: silver;
   background: #ffffff;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.build-btn-4:after {
+  content: "v.2015.1";
+  color: silver;
+  background: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.hidden-dl-section-description {
+  color: #ff6b01; 
+}
+
+.hidden-dl-section-description:hover {
+  text-decoration: underline;
 }
 
 
@@ -1767,10 +1800,6 @@ form.search::before { /* adds blank content into form */
 }
 
 /* Article styles */
-.print-button {
-  float: right; 
-}
-
 .article-title .visibility-internal-icon:before {
   width: auto;
   min-width: 13px;
@@ -1859,6 +1888,8 @@ form.search::before { /* adds blank content into form */
   color: black;
   font-size: 16px;
   line-height: 18px;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .article-side-column h3,
@@ -2068,6 +2099,11 @@ pre.prettyprint {
   border: 1px solid #d0d0d0 !important;
 }
 
+.eula-agreement-btn {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 /* ====================================================
    Requests
    ==================================================== */
@@ -2141,7 +2177,7 @@ label[for=request_ticket_form_id] {
 }
 
 .request-page-submit-button input[type=submit] {
-  padding: 14px 60px;
+  padding: 15px 60px;
   float: right;
   border: none;
   -webkit-transition: background-color 200ms ease;
@@ -2169,7 +2205,7 @@ label[for=request_ticket_form_id] {
 .new-request input[type=submit] {
   background-color: #4088CF;
   padding: 0; 
-  padding: 13.5px 59px;
+  padding: 14px 59px;
   -webit-transition: background-color 200ms ease;
   -moz-transition: background-color 200ms ease;
   transition: background-color 200ms ease;
@@ -2670,6 +2706,12 @@ body.community-enabled .search-results-column {
   color: #a9a9a9;
   font-weight: normal;
   font-style: italic;
+}
+
+.signature {
+  margin-top: 20px;
+  font-size: 11px;
+  color: silver; 
 }
 
 .comment-list {
