@@ -2,6 +2,13 @@
  */
 
 $(document).ready(function() {
+  //Application Installer EULA Tickbox
+  //If you click the EULA tickbox, "disabled" is removed from button, making it clickable
+  $( "#cbAccept" ).click(function() {
+    $( 'div.installer-btn-container' ).toggleClass( "eula-click" );
+    $('button#ExagoDownloadLinkWindows').prop('disabled', !$('div.installer-btn-container').hasClass("eula-click"));
+    $('button#ExagoDownloadLinkLinux').prop('disabled', !$('div.installer-btn-container').hasClass("eula-click"));
+  });
   
   //Hidden 'report a site issue' in ticket form
   //remove the options from the dropdown selector
