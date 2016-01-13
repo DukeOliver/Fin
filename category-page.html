@@ -8,18 +8,6 @@
     <section class="main-column downloads-title">
       <h1>Downloads</h1>
       <p class="downloads-description">Listed below are the files your account has been granted access to</p>
-      {{#if signed_in}}
-      <section class="downloads-section wide-downloads app-downloads">
-        <h3>Application Installers</h3>
-        <p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p>
-        <ul>
-          <li><a href="/hc/en-us/articles/214947178" class="guide-dl-btn install-btn build-btn-1" style="font-weight:600">Exago v2015.1</a></li>
-          <li><a href="/hc/en-us/articles/216071347" class="guide-dl-btn install-btn build-btn-2">Exago v2014.1</a></li>
-          <li><a href="/hc/en-us/articles/215425688" class="guide-dl-btn install-btn build-btn-3">Exago v2013.2</a></li>
-        </ul>
-      </section>
-      {{else}}
-      {{/if}}
       <section class="downloads-section half-downloads">
         <h3>v2015.1 Guides</h3>
         <p>Our most-recent manuals</p>
@@ -50,52 +38,52 @@
         </ol>
       </section>
     </div>
-      {{else}}
-      <section class="main-column category-column">
+    {{else}}
+    <section class="main-column category-column">
       <h1>{{category.name}}</h1>
       <p class="category-description">{{category.description}}</p>
       {{#if category.sections}}
-        <div class="section-tree">
-          {{#each sections}}
-            <section class="category-sections">
-              <h3>
-                {{#if internal}}
-                  <span class="visibility-internal" data-title="hidden category">
-                    <img src="{{asset 'goatbody1.svg'}}" width="20">
-                    
-                  </span>
-                {{/if}}
-                <a href="{{url}}">{{name}}</a>
-              </h3>
-              {{#if articles}}
-                <ul class="article-list">
-                  {{#each articles}}
-                    <li {{#if promoted}} class="article-promoted" {{/if}} >
-                      {{#if promoted}}
-                        <span data-title="{{t 'promoted'}}">★</span>
-                      {{/if}}
-                      <a href="{{url}}">{{title}}</a>
-                    </li>
-                  {{/each}}
-                </ul>
-                {{#if more_articles}}
-                  <a href="{{url}}" class="see-all-articles">
-                    {{t 'show_all_articles' count=article_count}}
-                  </a>
-                {{/if}}
-              {{else}}
-                <i class="section-empty">
-                  <a href="{{url}}">No articles here yet!</a>
-                </i>
+      <div class="section-tree">
+        {{#each sections}}
+        <section class="category-sections">
+          <h3>
+            {{#if internal}}
+            <span class="visibility-internal" data-title="hidden category">
+              <img src="{{asset 'goatbody1.svg'}}" width="20">
+
+            </span>
+            {{/if}}
+            <a href="{{url}}">{{name}}</a>
+          </h3>
+          {{#if articles}}
+          <ul class="article-list">
+            {{#each articles}}
+            <li {{#if promoted}} class="article-promoted" {{/if}} >
+              {{#if promoted}}
+              <span data-title="{{t 'promoted'}}">★</span>
               {{/if}}
-            </section>
-          {{/each}}
-        </div>
+              <a href="{{url}}">{{title}}</a>
+            </li>
+            {{/each}}
+          </ul>
+          {{#if more_articles}}
+          <a href="{{url}}" class="see-all-articles">
+            {{t 'show_all_articles' count=article_count}}
+          </a>
+          {{/if}}
+          {{else}}
+          <i class="section-empty">
+            <a href="{{url}}">No articles here yet!</a>
+          </i>
+          {{/if}}
+        </section>
+        {{/each}}
+      </div>
       {{else}}
       <p>We're empty!</p>
-        <!--<i class="category-empty">
-          <a href="{{category.url}}">{{t 'empty'}}</a>
-        </i>-->
+      <!--<i class="category-empty">
+<a href="{{category.url}}">{{t 'empty'}}</a>
+</i>-->
       {{/if}}
     </section>
     <div id="sidebar">
@@ -126,5 +114,41 @@ window.onload = function() {
   }
 </script>
 
+<!--adds "application installers" section if a user has the 'download_access' tag -->
+<script>
+$(document).ready(function() {
+//Looks for a specified tag on a user
+  var isUser = false;
+  console.log(HelpCenter.user.tags);
+  if (HelpCenter.user.tags.indexOf("download_access") != -1) {
+    isUser = true;
+  }
+
+//Checks if the tag was found or not
+  if (isUser === true) {
+  $('.downloads-description').after("<section class='downloads-section wide-downloads app-downloads'><h3>Application Installers</h3><p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p><ul><li><a href='/hc/en-us/articles/214947178' class='guide-dl-btn install-btn build-btn-1' style='font-weight:600'>Exago v2015.1</a></li><li><a href='/hc/en-us/articles/216071347' class='guide-dl-btn install-btn build-btn-2'>Exago v2014.1</a></li><li><a href='/hc/en-us/articles/215425688' class='guide-dl-btn install-btn build-btn-3'>Exago v2013.2</a></li></ul></section>");
+  } 
+});
+</script>
+
+<!--adds "eval installer" section if an organization has the 'organization_status_evaluation' tag-->
+<script>
+$(document).ready(function() {
+  var isCust;
+  //find tag in array
+  function isCustomer(element, index, array) {
+    return (element === 'organization_status_evaluation');
+  }
+  //look for org tags in HelpCenter object
+  HelpCenter.user.organizations.forEach(function(x) {
+    isCust = x.tags.some(isCustomer);
+    return (isCust === true);
+    });
+  //if found, print this
+  if (isCust === true) {
+     $('.downloads-description').after("<section class='downloads-section wide-downloads app-downloads'><h3>Evaluation Installer</h3><p>Select to view the download page for the Evaluation version of Exago</p><ul><li><a href='/hc/en-us/articles/215662328' class='guide-dl-btn install-btn build-btn-4'>Exago Trial</a></li></ul></section>");
+  }
+});
+</script>
 
 </div> <!--<div class="site-container"> is on header page-->
