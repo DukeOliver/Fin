@@ -64,6 +64,7 @@
     //these messages only apply on certain forms
     if(window.location.href.indexOf("211898") > -1) {
       //report a site issue
+      $(".request_subject").prepend('<p style="color:#a6a6a6;text-align:center">This form goes straight to our site administrator.<br>Please be as descriptive as possible, as to allow for a speedy fix for the issue you are experiencing.</p>');
       $(".version-build-bg").prepend('<p style="color:#d21818;text-align:center">These fields are required by our system, but do not matter for this particular form.<br>Feel free to enter any value.</p>');
   
       //ask a question
@@ -123,12 +124,12 @@
 
   }); 
 </script>
-
-<!-- disables form textboxes for ie8 -->
+  
+  <!-- disables form textboxes for ie8 -->
 <!--[if IE 8]>
 <script>
   $(document).ready(function () {
-    $(".request_cc_emails").prepend('<div style="text-align:center;font-size:16px;color:red">NOTICE: This form does not work for Internet Explorer 8.<br>Please <a href="http://www.whatbrowser.org/intl/en/" style="color:blue;text-decoration:underline">upgrade your browser</a> or contact your administrator.</div>');
+    $(".request_subject").prepend('<div style="text-align:center;font-size:16px;color:red">NOTICE: This form does not work for Internet Explorer 8.<br>Please <a href="http://www.whatbrowser.org/intl/en/" style="color:blue;text-decoration:underline">upgrade your browser</a>, use a mobile/tablet device, or contact your administrator.</div>');
 
     var form = document.getElementById("new_request");
     var elements = form.elements;
