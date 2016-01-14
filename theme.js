@@ -11,9 +11,9 @@ $(document).ready(function() {
   });
   
   //Hidden 'report a site issue' in ticket form
-  //remove the options from the dropdown selector
-  $('#request_issue_type_select option[value="211898"]').remove();
-  //remove the options from the nesty-input after it's been created. 
+  //hide 'report a site issue' from the dropdown selector
+  $('#request_issue_type_select option[value="211898"]').hide();
+  //remove it from the nesty-input after it has been created. 
   $('.nesty-panel').on('DOMNodeInserted', function(e){
     $(this).children('ul').children().remove('#211898');
   });
