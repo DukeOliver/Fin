@@ -757,6 +757,13 @@ button img, [role=button] img {
   height: 16px;
 }
 
+.twitter-feed-container-outer {
+  width:500px;
+  height:560px;
+  background:#ffffff;
+  border:1px solid #E8E8E8;
+}
+
 .accordion-box {
   border: 1px solid transparent;
   margin: 20px;
@@ -1593,6 +1600,13 @@ form.search::before { /* adds blank content into form */
   text-decoration: underline; 
 }
 
+.js-disable-test {
+  color: red;
+  border: 1px solid red;
+  font-size: 11px;
+  line-height: 12px;
+  padding: 5px;
+}
 
 /* ====================================================
    Community box
