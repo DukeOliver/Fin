@@ -181,14 +181,8 @@
         Twitter Feed
       </div>
       <div class="twitter-feed-container-outer">
-        <div id="twitter-feed-container-inner">
-        <!--fade-in the twitter feed to combat dom flicker -->
-        <script>
-          document.getElementById("twitter-feed-container-inner").style.display = "none";
-          $(window).load(function() {
-            $("#twitter-feed-container-inner").fadeIn("fast");
-          });
-        </script>
+        <!--set to display:none, then fades in with script below-->
+        <div id="twitter-feed-container-inner" style="display:none">
       <!--[if IE 8]>
       <img src="{{asset 'twitterimage.png'}}"/>
       <![endif]-->
@@ -239,7 +233,7 @@ var $footer_tweetbox_border = "0px";
 var $load_more_background = "#273B4C";
 var $load_more_text_color = "#ffffff";
     
-//loads script after 500ms
+//loads script after 300ms
   setTwitterFrameStyles();
   
   function isTwitterFrameReady()
@@ -253,7 +247,7 @@ var $load_more_text_color = "#ffffff";
       {
   	    setTimeout(function() {
   			  setTwitterFrameStyles();
-        }, 500);
+        }, 300);
         return;
       }
   
@@ -261,7 +255,34 @@ var $load_more_text_color = "#ffffff";
 $("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h2, h3, blockquote, p, ol, ul, li, img, iframe, button, .tweet-box-button{font-family:'+$font+' !important;font-weight:'+$font_weight+' !important;} .hashtag{color:' + $hashtag_color + '!important;display:none !important;} .tweet{padding:' + $tweet_padding + ' !important;} .tweet .e-entry-title{white-space: ' + $tweet_wrap + '!important;} .customisable-border{border:' + $tweet_border + '!important;border-bottom:' + $tweet_border_bottom + '!important;} .timeline{border-radius: ' + $border_radius + '!important;} .thm-dark .retweet-credit,.h-feed, .stats strong{color:' + $text_color + ' !important;}a:not(.follow-button):not(.tweet-box-button):not(.expand):not(.u-url), .load-more{color:' + $link_color + ' ;} .follow-button{color:' + $follow_button_link_color + '; display:' + $display_button + ' !important;} .timeline-header{background:' + $header_background + '; border-radius:' + $border_radius + ' ' + $border_radius + ' 0px 0px; padding:' + $timeline_header_padding + '} .timeline-header h1 a{color:' + $header_text_color + ' !important;} .footer{display:'+$footer_display+'; padding:'+$footer_padding+'} .timeline-footer{border-radius:0px 0px ' + $border_radius + ' ' + $border_radius + ' !important; background:' + $footer_background + ' !important;} .tweet-box-button{background-color:' + $footer_tweetbox_background + ' !important; color:' + $footer_tweetbox_textcolor + ' !important; border:' + $footer_tweetbox_border + ' !important;} .timeline .stream, .tweet-actions{background:' + $background_color + ' !important;} .tweet-actions{box-shadow:0 0 10px 5px' + $background_color + ' !important;} .ic-mask{background-color:' + $icon_color + ' !important;} a:hover .ic-mask, a:focus .ic-mask{background-color:' + $icon_hover_color + ' !important;} .header .avatar{border-radius: '+ $avatar_border_radius + ' !important; border:' + $avatar_border + ' !important; display:' + $avatar_display + ' !important;} .profile[aria-label="Exago Support (screen name: ExagoSupport)"] .p-name{color:'+$exago_support_color+'!important;} .p-name{color:'+$name_color+' !important;} span.p-nickname, .u-url, .expand{color:'+$sublink_color+' !important;} .load-more, .no-more-pane {background-color:' + $load_more_background + ' !important; color:' + $load_more_text_color + '!important;} .retweet-credit{color:' + $subtext_color + ' !important;}</style>');
 }
 });
+</script>
+
+<!--fade in the twitter-feed-container-inner div, to combat dom flicker-->
+<script>
+  $(window).load(function() {
+  $("#twitter-feed-container-inner").delay(300).fadeIn('slow');
+  });
+</script>
+
+<!-- funky custom script to load every list item in twitter feed one after the other-->
+<script>
+  $(window).load(function() {
+
+    //hide the li items
+    $("#twitter-widget-0").contents().find('li').css("display","none");
+    //hide the "load more" button
+    $("#twitter-widget-0").contents().find('button').css("display","none");
   
+    //target each li item, fade at 20ms/700ms each
+    $("#twitter-widget-0").contents().find('li').each(function(index) {
+      $(this).delay(30*index).fadeIn(900);
+    });
+    
+    //target the 'load more' button, fade in slowly
+    $("#twitter-widget-0").contents().find('button').each(function(index) {
+      $(this).delay(1000*index).fadeIn(1000);
+    });
+  });
 </script>
 
 </div> <!--<div class="site-container"> is on header page-->
