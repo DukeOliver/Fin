@@ -33,9 +33,17 @@
         <h3>Download Information</h3>
         <p>Included on this page are files we offer to our users. Upon click, the download should begin automatically. If not, your browser will prompt you for a download location.<p>
         <br>
-        <ol>
-          <li>PDF and DOC files are free to be distributed amongst your team. Every major release will receive a new version of the guide, so be sure to update your own guides when your systems administrator updates Exago.</li><br>
-        </ol>
+        <p>PDF and DOC files are free to be distributed amongst your team. Every major release will receive a new version of the guide, so be sure to update your own guides when your systems administrator updates Exago.</p>
+        <br>
+        <h3>Troubleshooting</h3>
+        <p>Are you unable to see the Exago installers, despite having access to them on your account? Please make sure that <a class="dl-info-link" href="http://www.enable-javascript.com/" target="_blank">javascript is enabled</a> in your browser.</p>
+        <br>
+      {{#if signed_in}}
+        <p>To receive more information on this issue, <a class="dl-info-link" href="/hc/en-us/requests/new?ticket_form_id=211898">contact the site administrator</a>.</p>
+      {{else}}
+        <p>To receive more information on this issue, <a class="dl-info-link" href="mailto:dkisch@exagoinc.com">contact the site administrator</a>.</p>
+      {{/if}}   
+        
       </section>
     </div>
     {{else}}
@@ -149,6 +157,14 @@ $(document).ready(function() {
      $('.downloads-description').after("<section class='downloads-section wide-downloads app-downloads'><h3>Evaluation Installer</h3><p>Select to view the download page for the Evaluation version of Exago</p><ul><li><a href='/hc/en-us/articles/215662328' class='guide-dl-btn install-btn build-btn-4'>Exago Trial</a></li></ul></section>");
   }
 });
+</script>
+
+<script>
+  $(document).ready(function() {
+    if (document.getElementById('user-name').innerHTML.indexOf("Ellen") != -1) { 
+      $('.downloads-description').append('<span style="color:orange">***</span>');
+    }
+  });
 </script>
 
 </div> <!--<div class="site-container"> is on header page-->
