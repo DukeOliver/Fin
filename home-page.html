@@ -27,6 +27,12 @@
   <![endif]-->
 </div>
 
+<noscript>
+  <div class="thin-top-bar">
+    <p style="font-size:12px"><span style="color:red">Your browser's javascript is disabled!</span> To view the site properly, please <a class="dl-info-link" href="http://www.enable-javascript.com/" target="_blank">click here</a> to learn how to re-enable javascript.</p>
+  </div>
+</noscript>
+
 <!--ACCORDION - HOMEPAGE -->
 <div class="main-homepage clearfix">
   <div class="column-container">
@@ -172,12 +178,24 @@
         <svg class="twitter-feed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
           <path fill="#ccc" d="M17.32 6.25v.48c0 5-3.8 10.75-10.73 10.75-2.2 0-4.2-.63-5.8-1.7.3.03.6.05.9.05 1.7 0 3.4-.6 4.7-1.6-1.7-.03-3.1-1.13-3.6-2.63.2.04.4.06.7.06.3 0 .7-.04 1-.13-1.7-.35-3-1.87-3-3.7v-.05c.5.28 1.1.45 1.7.47-1-.67-1.7-1.83-1.7-3.14 0-.6.2-1.3.5-1.9 1.9 2.3 4.7 3.8 7.8 4-.1-.2-.1-.5-.1-.8 0-2.1 1.65-3.73 3.74-3.73 1.1 0 2.07.46 2.76 1.2.9-.2 1.7-.5 2.4-.92-.3.9-.9 1.64-1.63 2.1.76-.1 1.5-.3 2.16-.6-.5.77-1.14 1.44-1.87 1.97z"></path>
         </svg>
-        Twitter Feed</div>
+        Twitter Feed
+      </div>
+      <div class="twitter-feed-container-outer">
+        <div id="twitter-feed-container-inner">
+        <!--fade-in the twitter feed to combat dom flicker -->
+        <script>
+          document.getElementById("twitter-feed-container-inner").style.display = "none";
+          $(window).load(function() {
+            $("#twitter-feed-container-inner").fadeIn("fast");
+          });
+        </script>
       <!--[if IE 8]>
       <img src="{{asset 'twitterimage.png'}}"/>
       <![endif]-->
       <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/ExagoSupport/lists/exago-inc" data-widget-id="674983369801916417" height="560" data-chrome="nofooter noheader"><span style="color:silver">Tweets by @ExagoInc and @ExagoSupport.<br>To view, disable your browser's third-party privacy addons<br>(such as <em>Ghostery</em>, <em>Disconnect</em>, etc.)</span></a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+      </div>
     </section>
   </div>
 </div>
@@ -194,6 +212,8 @@ var $font_weight = "normal";
 var $tweet_wrap = "normal";
 var $border_radius = "0";
 var $hashtag_color = "#545454";
+var $tweet_border = "0";
+var $tweet_border_bottom = "1px solid #e8e8e8";
 var $timeline_header_padding = "5px";
 var $text_color = "#545454";
 var $link_color = "#4182BC";
@@ -238,7 +258,7 @@ var $load_more_text_color = "#ffffff";
       }
   
 // Apply the styles
-$("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h2, h3, blockquote, p, ol, ul, li, img, iframe, button, .tweet-box-button{font-family:'+$font+' !important;font-weight:'+$font_weight+' !important;} .hashtag{color:' + $hashtag_color + '!important;display:none !important;} .tweet{padding:' + $tweet_padding + ' !important;} .tweet .e-entry-title{white-space: ' + $tweet_wrap + '!important;} .timeline{border-radius: ' + $border_radius + '!important;} .thm-dark .retweet-credit,.h-feed, .stats strong{color:' + $text_color + ' !important;}a:not(.follow-button):not(.tweet-box-button):not(.expand):not(.u-url), .load-more{color:' + $link_color + ' ;} .follow-button{color:' + $follow_button_link_color + '; display:' + $display_button + ' !important;} .timeline-header{background:' + $header_background + '; border-radius:' + $border_radius + ' ' + $border_radius + ' 0px 0px; padding:' + $timeline_header_padding + '} .timeline-header h1 a{color:' + $header_text_color + ' !important;} .footer{display:'+$footer_display+'; padding:'+$footer_padding+'} .timeline-footer{border-radius:0px 0px ' + $border_radius + ' ' + $border_radius + ' !important; background:' + $footer_background + ' !important;} .tweet-box-button{background-color:' + $footer_tweetbox_background + ' !important; color:' + $footer_tweetbox_textcolor + ' !important; border:' + $footer_tweetbox_border + ' !important;} .timeline .stream, .tweet-actions{background:' + $background_color + ' !important;} .tweet-actions{box-shadow:0 0 10px 5px' + $background_color + ' !important;} .ic-mask{background-color:' + $icon_color + ' !important;} a:hover .ic-mask, a:focus .ic-mask{background-color:' + $icon_hover_color + ' !important;} .header .avatar{border-radius: '+ $avatar_border_radius + ' !important; border:' + $avatar_border + ' !important; display:' + $avatar_display + ' !important;} .profile[aria-label="Exago Support (screen name: ExagoSupport)"] .p-name{color:'+$exago_support_color+'!important;} .p-name{color:'+$name_color+' !important;} span.p-nickname, .u-url, .expand{color:'+$sublink_color+' !important;} .load-more, .no-more-pane {background-color:' + $load_more_background + ' !important; color:' + $load_more_text_color + '!important;} .retweet-credit{color:' + $subtext_color + ' !important;}</style>');
+$("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h2, h3, blockquote, p, ol, ul, li, img, iframe, button, .tweet-box-button{font-family:'+$font+' !important;font-weight:'+$font_weight+' !important;} .hashtag{color:' + $hashtag_color + '!important;display:none !important;} .tweet{padding:' + $tweet_padding + ' !important;} .tweet .e-entry-title{white-space: ' + $tweet_wrap + '!important;} .customisable-border{border:' + $tweet_border + '!important;border-bottom:' + $tweet_border_bottom + '!important;} .timeline{border-radius: ' + $border_radius + '!important;} .thm-dark .retweet-credit,.h-feed, .stats strong{color:' + $text_color + ' !important;}a:not(.follow-button):not(.tweet-box-button):not(.expand):not(.u-url), .load-more{color:' + $link_color + ' ;} .follow-button{color:' + $follow_button_link_color + '; display:' + $display_button + ' !important;} .timeline-header{background:' + $header_background + '; border-radius:' + $border_radius + ' ' + $border_radius + ' 0px 0px; padding:' + $timeline_header_padding + '} .timeline-header h1 a{color:' + $header_text_color + ' !important;} .footer{display:'+$footer_display+'; padding:'+$footer_padding+'} .timeline-footer{border-radius:0px 0px ' + $border_radius + ' ' + $border_radius + ' !important; background:' + $footer_background + ' !important;} .tweet-box-button{background-color:' + $footer_tweetbox_background + ' !important; color:' + $footer_tweetbox_textcolor + ' !important; border:' + $footer_tweetbox_border + ' !important;} .timeline .stream, .tweet-actions{background:' + $background_color + ' !important;} .tweet-actions{box-shadow:0 0 10px 5px' + $background_color + ' !important;} .ic-mask{background-color:' + $icon_color + ' !important;} a:hover .ic-mask, a:focus .ic-mask{background-color:' + $icon_hover_color + ' !important;} .header .avatar{border-radius: '+ $avatar_border_radius + ' !important; border:' + $avatar_border + ' !important; display:' + $avatar_display + ' !important;} .profile[aria-label="Exago Support (screen name: ExagoSupport)"] .p-name{color:'+$exago_support_color+'!important;} .p-name{color:'+$name_color+' !important;} span.p-nickname, .u-url, .expand{color:'+$sublink_color+' !important;} .load-more, .no-more-pane {background-color:' + $load_more_background + ' !important; color:' + $load_more_text_color + '!important;} .retweet-credit{color:' + $subtext_color + ' !important;}</style>');
 }
 });
   
