@@ -43,7 +43,10 @@
       {{else}}
         <p>To receive more information on this issue, <a class="dl-info-link" href="mailto:dkisch@exagoinc.com">contact the site administrator</a>.</p>
       {{/if}}   
-        
+        <br>
+        <noscript>
+        <p class="js-disable-test">If you can read this message, it means your browser may currently be disabling javascript!<p>
+        </noscript>
       </section>
     </div>
     {{else}}
@@ -157,14 +160,6 @@ $(document).ready(function() {
      $('.downloads-description').after("<section class='downloads-section wide-downloads app-downloads'><h3>Evaluation Installer</h3><p>Select to view the download page for the Evaluation version of Exago</p><ul><li><a href='/hc/en-us/articles/215662328' class='guide-dl-btn install-btn build-btn-4'>Exago Trial</a></li></ul></section>");
   }
 });
-</script>
-
-<script>
-  $(document).ready(function() {
-    if (document.getElementById('user-name').innerHTML.indexOf("Ellen") != -1) { 
-      $('.downloads-description').append('<span style="color:orange">***</span>');
-    }
-  });
 </script>
 
 </div> <!--<div class="site-container"> is on header page-->
