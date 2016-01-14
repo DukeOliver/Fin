@@ -1585,6 +1585,14 @@ form.search::before { /* adds blank content into form */
   text-decoration: underline;
 }
 
+.dl-info-link {
+  color: #ff6b01; 
+}
+
+.dl-info-link:hover {
+  text-decoration: underline; 
+}
+
 
 /* ====================================================
    Community box
@@ -2285,6 +2293,12 @@ label[for=request_ticket_form_id] {
   float: right;
 }
 
+.request-subject {
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 #request-table tr:hover > .request-subject a {
   color: #ff6b01;
 }
