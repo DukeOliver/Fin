@@ -8,14 +8,14 @@
   <div class="column-container">
     <section class="main-column wide-column">
       <div class="border1">
-        <div class="border2">
+        <div class="border2" style="min-height:170px">
           <h1>Submit a Request</h1>
           {{#if parent}}
             <span class="follow-up-hint">
               {{follow_up}}
             </span>
           {{/if}}
-          <div class="form submit-ticket-dropzone">
+          <div id="form-fade" class="form submit-ticket-dropzone" style="display:none">
             {{request_form}}
           </div>
         </div>
@@ -23,6 +23,15 @@
     </section>
   </div>
 </div>
+
+
+<!--fade in the form selector, to combat dom flicker-->
+<script>
+  $(window).load(function() {
+    $('#form-fade').fadeIn(600);
+  });
+</script>
+
 
 <!-- wrap div tags around certain elements for styling -->
 <script>
@@ -127,6 +136,8 @@
 
   }); 
 </script>
+  
+
   
   <!-- disables form textboxes for ie8 -->
 <!--[if IE 8]>
