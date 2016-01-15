@@ -193,6 +193,8 @@
     </section>
   </div>
 </div>
+</main>
+</div> <!--<div class="site-container"> is on header page-->
 
 <!--TWITTER WIDGET STYLING-->
 <script>
@@ -260,29 +262,24 @@ $("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h
 <!--fade in the twitter-feed-container-inner div, to combat dom flicker-->
 <script>
   $(window).load(function() {
-  $("#twitter-feed-container-inner").delay(300).fadeIn('slow');
-  });
-</script>
-
-<!-- funky custom script to load every list item in twitter feed one after the other-->
-<script>
-  $(window).load(function() {
-
-    //hide the li items
+    //fade in container div
+    $("#twitter-feed-container-inner").delay(300).fadeIn('slow');
+  
+  //hide the li items
     $("#twitter-widget-0").contents().find('li').css("display","none");
     //hide the "load more" button
     $("#twitter-widget-0").contents().find('button').css("display","none");
-  
+
     //target each li item, fade at 20ms/700ms each
     $("#twitter-widget-0").contents().find('li').each(function(index) {
       $(this).delay(30*index).fadeIn(900);
     });
-    
-    //target the 'load more' button, fade in slowly
+
+  
+      //target the 'load more' button, fade in slowly
     $("#twitter-widget-0").contents().find('button').each(function(index) {
       $(this).delay(1000*index).fadeIn(1000);
     });
+    
   });
 </script>
-
-</div> <!--<div class="site-container"> is on header page-->
