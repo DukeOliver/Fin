@@ -1965,9 +1965,14 @@ form.search::before { /* adds blank content into form */
   color: #ff6b01;
 }
 
-/*.search-result:hover > .search-result-div .search-result-link > h3 {
-  color: #ff6b01;
-}*/
+#related_articles ul,
+#recent_articles ul {
+  display: none; 
+}
+
+.search-results .recent-articles ul {
+  display: none; 
+}
 
 .article-column p {
   font-size: 14px;
@@ -3593,8 +3598,7 @@ body.community-enabled .search-results-column + .search-results-column {
 }
 
 .search-result {
-  padding: 0;
-  padding-left: 10px;
+  padding: 0 10px 0;
   -webkit-transition: background-color 250ms ease;
   -moz-transition: background-color 250ms ease;
   transition: background-color 250ms ease; 
@@ -3624,6 +3628,7 @@ body.community-enabled .search-results-column + .search-results-column {
   padding-top: 0;
   color: gray;
   font-size: 13px;
+  font-style: italic;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
