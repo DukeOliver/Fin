@@ -70,7 +70,7 @@
     <div id="sidebar">
       <section class="side-column article-side-column">
         <h3>Table of Contents</h3>
-        <div id="anchormenu">
+        <div id="anchormenu" style="display:none">
           building menu...
         </div>
       </section>
@@ -78,6 +78,7 @@
       {{else}}
       <section id="related_articles" class="side-column article-side-column">
         {{related_articles}}
+      
       </section>
       {{/is}}
       <section id="recent_articles" class="side-column article-side-column">
@@ -90,7 +91,17 @@
 <!-- end of EULA div -->
 {{/is}}
 
-<script type="text/javascript">
+<!--slide down and fade in sidebar ul/ol elements, to combat dom flicker-->
+<script>
+  $(window).load(function() {
+    $('#anchormenu, #related_articles ul, #recent_articles ul').stop(true).fadeIn({
+      duration: 500,
+      queue: false
+    }).css('display', 'none').slideDown(250);
+  });
+</script>
+
+<script>
   // Duke says: thanks chirp.com.au!
   
   var buildMenu = function(targetId, headingTag) {
