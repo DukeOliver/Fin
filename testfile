@@ -5,7 +5,7 @@
   <title>Exago Support Center</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="KPCKSHEUk0HjUQTihzulB7D/0CoCwvQhVpzPeKtljJkZlajoUSwJCaAn7IRWgwIOX4fHEZuUEZ+4018dzwhq4A==" />
+<meta name="csrf-token" content="hrWsiodSSRm3httE3nTCsqXZEc6UPxhXXW7dTWXj/6K30I4qp2rTUfTwMyIPzGW7SqEG9Q1p/emzIU0oAY4Z2w==" />
   <link href="http://support.exagoinc.com/hc/en-us" rel="canonical" />
 
   <!-- Entypo pictograms by Daniel Bruce — www.entypo.com -->
@@ -114,7 +114,38 @@ ga('send', 'pageview');
     <nav class="right-nav">
       <div class="nav-link"><a href="/hc/en-us/categories/202053837">Downloads</a></div>
       <div class="nav-link"><a href="/hc/en-us/categories/202521688">About</a></div>
-      <div class="nav-link">  <a class="login" data-auth-action="signin" role="button" href="/hc/en-us/signin?return_to=http%3A%2F%2Fsupport.exagoinc.com%2Fhc%2Fen-us&amp;locale=1">Sign in</a>
+      <div class="nav-link">  <div id="user" class="user-info dropdown">
+  <div class="btn with-image dropdown-toggle" role="button">
+    <img id="user-avatar" class="user-avatar" alt="Duke Oliver Kisch" src="http://support.exagoinc.com/system/photos/0002/3270/4927/duke.png" />
+    <span id="user-name">Duke Oliver Kisch</span>
+  </div>
+  <div id="user-dropdown" class="dropdown-menu dropdown-menu-end dropdown-menu-caret">
+    <div id="user-menu">
+    <a class="my-activities" href="/hc/en-us/requests" role="menuitem">
+  My activities
+</a>
+
+    <span role="separator"></span>
+
+
+
+    <a href="https://support.zendesk.com/hc/en-us/sections/200624016-Help-Center" target="_blank" role="menuitem">
+      Get help
+    </a>
+
+
+    <a href="/access/return_to?return_to=https://exagoinc.zendesk.com/agent/" target="_blank" role="menuitem">
+      Open agent interface
+    </a>
+
+  <a href="/access/logout?return_to=http%3A%2F%2Fsupport.exagoinc.com%2Fhc%2Fen-us" role="menuitem">Sign out</a>
+</div>
+
+    
+    
+  </div>
+</div>
+
 </div>
     </nav>
   </div>
@@ -447,14 +478,14 @@ $("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h
       <li><a href="http://exagoinc.com/privacy.html">Terms of Use</a></li>
       <li><a href="http://exagoinc.com/privacy.html">Privacy Policy</a></li>
       
-      <li><a href="mailto:dkisch@exagoinc.com">Report Site Issue</a></li>
+      <li><a href="/hc/en-us/requests/new?ticket_form_id=211898">Report Site Issue</a></li>
       
     </ul>
   </nav>
 </footer>
 
   <!-- / -->
-  
+  <iframe src="/hc/admin/manager_widget?id=200153628&amp;locale=en-us&amp;return_to=%2Fhc%2Fen-us&amp;type=localized_help_center" id="manager-widget" border="0" height="0" width="0" style="border:0;position:fixed;bottom:20px;right:20px;z-index:1000"></iframe>
 
   <script type="text/javascript" src="//p5.zdassets.com/hc/en-us/locales-ac57cc91782fc18f442814ef79e96f96c04d9fae.js"></script>
   <script src="https://exagoinc.zendesk.com/auth/v2/host.js" data-brand-id="506898" data-return-to="http://support.exagoinc.com/hc/en-us" data-theme="hc" data-locale="1" data-auth-origin="506898,true,false"></script>
@@ -473,8 +504,8 @@ $("#twitter-widget-0").contents().find('head').append('<style>.html, body, h1, h
 
   HelpCenter = {};
   HelpCenter.account = {"subdomain":"exagoinc","environment":"production","name":"Exago, Inc"};
-  HelpCenter.user = {"identifier":"da39a3ee5e6b4b0d3255bfef95601890afd80709","email":null,"name":null,"role":"anonymous","avatar_url":"https://assets.zendesk.com/hc/assets/user_avatar.png","organizations":[],"groups":[]};
-  HelpCenter.internal = {"current_session":{"locale":"en-us","csrf_token":"4cNXCbcWXiOEicFaOpp9dFsqh7y7KSkkRfC+cNjlyoDQpnWply7Ea8f/KTzrItp9tFKQhyJ/zJqrvy4VvIgs+Q==","shared_csrf_token":null},"settings":{"zopim_enabled":true,"spam_filter_enabled":true},"current_record_id":null,"current_record_url":null,"current_record_title":null,"search_results_count":null,"current_text_direction":"ltr","current_brand_url":"https://exagoinc.zendesk.com","current_path":null,"show_curlybars_ipm":false,"show_new_community_ipm_for_custom_theme":false,"show_new_community_ipm_for_stock_theme":false,"authentication_domain":"https://exagoinc.zendesk.com"};
+  HelpCenter.user = {"identifier":"fd2f2173854cc92a606c798b0ad8dbf43e4721de","email":"dkisch@exagoinc.com","name":"Duke Oliver Kisch","tags":["download_access","test_tag","user_active"],"locale":"en-us","role":"manager","avatar_url":"http://support.exagoinc.com/system/photos/0002/3270/4927/duke.png","organizations":[{"name":"Exago","default":"exagoinc.com","tags":["organization_status_client","organization_multi_tenant","organization_othersecurity","organization_status_evaluation"],"isShared":true}],"groups":[{"name":"Support Level 1","default":true,"isActive":true}]};
+  HelpCenter.internal = {"current_session":{"locale":"en-us","csrf_token":"yfHV/kwXeYw6GSzFt7sDIl+HnEQ1KU/3DDu0uN/dR6T4lPdebC/jxHlvxKNmA6QrsP+Lf6x/qknidCTdu7Ch3Q==","shared_csrf_token":"MVrgaOtofIsDtgZXbcXB7IGF6RsWZNybLVR7a+xVoFc="},"settings":{"article_sanitization_disabled":true,"zopim_enabled":true,"spam_filter_enabled":true},"current_record_id":null,"current_record_url":null,"current_record_title":null,"search_results_count":null,"current_text_direction":"ltr","current_brand_url":"https://exagoinc.zendesk.com","current_path":null,"show_curlybars_ipm":false,"show_new_community_ipm_for_custom_theme":false,"show_new_community_ipm_for_stock_theme":false,"authentication_domain":"https://exagoinc.zendesk.com"};
 </script>
 
   
