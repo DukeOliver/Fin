@@ -59,4 +59,14 @@
   </div>
 </div>
 
+<!--slide down and fade in sidebar ul to combat dom flicker-->
+<script>
+  $(window).load(function() {
+    $('#sidebar > section > section > ul').stop(true).fadeIn({
+      duration: 500,
+      queue: false
+    }).css('display', 'none').slideDown(250);
+  });
+</script>
+
 </div> <!--<div class="site-container"> is on header page-->
