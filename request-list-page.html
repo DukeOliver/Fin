@@ -7,7 +7,7 @@
 
 <div class="main-requests clearfix">
   <div class="column-container">
-    <section class="main-column wide-column">
+    <section class="main-column wide-column" style="min-height:220px">
       <nav class="my-activities-sub-nav nav-spaced">
         <ul>
           {{#each filters}}
@@ -34,12 +34,12 @@
         {{/form}}
       </div>
 
-      <div class="my-activities-table">
+      <div class="my-activities-table" style="display:none">
         {{#if requests}}
           <table id="request-table" class="request-table {{current_filter.identifier}}-requests">
             <thead>
               <tr>
-                <th>{{t 'id'}}</th>
+                <th>ID</th>
                 <th>{{t 'subject'}}</th>
                 <th>
                   {{#is current_filter.identifier 'my'}}
@@ -107,5 +107,12 @@
   </div>
 </div>
 
-
+</main>
 </div> <!--<div class="site-container"> is on header page-->
+
+<!--fade in activities table, to combat dom flicker-->
+<script>
+  $(document).ready(function() {
+    $('.my-activities-table').fadeIn(500);
+  });
+</script>
