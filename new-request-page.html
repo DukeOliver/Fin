@@ -15,23 +15,15 @@
               {{follow_up}}
             </span>
           {{/if}}
-          <div id="form-fade" class="form submit-ticket-dropzone" style="display:none">
+          <div id="form-fade" class="form submit-ticket-dropzone">
             {{request_form}}
           </div>
         </div>
+        <p class="form-report-issue"><a href="mailto:dkisch@exagoinc.com">Report a Site Issue</a></p>
       </div>
     </section>
   </div>
 </div>
-
-
-<!--fade in the form selector, to combat dom flicker-->
-<script>
-  $(window).load(function() {
-    $('#form-fade').fadeIn(600);
-  });
-</script>
-
 
 <!-- wrap div tags around certain elements for styling -->
 <script>
@@ -41,15 +33,34 @@
 
 <!--Auto-select 2015.1 as the default version in forms -->
 <script>
-  window.onload = function() {
+  $(document).ready(function() {
     var versionSelect = document.getElementById("request_custom_fields_28135878");
     if (versionSelect !== null)
     {
       var i = versionSelect.value = "ticket_version_2015.1";
       window.scrollTo(0,0);
     }
-  }
+  });
 </script>
+
+<!--DISABLED fade in the form selector, to combat dom flicker
+<script>
+  $(window).load(function() {
+      $('#form-fade').stop(true).fadeIn({
+        duration: 700,
+        queue: false
+    }).css('display', 'none').slideDown(300);
+  });
+</script>-->
+
+<!-- DISABLED fade the form out when an option is selected
+<script>
+  $(document).ready(function() {
+    $('.nesty-panel').click(function() { 
+      $('#form-fade').fadeOut(400);
+    });
+  });
+</script>-->
 
 <!-- remove exago environment selector from 'report site issue' -->
 <script>
@@ -154,4 +165,5 @@
 </script>
 <![endif]-->
 
+  </main>
 </div> <!--<div class="site-container"> is on header page-->
