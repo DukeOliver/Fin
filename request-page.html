@@ -17,23 +17,12 @@
           <div class="accordion-inner-container">
             <dl class="request-details">
               <dt style="text-align:center">{{t 'submitted_by' requester_name=request.requester.name}}</dt>
-              <!-- no idea what this form is -->
-              <!--{{#form 'organization' id='request-organization'}}
-              <dt>{{t 'organization'}}</dt>
-              <dd>{{select 'organization'}}</dd>
-              {{/form}}
-              {{#if group}}
-              <dt>{{t 'group'}}</dt>
-              <dd>
-                <span>{{group.name}}</span>
-              </dd>
-              {{/if}}-->
               <dt>Request Status</dt>
               <dd>
                 <span class="request-status request-{{request.status}}" title="{{request.status_description}}">
                 {{request.status_name}}
                 </span>
-              </dd>              
+              </dd>  
               {{#each custom_fields}}
               <!--This #is will delete unused custom fields in the ticket form-->
               {{#is value "No"}}
@@ -154,4 +143,5 @@
   }
 </script>
 
+</main>
 </div> <!--<div class="site-container"> is on header page-->
