@@ -207,6 +207,18 @@ button img, [role=button] img {
 }
 
 /* Forms */
+.form-report-issue {
+  float: right;
+  bottom: 0;
+}
+.form-report-issue a {
+  color: silver; 
+}
+
+.form-report-issue a:hover {
+  text-decoration: underline; 
+}
+
 #request_description {
   height: 250px;
 }
@@ -782,7 +794,9 @@ button img, [role=button] img {
 div.anonymous, 
 div.end_user, 
 div.agent,
-div.manager {
+div.manager,
+li.agent,
+li.manager {
 display: none;
 }
 
@@ -941,7 +955,8 @@ display: none;
 .admin-icon,
 .howto-icon,
 .services-icon,
-.about-icon {
+.about-icon,
+.secret-icon {
  fill: #494949;  
 }
 
@@ -2229,6 +2244,10 @@ label[for=request_ticket_form_id] {
   overflow: visible;
 }
 
+.upload-progress {
+  background-color: #A8D0F0; 
+}
+
 .new-request input[type=submit] {
   background-color: #4088CF;
   padding: 0; 
@@ -2682,7 +2701,7 @@ body.community-enabled .search-results-column {
 .zd-comment h3,
 .zd-comment h4,
 .zd-comment h5 {
-  color: #333;
+  color: #4182BC;
   text-align: left;
   line-height: 1.5;
 }
@@ -2690,12 +2709,31 @@ body.community-enabled .search-results-column {
 .zd-comment ul {
   margin: 5px;
   list-style-type: disc;
+  list-style-position: inside;
+}
+
+.zd-comment li ul {
+  margin: 0;
+  margin-left: 20px;
+  list-style-type: circle;
 }
 
 .zd-comment ol {
   margin: 5px;
-  list-style-type: decimal; 
+  list-style-type: decimal;
+  list-style-position: inside;
 }
+
+.zd-comment li ol {
+  margin: 0;
+  margin-left: 20px;
+  list-style-type: lower-latin;
+}
+
+.zd-comment li li ol {
+  list-style-type: lower-roman;
+}
+
 
 .zd-comment blockquote {
   display: inline-block;
@@ -2704,6 +2742,15 @@ body.community-enabled .search-results-column {
   padding-right: 30px;
   border-left: 3px solid #C1C1C1;
   background: #E6E6E6;
+}
+
+.zd-comment blockquote span {
+  background-color: #e6e6e6 !important;
+  color: #202020 !important;
+}
+
+.zd-comment blockquote a span{
+  color: #ff6b01 !important; 
 }
 
 .zd-comment code {
@@ -3756,10 +3803,8 @@ body.community-enabled .search-results-column + .search-results-column {
 }
 
 .recent-activity {
-  background: #f9f9f9;
   border-radius: 0;
-  padding: 25px 20px;
-  width: 270px;
+  padding: 5px;
 }
 
 .recent-activity-header {
@@ -4053,12 +4098,12 @@ modal-open {
    Up Arrow
    ==================================================== */
 .uparrow{
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   opacity: 0.3;
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 100px;
+  right: 30px;
   display: none;
   text-indent: -9999px;
   background: url('//p5.zdassets.com/hc/theme_assets/806071/200153628/up-arrows15.svg') no-repeat;
