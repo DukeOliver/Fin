@@ -117,14 +117,14 @@
 
 <!--remove border from category sections along the bottom -->
 <script>
-window.onload = function() {
+$(document).ready(function() {
   var boxes = document.getElementsByClassName('category-sections').length;
     if (boxes % 2 == 0) {
       $('.category-sections:nth-last-child(-n+2)').css('border-bottom', '0')
     } else {
       $('.category-sections:last-child').css('border-bottom', '0')
   }
-  }
+  });
 </script>
 
 <!--adds "application installers" section if a user has the 'download_access' tag -->
