@@ -171,6 +171,24 @@
             </ul>
           </div>
         </li>
+<!--SECRET ACCORDION!-->     
+        <li class="manager agent panel homepage-panel">
+          <a href="#secret-accordion" data-toggle="collapse" data-parent="#homepage-accordion" class="category-list-item">
+              <svg class="homepage-icon secret-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.166 45.166">
+  <path d="M42.2 19.5C41.6 8.38 33.15 0 22.57 0 12 0 3.57 8.38 2.97 19.5 2.73 24.35.87 39.02.87 39.17c-.1.7.2 1.4.74 1.82.55.4 5.74 4.15 21.08 4.15 15.08 0 20.34-3.74 20.9-4.17.55-.44.84-1.14.75-1.84-.02-.15-1.87-14.82-2.13-19.67zm-9.28-3.08c2.35.3 3.95 2.66 3.6 5.12-.35 2.46-2.34 4.12-4.46 3.85-6.3-.85-12.66-.85-18.95 0C11 25.63 9 24 8.67 21.5c-.35-2.46 1.26-4.8 3.6-5.12 6.88-.9 13.8-.9 20.68 0z"/>
+  <circle cx="16.1" cy="21.03" r="2.17"/>
+  <circle cx="29.07" cy="21.03" r="2.17"/>
+</svg>
+            <h3>Secret Agent/Manager Info</h3>
+            <p>View some hidden stuff, like recent activities</p>
+            <img class="category-arrow" src="//p5.zdassets.com/hc/theme_assets/806071/200153628/arrowdown.png">
+          </a>
+          <div id="secret-accordion" class="collapse">
+            <ul class="inner-panel">
+              {{recent_activity}}
+            </ul>
+          </div>
+        </li>
       </ul>
     </section>
     <section class="twitter-column">
