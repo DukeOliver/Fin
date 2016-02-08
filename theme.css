@@ -1592,8 +1592,15 @@ form.search::before { /* adds blank content into form */
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.build-btn-4:after {
+.build-btn-eval:after {
   content: "v.2015.1";
+  color: silver;
+  background: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.build-btn-beta:after {
+  content: "v.2016.1";
   color: silver;
   background: #ffffff;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
@@ -2706,8 +2713,21 @@ body.community-enabled .search-results-column {
   line-height: 1.5;
 }
 
+.zd-comment img {
+  margin: 5px 0;  
+}
+
+.zd-comment p {
+  margin-bottom: 10px; 
+}
+
+.zd-comment li {
+  margin-bottom: 15px;
+}
+
 .zd-comment ul {
   margin: 5px;
+  margin-left: 25px;
   list-style-type: disc;
   list-style-position: inside;
 }
@@ -2720,8 +2740,9 @@ body.community-enabled .search-results-column {
 
 .zd-comment ol {
   margin: 5px;
+  margin-left: 25px;
+  padding-left: 10px;
   list-style-type: decimal;
-  list-style-position: inside;
 }
 
 .zd-comment li ol {
@@ -2780,6 +2801,44 @@ body.community-enabled .search-results-column {
 
 .zd-comment a:hover {
   text-decoration: underline; 
+}
+
+.comment-body {
+  padding-right: 10px; 
+  padding-top: 5px;
+}
+
+.comment-container {
+  padding-left: 5px; 
+}
+
+.comment-container > .attachment-list {
+  margin-right: 450px;
+  padding: 5px;
+  background-color: #e0e0e0;
+}
+
+.comment-container > .attachment-list li {
+  margin-bottom: 0;
+  padding: 5px;
+  padding-left: 9px;
+}
+
+.comment-container > .attachment-list li:before {
+  content: none;  
+}
+
+.comment-container > .attachment-list li a {
+  font-weight: 700; 
+  transition: color 200ms ease;
+}
+
+.comment-container > .attachment-list li a:hover {
+  color: #ff6b01; 
+}
+
+.comment-container > .attachment-list span {
+  color: #454545; 
 }
 
 .comment-author {
@@ -2850,7 +2909,6 @@ body.community-enabled .search-results-column {
 }
 
 .comment-avatar {
-
   position: relative;
   width: 65px;
 }
@@ -2861,7 +2919,7 @@ body.community-enabled .search-results-column {
 
 .comment-avatar-agent:after {
   background-color: transparent;
-  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/logo-orange-small.png);
+  background-image: url(//p5.zdassets.com/hc/theme_assets/806071/200153628/small-orange-logo.png);
   background-repeat: no-repeat;
   background-size: 55px;
   content: " ";
@@ -3123,6 +3181,7 @@ tbody tr:hover {
 
 .request-id {
   color: #BEBEBE;
+  padding: 5px;
 }
 
 .request-status {
