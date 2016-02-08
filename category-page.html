@@ -127,22 +127,6 @@ $(document).ready(function() {
   });
 </script>
 
-<!--adds "application installers" section if a user has the 'download_access' tag -->
-<script>
-$(window).load(function() {
-//Looks for a specified tag on a user
-  var isUser = false;
-  if (HelpCenter.user.tags.indexOf("download_access") != -1) {
-    isUser = true;
-  }
-
-//Checks if the tag was found or not
-  if (isUser === true) {
-  $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Application Installers</h3><p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p><ul><li><a href='/hc/en-us/articles/214947178' class='guide-dl-btn install-btn build-btn-1' style='font-weight:600'>Exago v2015.1</a></li><li><a href='/hc/en-us/articles/216071347' class='guide-dl-btn install-btn build-btn-2'>Exago v2014.1</a></li><li><a href='/hc/en-us/articles/215425688' class='guide-dl-btn install-btn build-btn-3'>Exago v2013.2</a></li></ul></section>");
-  } 
-});
-</script>
-
 <!--adds "eval installer" section if an organization has the 'organization_status_evaluation' tag-->
 <script>
 $(window).load(function() {
@@ -158,8 +142,44 @@ $(window).load(function() {
     });
   //if found, print this
   if (isCust === true) {
-     $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Evaluation Installer</h3><p>Select to view the download page for the Evaluation version of Exago</p><ul><li><a href='/hc/en-us/articles/215662328' class='guide-dl-btn install-btn build-btn-4'>Exago Trial</a></li></ul></section>");
+     $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Evaluation Installer</h3><p>Select to view the download page for the Evaluation version of Exago</p><ul><li><a href='/hc/en-us/articles/215662328' class='guide-dl-btn install-btn build-btn-eval'>Exago Trial</a></li></ul></section>");
   }
+});
+</script>
+
+<!--adds "Beta Installers" section if an organization has the 'beta_access' tag-->
+<script>
+$(window).load(function() {
+  var isCust;
+  //find tag in array
+  function isCustomer(element, index, array) {
+    return (element === 'beta_access');
+  }
+  //look for org tags in HelpCenter object
+  HelpCenter.user.organizations.forEach(function(x) {
+    isCust = x.tags.some(isCustomer);
+    return (isCust === true);
+    });
+  //if found, print this
+  if (isCust === true) {
+     $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Beta Installers</h3><p>Select to view the download page for the Beta version of Exago</p><ul><li><a href='/hc/en-us/articles/216973657' class='guide-dl-btn install-btn build-btn-beta'>Exago Beta</a></li></ul></section>");
+  }
+});
+</script>
+
+<!--adds "application installers" section if a user has the 'download_access' tag -->
+<script>
+$(window).load(function() {
+//Looks for a specified tag on a user
+  var isUser = false;
+  if (HelpCenter.user.tags.indexOf("download_access") != -1) {
+    isUser = true;
+  }
+
+//Checks if the tag was found or not
+  if (isUser === true) {
+  $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Application Installers</h3><p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p><ul><li><a href='/hc/en-us/articles/214947178' class='guide-dl-btn install-btn build-btn-1' style='font-weight:600'>Exago v2015.1</a></li><li><a href='/hc/en-us/articles/216071347' class='guide-dl-btn install-btn build-btn-2'>Exago v2014.1</a></li><li><a href='/hc/en-us/articles/215425688' class='guide-dl-btn install-btn build-btn-3'>Exago v2013.2</a></li></ul></section>");
+  } 
 });
 </script>
 
