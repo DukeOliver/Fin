@@ -2,6 +2,7 @@
  */
 
 $(document).ready(function() {
+  
   //Application Installer EULA Tickbox
   //If you click the EULA tickbox, "disabled" is removed from button, making it clickable
   $( "#cbAccept" ).click(function() {
@@ -48,6 +49,10 @@ $(document).ready(function() {
   
     if (HelpCenter.user.role=="agent" || HelpCenter.user.role=="manager"){
       $("div.manager").show();
+    }
+  
+   if (HelpCenter.user.role=="agent" || HelpCenter.user.role=="manager"){
+      $("li.manager").show();
     }
 
    // Change text in search bar
