@@ -19,7 +19,7 @@
             {{request_form}}
           </div>
         </div>
-        <p class="form-report-issue"><a href="mailto:dkisch@exagoinc.com"  title="email the admin, dkisch@exagoinc.com">Report a Form Issue</a></p>
+        <p class="form-report-issue"><a href="mailto:design@exagoinc.com"  title="email the admin, design@exagoinc.com">Report a Form Issue</a></p>
       </div>
     </section>
   </div>
@@ -28,16 +28,16 @@
 <!-- wrap div tags around certain elements for styling -->
 <script>
   //build and version
-  $(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088, .request_custom_fields_29645988").wrapAll('<div class="version-build-bg clearfix"></div>');
+  $(".request_custom_fields_28135878, .request_custom_fields_29374197, .request_custom_fields_29511787, .request_custom_fields_29511867, .request_custom_fields_29563478, .request_custom_fields_29563088, .request_custom_fields_29645988, .request_custom_fields_31679877").wrapAll('<div class="version-build-bg clearfix"></div>');
 </script>
 
-<!--Auto-select 2015.1 as the default version in forms -->
+<!--Auto-select 2016.1 as the default version in forms -->
 <script>
   $(document).ready(function() {
     var versionSelect = document.getElementById("request_custom_fields_28135878");
     if (versionSelect !== null)
     {
-      var i = versionSelect.value = "ticket_version_2015.1";
+      var i = versionSelect.value = "ticket_version_2016.1";
       window.scrollTo(0,0);
     }
   });
