@@ -1223,7 +1223,7 @@ form.search::before { /* adds blank content into form */
 .site-container {
   position: relative;
   min-height: 100%;
-  margin-bottom: -101px;
+  /*margin-bottom: -101px;*/
 }
 
 .site-container::after {
@@ -1425,6 +1425,12 @@ form.search::before { /* adds blank content into form */
   float:left;
 }
 
+.full-downloads {
+  display: inline-block;
+  width: 100%;
+  float:left;
+}
+
 .app-downloads {
   background-color: #F2F2F2;
   margin: 0;
@@ -1465,7 +1471,7 @@ form.search::before { /* adds blank content into form */
   display: block;
   position: absolute;
   top: -4px;
-  left: -18px;
+  left: -19px;
   padding: 0 3px;
   background: #ff6b01;
   color: #fff;
@@ -1479,7 +1485,6 @@ form.search::before { /* adds blank content into form */
 
 .dl-badge-beta {
   background: #3785CC; 
-  left: -19px;
 }
 
 .dl-badge-demo {
@@ -1576,7 +1581,7 @@ form.search::before { /* adds blank content into form */
 }
 
 .www-btn:after {
-  content:"www.";
+  content:"article";
   color: #4182BC;
   background: #fff;
   border-left:1px solid rgba(0,0,0,0.08);
@@ -1597,6 +1602,13 @@ form.search::before { /* adds blank content into form */
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.zip-btn:after {
+  content: ".zip";
+  color: #9300FF;
+  background: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .install-btn {
   padding: 3px 95px 3px 10px;  
 }
@@ -1606,14 +1618,14 @@ form.search::before { /* adds blank content into form */
 }
 
 .build-btn-2016:after {
-  content: "Release 1";
+  content: "Release 6";
   color: #ff6b01;
   background: #ffffff;
   border-left: 1px solid rgba(0,0,0,0.08);
 }
 
 .build-btn-2015:after {
-  content: "Build 3.4";
+  content: "Build 3.7";
   color: silver;
   background: #ffffff;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
@@ -1634,14 +1646,14 @@ form.search::before { /* adds blank content into form */
 }
 
 .build-btn-eval:after {
-  content: "Release 1";
+  content: "Release 6";
   color: #ff6b01;
   background: #ffffff;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .build-btn-beta:after {
-  content: "Release 1";
+  content: "Release 3";
   color: #3785CC;
   background: #ffffff;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
@@ -2506,7 +2518,8 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29511867,
 .request_custom_fields_29563478,
 .request_custom_fields_29563088,
-.request_custom_fields_29645988 {
+.request_custom_fields_29645988,
+.request_custom_fields_31679877 {
   margin: 20px 40px 20px 0 !important;
   border-left: 1px solid #9E9E9E;
   padding-left: 40px;
@@ -2519,7 +2532,8 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29511867,
 .request_custom_fields_29563478,
 .request_custom_fields_29563088,
-.request_custom_fields_29645988 {
+.request_custom_fields_29645988,
+.request_custom_fields_31679877 {
   display: inline-block;
   width: 40%;
   text-align: center;
@@ -2557,6 +2571,7 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29512527,
 .request_custom_fields_29575477,
 .request_custom_fields_29660197,
+.request_custom_fields_31679897,
 .request_custom_fields_29561668,
 .request_custom_fields_29561748,
 .request_custom_fields_29561928,
@@ -2588,6 +2603,7 @@ label[for=request_ticket_form_id] {
 }
 
 .request_custom_fields_29575477 > a,
+.request_custom_fields_31679897 > a,
 .request_custom_fields_29561668 > a,
 .request_custom_fields_29561748 > a,
 .request_custom_fields_29561928 > a{
@@ -2606,6 +2622,7 @@ label[for=request_ticket_form_id] {
 }
 
 .request_custom_fields_29575477 label,
+.request_custom_fields_31679897 label,
 .request_custom_fields_29561668 label,
 .request_custom_fields_29660197 label {
   font-size: 13px !important;
@@ -2645,7 +2662,6 @@ label[for=request_ticket_form_id] {
 .request_custom_fields_29626557,
 .request_custom_fields_29612968,
 .request_custom_fields_29612978,
-.request_custom_fields_29612988,
 .request_custom_fields_29612918,
 .request_custom_fields_29675247 {
   margin-left: 45px;
