@@ -14,10 +14,9 @@
           <h3>v2016.1 Guides</h3>
           <p>Manuals for the newest build</p>
          <ul>
-            <li><a href="/hc/en-us/article_attachments/206190487/Exago_User_Guide_2016.1.pdf" class="guide-dl-btn pdf-btn">User Guide</a></li>
-            <li><a href="/hc/en-us/article_attachments/206190477/Exago_User_Guide_2016.1.doc" class="guide-dl-btn doc-btn">User Guide</a></li>
-            <li><a href="/hc/en-us/article_attachments/206190277/Exago_Technical_Guide_2016.1.pdf" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
-            <li><a href="/hc/en-us/article_attachments/206190287/Exago_Technical_Guide_2016.1.doc" class="guide-dl-btn doc-btn">Technical Guide</a></li>
+            <li><a href="/hc/en-us/article_attachments/207166167/Exago_User_Guide_v2016.1.pdf" class="guide-dl-btn pdf-btn">User Guide</a></li>
+            <li><a href="/hc/en-us/article_attachments/207117298/Exago_User_Guide_v2016.1.docx" class="guide-dl-btn doc-btn">User Guide</a></li>
+            <li><a href="/hc/en-us/article_attachments/207573627/Exago_Technical_Guide_v2016.1.pdf" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
           </ul>
         </section>
         <section class="downloads-section third-downloads">
@@ -38,6 +37,15 @@
             <li><a href="/hc/en-us/article_attachments/204775227/Exago_Technical_Guide_2014.1.pdf" class="guide-dl-btn pdf-btn">Technical Guide</a></li>
           </ul>
         </section>
+      {{#if signed_in}}
+      <section class="downloads-section full-downloads">
+        <h3>API Examples</h3>
+        <p>Visit the <a href="/hc/en-us/sections/203613598"  style="color:#FF6B01">API Section</a> for more</p>
+        <ul>
+          <li><a href="/hc/en-us/article_attachments/207670407/Exago_Folder_Management_Example.zip" class="guide-dl-btn zip-btn">Folder Management</a></li>
+        </ul>
+      </section>
+      {{/if}}
         <div class="manager agent" style="clear:both;">
           <p style="color:grey">Hidden Links</p>
           <span class="visibility-internal" data-title="file downloads, EULA, sitemap xml"><a href="/hc/en-us/sections/203678918"><img src="{{asset 'goatbody1.svg'}}" width="20"></a></span>
@@ -185,6 +193,7 @@ $(window).load(function() {
 });
 </script>
 
+
 <!--adds "application installers" section if a user has the 'download_access' tag -->
 <script>
 $(window).load(function() {
@@ -196,7 +205,7 @@ $(window).load(function() {
 
 //Checks if the tag was found or not
   if (isUser === true) {
-  $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Application Installers</h3><p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p><ul><li><a href='/hc/en-us/articles/217925898' class='guide-dl-btn install-btn build-btn-2016' style='font-weight:600'><span class='dl-badge'>New</span>Exago v2016.1</a></li><li><a href='/hc/en-us/articles/214947178' class='guide-dl-btn install-btn build-btn-2015'>Exago v2015.1</a></li><li><a href='/hc/en-us/articles/216071347' class='guide-dl-btn install-btn build-btn-2014'>Exago v2014.1</a></li><li><a href='/hc/en-us/articles/215425688' class='guide-dl-btn install-btn build-btn-2013'>Exago v2013.2</a></li></ul></section>");
+  $('.dl-items-container').prepend("<section class='downloads-section wide-downloads app-downloads'><h3>Application Installers</h3><p>Select your version to view Windows &amp; Linux installers,<br />release notes and installation/updating guides</p><ul><li><a href='/hc/en-us/articles/217925898' class='guide-dl-btn install-btn build-btn-2016' style='font-weight:600'><span class='dl-badge'>New</span>Exago v2016.1</a></li><li><a href='/hc/en-us/articles/214947178' class='guide-dl-btn install-btn build-btn-2015'>Exago v2015.1</a></li><li><a href='/hc/en-us/articles/216071347' class='guide-dl-btn install-btn build-btn-2014'>Exago v2014.1</a></li><!--<li><a href='/hc/en-us/articles/215425688' class='guide-dl-btn install-btn build-btn-2013'>Exago v2013.2</a></li>--></ul></section>");
   } 
 });
 </script>
@@ -213,3 +222,4 @@ $(window).load(function() {
 
 </main>
 </div> <!--<div class="site-container"> is on header page-->
+
